@@ -1,4 +1,4 @@
-<title>MeusFilmes - Listar</title>
+<title>MeusFilmes - Listar Filmes</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
@@ -123,13 +123,13 @@
                                 <b>Data Lançamento:</b> <?php echo date('d/m/Y', strtotime($filme["data_lancamento"]));?> <br>
                                 <b>Categoria:</b> <?php echo $filme["categoria_nome"];?> <br>
                                 <?php if($filme["assistido"] == '0') {
-                                    echo "Já assistido";
                                     ?>
+                                    <b>Já assistido</b>
                                     <i class="bi bi-play-circle-fill"></i>
                                     <?php
                                     } else {
-                                    echo "Nunca assistido";
                                     ?>
+                                    <b>Nunca assistido</b>
                                     <i class="bi bi-pause-circle-fill"></i>
                                     <?php
                                     } ?> <br>

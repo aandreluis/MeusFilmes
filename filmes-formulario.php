@@ -1,4 +1,4 @@
-<title>MeusFilmes - Adicionar</title>
+<title>MeusFilmes - Adicionar Filmes</title>
 <?php 
     include("header.php"); 
     include("conecta.php");//ok
