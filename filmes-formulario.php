@@ -2,7 +2,7 @@
 <?php 
     include("header.php"); 
     include("conecta.php");//ok
-    include("banco-categoria.php");   //ok  
+    include("banco-filmes.php");   //ok  
 ?>
 
 <?php 

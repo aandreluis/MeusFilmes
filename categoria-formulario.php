@@ -2,7 +2,6 @@
 <?php 
     include("header.php"); 
     include("conecta.php");
-    include("banco-categoria.php"); 
 ?>
 
 <!-- Seção inicio -->
