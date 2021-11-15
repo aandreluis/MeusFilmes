@@ -1,0 +1,203 @@
+body {
+    /* background-color: #262626; */
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* Buttons nav */
+.btn-menu {
+    color: #fff;
+    background-color: #5B3FBF;
+    border-color: #5B3FBF;
+}
+.btn-menu:hover {
+    color: #fff;
+    background-color: #9677D9;
+    border-color: #9677D9;  
+}
+
+.btn-check:focus + .btn-menu, .btn-menu:focus {
+    color: #fff;
+    background-color: #7636ec;
+    border-color: #7636ec;
+    box-shadow: 0 0 0 0.25rem #5b40f3c2;
+}
+
+.btn-check:checked + .btn-menu, .btn-check:active + .btn-menu, .btn-menu:active, .btn-menu.active, .show > .btn-menu.dropdown-toggle {
+    color: #fff;
+    background-color: #9677D9;
+    border-color: #5B3FBF;
+  }
+  .btn-check:checked + .btn-menu:focus, .btn-check:active + .btn-menu:focus, .btn-menu:active:focus, .btn-menu.active:focus, .show > .btn-menu.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem #5b40f3c2;
+  }
+  .btn-menu:disabled, .btn-menu.disabled {
+    color: #fff;
+    background-color: #806aff;
+    border-color: #724bff;
+  }
+
+  .btn-drop-center {
+    border-radius: 0; 
+  }
+
+  .btn-drop-end {
+    border-radius: 0 0.2rem 0.2rem 0; 
+  }
+
+/* Buttons nav */
+
+.nav-title {
+    color: #5B3FBF;
+    font-weight: bold;
+}
+
+.nav-title:hover {
+    text-decoration: underline;
+}
+
+.nav-bg {
+    background-color: #262626;
+    background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+}
+
+#home-pg {
+    width: 70%;
+    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    /* Não coloquei o height pois ja fica responsivo por causa do bootstrap */
+    padding: 24px 16px 24px 16px;
+    margin-bottom: 2%;
+    background-color: #262626;
+    background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+    border-radius: 8px;
+    box-shadow:  0px 5px 8px 0.025rem #262626a8;
+
+}
+.custom-home-container {
+    display: flex;
+    justify-content: center;
+}
+
+#home-pg .img-home {
+    width: 90%;
+}
+
+#home-pg .titulo-home {
+    text-align: center;
+    color: #5B3FBF;
+}
+
+#home-pg .paragrafo-home {
+    color: #ffffff;
+    text-align: justify;
+    font-size: 17px;
+}
+
+/* footer */
+
+.rodape-bg {
+    background-color: #262626;
+    background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+}
+
+  /* filmes */
+
+#filmes-pg {
+    width: 70%;
+    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    padding: 24px 16px 24px 16px;
+    margin-bottom: 2%;
+    background-color: #262626;
+    background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+    border-radius: 8px;
+    box-shadow:  0px 5px 8px 0.025rem #262626a8;
+}
+
+#filmes-pg .card-box:hover {
+    box-shadow:  0px 5px 8px 0.025rem #5b3fbf65;
+    transition: .3s;
+}
+
+#filmes-pg .border-card {
+    border-color: #5B3FBF;
+
+}
+
+#filmes-pg .veiculos-btn {
+    width: min(40%, 140px);
+}
+
+#filmes-pg .titulo-home {
+    text-align: center;
+    color: #5B3FBF;
+}
+
+
+#categoria-form-pg {
+    width: 50%;
+    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    margin-bottom: 2%;
+    padding: 24px 16px 24px 16px;
+    background-color: #262626;
+    background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+    border-radius: 8px;
+    box-shadow:  0px 5px 8px 0.025rem #262626a8;
+
+}
+.custom-home-container {
+    display: flex;
+    justify-content: center;
+}
+
+#categoria-form-pg .img-home {
+    width: 90%;
+}
+
+#categoria-form-pg .titulo-home {
+    text-align: center;
+    color: #5B3FBF;
+}
+
+#categoria-form-pg .paragrafo-home {
+    color: #ffffff;
+    text-align: justify;
+    font-size: 17px;
+}
+
+/* login */
+
+#login-pg {
+    width: 32%;
+    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    padding: 24px 16px 24px 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow:  0px 5px 8px 0.025rem rgb(151 31 18 / 41%);
+}
+
+#login-pg .img-login {
+    width: 50%;
+}
+
+/* modal */
+
+.img-modal {
+    width: 50%;
+}
+
+.link-padrao {
+    color: #9677D9;
+    font-weight: 800;
+}
+ 
+.link-padrao:hover {
+    transition: .2s;
+    color: #5B3FBF;
+}
+
+.border-padrao {
+    border: solid 3px;
+    border-color: #5B3FBF;
+}
