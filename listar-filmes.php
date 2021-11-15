@@ -90,10 +90,24 @@
     <div class="custom-home-container">
         <div id="filmes-pg">
             <h1 class="titulo-home">Filmes Cadastrados</h1>
+            <?php
+            if (listaFilmes($conexao) == null) {//verifica se existe filmes para mostrar
+            ?>
+                <div class="row d-flex justify-content-center mt-4">
+                    <div class="col-md-12">
+                        <h5 class="paragrafo-home text-muted">Ops... Nenhum filme encontrado!</h5>
+                        <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
+                    </div>
+                </div>
+                    
+            <?php
+            }    
+            ?>         
                 <!-- Cards -->
                 <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
 <?php
-$filmes = listaFilmes($conexao);
+    $filmes = listaFilmes($conexao);
+    
     foreach($filmes as $filme){//for melhorado
 
 ?>

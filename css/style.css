@@ -134,6 +134,11 @@ body {
     color: #5B3FBF;
 }
 
+#filmes-pg .paragrafo-home {
+    color: #ffffff;
+    text-align: center;
+    font-size: 17px;
+}
 
 #categoria-form-pg {
     width: 50%;

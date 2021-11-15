@@ -26,7 +26,7 @@
                             <input type="hidden" name="id" value="<?php echo $categoria["id"];?>">
                             
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Adicionar</button>
+                                <button type="submit" class="btn btn-menu mt-2">Alterar</button>
                             </div>
                         </form>
                     </div>

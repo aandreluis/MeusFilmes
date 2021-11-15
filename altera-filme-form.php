@@ -76,7 +76,7 @@
 
 
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Atualizar</button>
+                                <button type="submit" class="btn btn-menu mt-2">Alterar</button>
                             </div>
                         </form>
                     </div>

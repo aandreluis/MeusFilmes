@@ -27,7 +27,7 @@
     if ($add == "true") {
     ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria foi <strong>cadastrada</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -37,7 +37,7 @@
     if ($add == "false") {
     ?>
          <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria <strong>não</strong> foi cadastrada!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -51,7 +51,7 @@
     if ($alterado == "true") {
     ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria foi <strong>alterada</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -61,7 +61,7 @@
     if ($alterado == "false") {
     ?>
          <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria <strong>não</strong> foi alterada!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -74,7 +74,7 @@
     if ($removido == "true") {
     ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria foi <strong>removida</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -93,6 +93,18 @@
                 <div class="row">
                     <div class="col-md-6">
                     <h1 class="titulo-home">Categorias</h1>
+                    <?php
+                    if (listaCategorias($conexao) == null) {//verifica se existe categorias para mostrar
+                        ?>
+                            <div class="row d-flex justify-content-center mt-4">
+                                <div class="col-md-12">
+                                    <h5 class="paragrafo-home text-muted text-center">Ops... Nenhuma categoria encontrada!</h5>
+                                    <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
+                                </div>
+                            </div>
+                    <?php
+                    } else {
+                    ?>            
                         <table class="table table-dark table-striped table-bordered border-padrao text-center mt-3">
                             <tr class="text-white">
                                 <td><b>Categorias</b></td>
@@ -109,6 +121,7 @@
                             </tr>
                         <?php
                         }
+                    }
                         ?>
                         </table>
                     </div>

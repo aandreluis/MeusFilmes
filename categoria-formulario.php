@@ -22,7 +22,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row justify-content-center mt-4">
                         <div class="col-md-6">
                             <img class="img-home mx-auto d-block" src="img/new-ideas.svg" alt="Cinema em casa">
                         </div>
