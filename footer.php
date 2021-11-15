@@ -8,7 +8,7 @@
 				<span class="text-muted me-2">&copy; 2021 MeusFilmes, Desenvolvido por André Luis</span>
 			</div>
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-whatsapp"></i></a>
+				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-github"></i></a>
 				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-instagram"></i></a>
 				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-facebook"></i></a>
 				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-twitter"></i></a>
