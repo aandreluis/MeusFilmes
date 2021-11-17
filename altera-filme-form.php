@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputDescricao" class="form-label">Descrição</label>
-                                <textarea class="form-control"  name="descricao" id="inputDescricao" placeholder="Descrição do filme"><?php echo $filme["descricao"]; ?></textarea>
+                                <textarea class="form-control" style="resize: none; height: 100px;" name="descricao" id="inputDescricao" placeholder="Descrição do filme"><?php echo $filme["descricao"]; ?></textarea>
                             </div>
                             <div class="col-md-12">
                                 <label for="inputImagem" class="form-label">Link imagem</label>

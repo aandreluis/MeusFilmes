@@ -1,32 +1,65 @@
-<?php include("header.php"); ?>
-    <!-- Seção inicio -->
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- favicon -->
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+		<title>CarRent - Login</title>
+	</head>
+	<body>
+		
+
+		<!-- Seção inicio -->
 		<section class="mt-5">
 			<div class="custom-home-container">
-				<div id="home-pg">
-					<div class="row">
-						<div class="col-md-6">
-							<img class="img-home mx-auto d-block" src="img/home-cinema.svg" alt="Cinema em casa">
+				<div id="login-pg">
+					<div class="container">
+                        <?php 
+                            if(isset($_GET["login"]) && $_GET["login"] == "false") {
+                                ?>
+                                <p class="alert alert-danger">ERRO</p>
+                                <?php
+                            }
+                        
+                        ?>
+						<div class="row">
+						  <img class="img-login mx-auto d-block" src="/img/password.svg" alt="">
 						</div>
-						<div class="col-md-6">
-							<h1 class="titulo-home">Sobre o MeusFilmes</h1>
-							<p class="paragrafo-home mx-auto">
-								No <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
-								- Adicione: <b>titulo, descrição, data de lançamento, categorias, entre outras informações!</b>
-							 </p>
-							<h3 class="titulo-home">Confira os filmes já cadastrados ou adicione novos filmes</h3>
-							<br>
-                            <div class="row d-flex align-items-center">
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <a href="filmes-formulario.php" class="btn btn-menu btn-lg" type="button">Adicionar</a>
-                                </div>
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <a href="listar-filmes.php" class="btn btn-menu btn-lg" type="button">Listar</a>
-                                </div>
-                            </div>
+						<div class="row mt-3">
+							<form action="login.php" method="post">
+								<div class="mb-3">
+								  <label for="inputEmail" class="form-label">Seu email</label>
+								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
+								</div>
+								<div class="mb-3">
+								  <label for="inputPassword1" class="form-label">Sua senha</label>
+								  <input type="password" class="form-control" name="password">
+								</div>
+					
+								<div class="d-grid gap-2 col-6 mx-auto">
+									<button class="btn btn-menu" type="submit">Fazer login</button>
+								</div>
+							  </form>
 						</div>
-					</div>
+					  </div>
 				</div>
 			</div>
 		  </section> 
 		<!-- Seção inicio -->
-<?php include("footer.php"); ?>
+
+
+<?php include ("footer.php") ?>
