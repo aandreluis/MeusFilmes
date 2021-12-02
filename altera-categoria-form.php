@@ -2,7 +2,8 @@
 <?php 
     include("header.php"); 
     include("conecta.php");
-    include("banco-filmes.php"); 
+    include("banco-filmes.php");
+    verificaUsuario();
 ?>
 
 <?php 

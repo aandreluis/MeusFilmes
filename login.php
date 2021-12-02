@@ -1,6 +1,7 @@
 <?php 
     include("conecta.php");
     include("banco-usuarios.php");
+    include("logica-usuario.php");
 
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -10,6 +11,7 @@
     if($usuario == NULL) {
         header("Location: index.php?login=false");
     } else {
+        logaUsuario($email);
         header("Location: index2.php?login=true");
     }
 ?>

@@ -2,6 +2,7 @@
 <?php 
     include("header.php"); 
     include("conecta.php");
+    verificaUsuario();
 ?>
 
 <!-- Seção inicio -->

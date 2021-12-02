@@ -1,12 +1,30 @@
-<?php include("header.php"); ?>
+<?php 
+	include("header.php");
+    verificaUsuario();
+?>
 
 <?php 
 		if(isset($_GET["login"]) && $_GET["login"] == "true") {
 			?>
-			<p class="alert alert-danger">CERTO</p>
+			<div class="container sticky-top">
+			<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				Login realizado com <strong>sucesso!</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+				</div>
 			<?php
 		}
 	
+?>
+
+<?php 
+        if(usuarioEstaLogado()) {
+            ?>
+            <p class="text-success">Você está logado como <?php echo $_SESSION["usuario_logado"]; ?> </p>
+            <a href="logout.php" class="btn btn-danger">Sair</a>
+            <?php
+        }
+    
 ?>
 
     <!-- Seção inicio -->

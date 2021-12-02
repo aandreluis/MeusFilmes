@@ -17,40 +17,76 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-		<title>CarRent - Login</title>
+		<title>MeusFilmes - Login</title>
 	</head>
 	<body>
+		<!-- MENU -->
+        <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
+            <div class="container justify-content-center">
+                <a class="navbar-brand" href="index.php">
+                    <img class="d-inline-block align-text-center me-2" width="50" src="img/logo.png" alt="logo">
+                    <h2 class="nav-title d-inline-block align-text-top">MeusFilmes</h2>
+                </a>
+            </div>
+        </nav>	
+		<!-- MENU -->
 		
+	<?php 
 
+		if(isset($_GET["falhaDeSeguranca"])) {
+			?>
+			<div class="container sticky-top">
+				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+					Você não tem acesso a esta funcionalidade. <strong>Favor fazer login.</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+			<?php
+		}
+
+		if(isset($_GET["login"]) && $_GET["login"] == "false") {
+			?>
+			<div class="container sticky-top">
+			<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				Email ou senha <strong>invalidos!</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+				</div>
+			<?php
+		}
+
+		if(isset($_GET["logout"])) {
+			?>
+			<div class="container sticky-top">
+				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+					Deslogado com <strong>sucesso!</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+			<?php
+		}
+	
+	?>
 		<!-- Seção inicio -->
 		<section class="mt-5">
 			<div class="custom-home-container">
 				<div id="login-pg">
 					<div class="container">
-                        <?php 
-                            if(isset($_GET["login"]) && $_GET["login"] == "false") {
-                                ?>
-                                <p class="alert alert-danger">ERRO</p>
-                                <?php
-                            }
-                        
-                        ?>
 						<div class="row">
-						  <img class="img-login mx-auto d-block" src="/img/password.svg" alt="">
+						  <img class="img-login mx-auto d-block" src="./img/password.svg" alt="">
 						</div>
 						<div class="row mt-3">
 							<form action="login.php" method="post">
 								<div class="mb-3">
-								  <label for="inputEmail" class="form-label">Seu email</label>
+								  <label for="inputEmail" class="form-label text-white">Seu email</label>
 								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
 								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
-								  <label for="inputPassword1" class="form-label">Sua senha</label>
-								  <input type="password" class="form-control" name="password">
+								  <label for="inputSenha" class="form-label text-white">Sua senha</label>
+								  <input type="password" class="form-control" name="senha">
 								</div>
-					
-								<div class="d-grid gap-2 col-6 mx-auto">
+								<div class="d-grid gap-2 col-6 mx-auto mt-5">
 									<button class="btn btn-menu" type="submit">Fazer login</button>
 								</div>
 							  </form>

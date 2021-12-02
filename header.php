@@ -1,3 +1,7 @@
+<?php 
+    include("logica-usuario.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -22,7 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <div class="btn-group me-3">
-                        <a href="index.php" class="btn btn-menu">Início</a>
+                        <a href="index2.php" class="btn btn-menu">Início</a>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Filmes

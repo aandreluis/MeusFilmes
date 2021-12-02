@@ -1,8 +1,9 @@
 <title>MeusFilmes - Adicionar Filmes</title>
 <?php 
     include("header.php"); 
-    include("conecta.php");//ok
-    include("banco-filmes.php");   //ok  
+    include("conecta.php");
+    include("banco-filmes.php");
+    verificaUsuario();
 ?>
 
 <?php 
