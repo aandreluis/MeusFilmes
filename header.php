@@ -37,12 +37,21 @@
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="btn btn-menu  btn-drop-end dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item active" href="categoria-formulario.php">Adicionar</a></li>
                                 <li><a class="dropdown-item" href="listar-categorias.php">Listar</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-menu  btn-drop-end dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $_SESSION["usuario_logado"]; ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Sair</a></li>
                             </ul>
                         </div>
                         <!-- <a href="/login.html" class="btn btn-menu">Login <i class="bi bi-person-circle"></i></a> -->

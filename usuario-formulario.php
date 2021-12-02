@@ -33,49 +33,16 @@
 		
 	<?php 
 
-		if(isset($_GET["falhaDeSeguranca"])) {
-			?>
-			<div class="container sticky-top">
-				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-					Você não tem acesso a esta funcionalidade. <strong>Favor fazer login.</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-			</div>
-			<?php
-		}
-
-		if(isset($_GET["login"]) && $_GET["login"] == "false") {
-			?>
-			<div class="container sticky-top">
-			<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-				Email ou senha <strong>invalidos!</strong>
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-				</div>
-			<?php
-		}
-
-		if(isset($_GET["logout"])) {
-			?>
-			<div class="container sticky-top">
-				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-					Deslogado com <strong>sucesso!</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-			</div>
-			<?php
-		}
-
-		if(isset($_GET["cadastrarUsuario"])) {
-			?>
-			<div class="container sticky-top">
-				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-					Usuario cadastrado com <strong>sucesso!</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-			</div>
-		<?php
-	}
+    if(isset($_GET["cadastrarUsuario"])) {
+        ?>
+        <div class="container sticky-top">
+            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+                Não foi possivel realizar o cadastro. <strong>Tente novamente!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    <?php
+}
 	
 	?>
 		<!-- Seção inicio -->
@@ -87,23 +54,22 @@
 						  <img class="img-login mx-auto d-block" src="./img/password.svg" alt="">
 						</div>
 						<div class="row mt-3">
-							<form action="login.php" method="post">
+							<form action="adiciona-usuario.php" method="post">
+                            <div class="mb-3">
+								  <label for="inputNome" class="form-label text-white">Seu nome</label>
+								  <input type="text" class="form-control" name="nome" aria-describedby="nomeHelp">
+								</div>
 								<div class="mb-3">
 								  <label for="inputEmail" class="form-label text-white">Seu email</label>
 								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
 								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
-								  <label for="inputSenha" class="form-label text-white">Sua senha</label>
+								  <label for="inputSenha" class="form-label text-white">Crie uma senha</label>
 								  <input type="password" class="form-control" name="senha">
 								</div>
 								<div class="d-grid gap-2 col-6 mx-auto mt-5">
-									<button class="btn btn-menu" type="submit">Fazer login</button>
-									<div class="form-text text-center">
-										Não possui uma conta? 
-										<a  href="usuario-formulario.php">Cadastre-se aqui!</a>
-
-									</div>
+									<button class="btn btn-menu" type="submit">Cadastrar</button>
 								</div>
 							  </form>
 						</div>

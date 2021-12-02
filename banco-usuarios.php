@@ -8,6 +8,11 @@
         return $usuario;
     }
 
+    function cadastraUsuario($conexao, $nome, $email, $senha){
+        $query = "insert into usuarios (nome, email, senha) values ('{$nome}', '{$email}', '{$senha}')";
+        return mysqli_query($conexao, $query);
+    }
+
 
 
 

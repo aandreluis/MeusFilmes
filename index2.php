@@ -18,12 +18,12 @@
 ?>
 
 <?php 
-        if(usuarioEstaLogado()) {
-            ?>
-            <p class="text-success">Você está logado como <?php echo $_SESSION["usuario_logado"]; ?> </p>
-            <a href="logout.php" class="btn btn-danger">Sair</a>
+  //      if(usuarioEstaLogado()) {
+    //        ?>
+     <!--        <p class="text-success">Você está logado como <?php //echo $_SESSION["usuario_logado"]; ?> </p>
+            <a href="logout.php" class="btn btn-danger">Sair</a> -->
             <?php
-        }
+      //  }
     
 ?>
 
