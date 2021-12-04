@@ -1,4 +1,5 @@
 <?php 
+    include("conecta.php");
     session_start();
 
     function verificaUsuario() {
@@ -9,15 +10,26 @@
     }
 
     function usuarioEstaLogado() {//retorna existencia
-        return isset($_SESSION["usuario_logado"]);
+        return isset($_SESSION["email-usuario"]);
     }
 
     function usuarioLogado() {//retorna qual usuario
-        return $_SESSION["usuario_logado"];
+        return $_SESSION["email-usuario"];
     }
 
-    function logaUsuario($email) {
-        $_SESSION["usuario_logado"] = $email;
+    function logaUsuario($conexao, $email) {
+        $query = "select * from usuarios where email = '{$email}'";
+        $resultado = mysqli_query($conexao, $query);
+        $usuario = mysqli_fetch_assoc($resultado);
+        $_SESSION["id-usuario"] = $usuario["id"];
+        $_SESSION["nome-usuario"] = $usuario["nome"];
+        $_SESSION["email-usuario"] = $usuario["email"];
+        $_SESSION["senha-usuario"] = $usuario["senha"];
+
+    }
+
+    function resetSession() {
+        session_reset();
     }
 
     function logout() {

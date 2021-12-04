@@ -5,16 +5,16 @@
 ?>
 <?php
     
+    $id = $_POST["id"];
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = md5($_POST["senha"]);
 
-     if(cadastraUsuario($conexao, $nome, $email, $senha)) {//funcionou
-        logaUsuario($conexao, $email);
-        header("location: index2.php?cadastrarUsuario=true");
+     if(alteraUsuario($conexao, $id, $nome, $email, $senha)) {//funcionou
+        header("location: perfil.php?alteraUsuario=true");
         die();
     } else {
-        header("location: usuario-formulario.php?cadastrarUsuario=false");
+        header("location: altera-usuario-form.php?alteraUsuario=false");
         die();
     }
     //encerrar a conexão

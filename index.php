@@ -66,17 +66,17 @@
 			<?php
 		}
 
-		if(isset($_GET["cadastrarUsuario"])) {
+		if(isset($_GET["removido"])) {
 			?>
 			<div class="container sticky-top">
 				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-					Usuario cadastrado com <strong>sucesso!</strong>
+					Conta excluida com <strong>sucesso!</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			</div>
-		<?php
-	}
-	
+			<?php
+		}
+
 	?>
 		<!-- Seção inicio -->
 		<section class="mt-5">

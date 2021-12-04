@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-		<title>MeusFilmes - Início</title>
 	</head>
 	<body>
 		<!-- MENU -->
@@ -47,10 +46,10 @@
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-menu  btn-drop-end dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $_SESSION["usuario_logado"]; ?>
+                                <?php echo $_SESSION["nome-usuario"]; ?>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item active" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item active" href="perfil.php">Perfil</a></li>
                                 <li><a class="dropdown-item" href="logout.php">Sair</a></li>
                             </ul>
                         </div>

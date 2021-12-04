@@ -11,7 +11,7 @@
     if($usuario == NULL) {
         header("Location: index.php?login=false");
     } else {
-        logaUsuario($email);
+        logaUsuario($conexao, $email);
         header("Location: index2.php?login=true");
     }
 ?>

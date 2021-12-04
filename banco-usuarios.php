@@ -13,6 +13,20 @@
         return mysqli_query($conexao, $query);
     }
 
+    function removeUsuario($conexao, $id){
+        $query = "delete from usuarios where id = {$id}";
+        return mysqli_query($conexao, $query);
+    }
+
+    function alteraUsuario($conexao, $id, $nome, $email, $senha) {
+        $query = "update usuarios set nome = '{$nome}', email = '{$email}', senha = '{$senha}' where id = '{$id}'";
+        //atualiza dos valores da session
+        $_SESSION["id-usuario"] = $id;
+        $_SESSION["nome-usuario"] = $nome;
+        $_SESSION["email-usuario"] = $email;
+        $_SESSION["senha-usuario"] = $senha;
+        return mysqli_query($conexao, $query);
+    }
 
 
 
