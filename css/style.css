@@ -210,7 +210,7 @@ body {
 }
 
 #perfil-pg {
-    width: 50%;
+    width: 40%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
     margin-bottom: 2%;
     padding: 24px 16px 24px 16px;

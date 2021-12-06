@@ -4,18 +4,20 @@
 ?>
     <title>MeusFilmes - <?php echo $_SESSION["nome-usuario"]; ?></title>
 
-<?php
- if(isset($_GET["alteraUsuario"])) {
-    ?>
-    <div class="container sticky-top">
-        <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-            Alterações realizadas com <strong>sucesso!</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <?php
+    if(isset($_GET["alteraUsuario"])) {
+        ?>
+        <div class="container sticky-top">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+                Alterações realizadas com <strong>sucesso!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         </div>
-    </div>
-<?php
-}
-?>
+        
+    <?php
+    }
+
+    ?>
 
 
 
@@ -26,21 +28,29 @@
                 <div class="row justify-content-center">
                     <h1 class="titulo-home">Meu perfil</h1>
 
-                    <div class="col-md-6 avatar d-flex justify-content-center">
-                        <img class="img-avatar" src="img/password.svg" alt="">
+                    <div class="col-md-6 avatar d-flex justify-content-center mt-3"><!-- DIV DA IMAGEM DO PERFIL -->
+                        <?php
+                            // se a imagem por null ou não exista no diretorio referenciado
+                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                                ?>
+                                <img class="img-avatar" src="img/avatar-default.svg" alt="Imagem do perfil">
+                                <?php
+                            } else {//se existir
+                                ?>
+                                <img class="img-avatar" src="img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
+                                <?php
+                            }
+                        ?>
                     </div>
-
-                    <div class="row justify-content-center mt-4">
-                        <div class="col-md-6 paragrafo-home text-center">
-                            <table class="table table-dark table-bordered border-padrao text-center mt-3">
-                                <tr class="text-white">
-                                    <td><b><?php echo $_SESSION["nome-usuario"]; ?></td>
-                                </tr>
-                                <tr class="text-white">
-                                    <td><b><?php echo $_SESSION["email-usuario"]; ?></td>
-                                </tr>
-                            </table> 
-                            <div class="card-footer">
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-md-6 paragrafo-home">
+                            <div class="row justify-content-center">
+                                <?php echo $_SESSION["nome-usuario"]; ?>
+                            </div>
+                            <div class="row justify-content-center">
+                                <?php echo $_SESSION["email-usuario"]; ?>
+                            </div>
+                            <div class="card-footer mt-4">
                                 <div class="row">
                                     <p class="card-subtitle text-center text-muted">Ações</p>
                                 </div>    

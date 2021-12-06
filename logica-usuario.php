@@ -22,6 +22,7 @@
         $resultado = mysqli_query($conexao, $query);
         $usuario = mysqli_fetch_assoc($resultado);
         $_SESSION["id-usuario"] = $usuario["id"];
+        $_SESSION["imagem-usuario"] = $usuario["imagem"];
         $_SESSION["nome-usuario"] = $usuario["nome"];
         $_SESSION["email-usuario"] = $usuario["email"];
         $_SESSION["senha-usuario"] = $usuario["senha"];
