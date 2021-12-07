@@ -18,6 +18,12 @@
         return mysqli_query($conexao, $query);
     }
 
+    function removeImagem() {
+        $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
+        if(file_exists($imagem)) {
+            unlink($imagem);
+        }
+    }
 
     function alteraUsuario($conexao, $id, $imagem, $nome, $email, $senha) {
         $query = "update usuarios set imagem = '{$imagem}', nome = '{$nome}', email = '{$email}', senha = '{$senha}' where id = '{$id}'";
@@ -30,12 +36,16 @@
         return mysqli_query($conexao, $query);
     }
 
-    function removeImagem() {
-        $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
-        if(file_exists($imagem)) {
-            unlink($imagem);
+    function listarUsuarios($conexao){
+        $usuarios = array();//criação da array vazia
+        $resultado = mysqli_query($conexao, "select * from usuarios");//retorna um array de valores
+        //laço para pegar todas os produtos
+        while($usuario = mysqli_fetch_assoc($resultado)){//pega a array de valores
+            array_push($usuarios, $usuario); //adiciona valores dentro da array
         }
+        return $usuarios;
     }
+    
 
 
 
