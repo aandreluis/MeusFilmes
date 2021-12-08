@@ -36,13 +36,49 @@
     if(isset($_GET["cadastrarUsuario"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                Não foi possivel realizar o cadastro. <strong>Tente novamente!</strong>
+			<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				Não foi possivel realizar o cadastro. <strong>Tente novamente!</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+    <?php
+	}
+
+	if(isset($_GET["emailInvalido"])) {
+		?>
+		<div class="container sticky-top">
+            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            	Este email invalido ou já cadastrado. <strong>Tente um novamente!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-    <?php
-}
+		
+	<?php
+	}
+
+	if(isset($_GET["senhaInvalida"])) {
+		?>
+		<div class="container sticky-top">
+            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				Senha invalida. <strong>Tente uma nova senha!</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+		
+	<?php
+	}
+
+	if(isset($_GET["senhasNaoConferem"])) {
+		?>
+		<div class="container sticky-top">
+            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				As senhas que você digitou não conferem. <strong>Tente novamente!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+		
+	<?php
+	}
 	
 	?>
 		<!-- Seção inicio -->
@@ -51,24 +87,31 @@
 				<div id="login-pg">
 					<div class="container">
 						<div class="row">
-						  <img class="img-login mx-auto d-block" src="./img/password.svg" alt="">
+						  <img class="img-login mx-auto d-block" src="./img/insert.svg" alt="">
 						</div>
 						<div class="row mt-3">
 							<form action="adiciona-usuario.php" method="post">
-                            <div class="mb-3">
+                           		<div class="mb-3">
 								  <label for="inputNome" class="form-label text-white">Seu nome</label>
-								  <input type="text" class="form-control" name="nome" aria-describedby="nomeHelp">
+								  <input type="text" class="form-control" name="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required>
+								  <div class="form-text">Seu nome completo, ou apenas o primeiro nome.</div>
 								</div>
 								<div class="mb-3">
 								  <label for="inputEmail" class="form-label text-white">Seu email</label>
-								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
-								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
+								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required>
+								  <div class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
 								  <label for="inputSenha" class="form-label text-white">Crie uma senha</label>
-								  <input type="password" class="form-control" name="senha">
+								  <input type="password" class="form-control" name="senha" placeholder="Crie uma senha forte" required>
+								  <div class="form-text">Utilize letras maiusculas, minusculas, números e caracteres especiais, exemplo: ("@!#$&).</div>
 								</div>
-								<div class="d-grid gap-2 col-6 mx-auto mt-5">
+								<div class="mb-3">
+								  <label for="inputSenhaConfirma" class="form-label text-white">Confirme sua senha</label>
+								  <input type="password" class="form-control" name="senhaConfirmacao" placeholder="Repita sua senha" required>
+								  <div class="form-text">Confirme sua senha para finalizar o cadastro.</div>
+								</div>
+								<div class="d-grid gap-2 col-6 mx-auto mt-3">
 									<button class="btn btn-menu" type="submit">Cadastrar</button>
 								</div>
 							  </form>

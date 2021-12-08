@@ -7,9 +7,31 @@
     
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $senha = md5($_POST["senha"]);
+    $senha = $_POST["senha"];
+    $senhaConfirmacao = $_POST["senhaConfirmacao"];
 
-     if(cadastraUsuario($conexao, $nome, $email, $senha)) {//funcionou
+     //verificação do email
+     if(verificaEmail($conexao, $email)) {
+        header("location: usuario-formulario.php?emailInvalido=true");
+        die();
+    }
+
+    //vefiricação da senha
+    if($senha == "" || $senha == NULL) { //senha em branco
+        header("location: usuario-formulario.php?senhaInvalida=true");
+        die();
+    } else {
+        if($senha == $senhaConfirmacao) {
+            //Ok
+            $senhaMd5 = md5($senha);
+        } else {
+            header("location: usuario-formulario.php?senhasNaoConferem=true");
+            die();
+        }
+    }
+       
+    //cadastro do usuario
+    if(cadastraUsuario($conexao, $nome, $email, $senhaMd5)) {//funcionou
         logaUsuario($conexao, $email);
         header("location: index2.php?cadastrarUsuario=true");
         die();

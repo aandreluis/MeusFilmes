@@ -8,6 +8,17 @@
         return $usuario;
     }
 
+    function verificaEmail($conexao, $email) {
+        if($email == "" || $email == NULL) {
+            return 1;
+        }
+        $linhas = mysqli_query($conexao, "select * from usuarios where email = '{$email}'");
+        if(mysqli_num_rows($linhas) > 0){
+            return 1; //existe um email ja cadastrado
+        }
+        return 0; //não existe
+    }
+
     function cadastraUsuario($conexao, $nome, $email, $senha){
         $query = "insert into usuarios (nome, email, senha) values ('{$nome}', '{$email}', '{$senha}')";
         return mysqli_query($conexao, $query);
