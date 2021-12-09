@@ -58,7 +58,7 @@
 		if(isset($_GET["logout"])) {
 			?>
 			<div class="container sticky-top">
-				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
 					Deslogado com <strong>sucesso!</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
@@ -90,12 +90,12 @@
 							<form action="login.php" method="post">
 								<div class="mb-3">
 								  <label for="inputEmail" class="form-label text-white">Seu email</label>
-								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required>
 								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
 								  <label for="inputSenha" class="form-label text-white">Sua senha</label>
-								  <input type="password" class="form-control" name="senha">
+								  <input type="password" class="form-control" name="senha" required>
 								</div>
 								<div class="d-grid gap-2 col-6 mx-auto mt-5">
 									<button class="btn btn-menu" type="submit">Fazer login</button>
