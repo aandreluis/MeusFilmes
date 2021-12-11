@@ -12,6 +12,4 @@
     die();
 ?>
 
-
-
 <?php include("footer.php"); ?>

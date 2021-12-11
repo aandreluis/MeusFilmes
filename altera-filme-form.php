@@ -1,8 +1,9 @@
-<title>MeusFilmes - Adicionar</title>
+<title>MeusFilmes - Alterar</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
     include("banco-filmes.php");
+    include("banco-categorias.php");
     verificaUsuario();
 ?>
 
@@ -20,7 +21,6 @@
                     <div class="col-md-6">
                         <img class="img-home mx-auto d-block" src="img/home-cinema.svg" alt="Cinema em casa">
                     </div>
-
                     <div class="col-md-6">
                     <h1 class="titulo-home">Alterar Filme</h1>
                         <form class="row g-3 text-white" action="altera-filme.php" method="post">
@@ -54,7 +54,6 @@
                                 <?php foreach($categorias as $categoria) {
                                     $essaCategoria = $filme["categoria_id"] == $filme["id"];
                                     $selecao = $essaCategoria ? "selected = 'selected'" : ""; //operador ternario    
-                                    
                                 ?>
                                     <option value="<?php echo $categoria["id"]; ?>" <?php echo $selecao; ?>><?php echo $categoria["nome"];?></option>
                                 <?php   }   ?>
@@ -74,8 +73,6 @@
                                 </div>
                                 <input type="hidden" name="id" value="<?php echo $filme["id"];?>">
                             </div>
-
-
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-menu mt-2">Alterar</button>
                             </div>

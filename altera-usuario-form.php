@@ -69,11 +69,10 @@
 						<div class="row mt-3">
 							<form enctype="multipart/form-data" action="altera-usuario.php" method="post">
 								<div class="mb-3">
-								<label for="formImagem" class="form-label text-white">Imagem do perfil</label>
-								<!-- <input type="hidden" name="MAX_FILE_SIZE" value="5000" /> -->
-								<input class="form-control" type="file" name="imagem" accept=".jpg, .png, .jpeg"/>
-								<input type="hidden" name="imagemAtual" value="<?php echo $_SESSION["imagem-usuario"]; ?>">
-								<div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg</div>
+									<label for="formImagem" class="form-label text-white">Imagem do perfil</label>
+									<!-- <input type="hidden" name="MAX_FILE_SIZE" value="5000" /> -->
+									<input class="form-control" type="file" name="imagem" accept=".jpg, .png, .jpeg"/>
+									<div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg</div>
 								</div>
                             	<div class="mb-3">
 									<label for="inputNome" class="form-label text-white">Seu nome</label>
@@ -87,10 +86,8 @@
 								<div class="mb-3">
 									<label for="inputSenha" class="form-label text-white">Senha</label>
 									<input type="password" class="form-control" name="senhaNova">
-									<input type="hidden" name="senhaAtual" value="<?php echo $_SESSION["senha-usuario"]; ?>">
 									<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
 								</div>
-                                <input type="hidden" name="id" value="<?php echo $_SESSION["id-usuario"];?>">
 								<div class="d-grid gap-2 col-6 mx-auto mt-5">
 									<button class="btn btn-menu" type="submit">Salvar</button>
 								</div>

@@ -2,90 +2,46 @@
 <?php 
     include("header.php"); 
     include("conecta.php");
-    include("banco-filmes.php");
+    include("banco-categorias.php");
     verificaUsuario();
 ?>
 
 <?php
-    if(isset($_GET["alterado"])) { //recebe o valor por GET
-        $alterado = $_GET["alterado"]; //se o valor existir adiciona para variavel
-    } else {
-        $alterado = ''; //se não deixa como null
+    if(isset($_GET["alterado"])) {
+        if($_GET["alterado"] == "true") {
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                    A categoria foi <strong>alterada</strong> com sucesso!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+        }
+        if($_GET["alterado"] == "false") {
+            ?>
+            <div class="container sticky-top">
+               <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                   A categoria <strong>não</strong> foi alterada!
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            </div>
+            <?php
+        }
+  
     }
+
     if(isset($_GET["removido"])) {
-        $removido = $_GET["removido"];
-    } else {
-        $removido = '';
-    }
-    if(isset($_GET["add"])) {
-        $add = $_GET["add"];
-    }else{
-        $add = '';
-    }
-?>
-
-<?php 
-    if ($add == "true") {
-    ?>
-        <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
-                A categoria foi <strong>cadastrada</strong> com sucesso!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
-    }
-    if ($add == "false") {
-    ?>
-         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
-                A categoria <strong>não</strong> foi cadastrada!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
-    }
-
-?>
-
-<?php 
-    if ($alterado == "true") {
-    ?>
-        <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
-                A categoria foi <strong>alterada</strong> com sucesso!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
-    }
-    if ($alterado == "false") {
-    ?>
-         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
-                A categoria <strong>não</strong> foi alterada!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
-    }
-?>
-
-<?php 
-    if ($removido == "true") {
-    ?>
+        ?>
         <div class="container sticky-top">
             <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
                 A categoria foi <strong>removida</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-    <?php
+        <?php
     }
-?>
-
-
-
+    ?>
 
 <!-- Seção inicio -->
     <section class="mt-5">
@@ -95,7 +51,7 @@
                     <div class="col-md-6">
                     <h1 class="titulo-home">Categorias</h1>
                     <?php
-                    if (listaCategorias($conexao) == null) {//verifica se existe categorias para mostrar
+                    if (!listaCategorias($conexao, $_SESSION["id-usuario"])) {//verifica se existe categorias para mostrar
                         ?>
                             <div class="row d-flex justify-content-center mt-4">
                                 <div class="col-md-12">
@@ -112,7 +68,7 @@
                                 <td colspan="2"><b>Ações</b></td>
                             </tr>
                         <?php
-                        $categorias = listaCategorias($conexao);
+                        $categorias = listaCategorias($conexao, $_SESSION["id-usuario"]);
                             foreach($categorias as $categoria){//for melhorado
                         ?>
                             <tr class="text-white">

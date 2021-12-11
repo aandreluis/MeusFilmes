@@ -5,23 +5,22 @@
 ?>
 <?php
     
-    $id = $_POST["id"];
+    $id = $_SESSION["id-usuario"]; //pega o id via session
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $imagemAtual = $_POST["imagemAtual"];
     
     if(empty($senhaNova = $_POST["senhaNova"])) {//se a senha nova estiver vazia
-        $senha = $senhaAtual = $_POST["senhaAtual"]; //deixa a senha que está na sessao (ja md5)
+        $senha = $_SESSION["senha-usuario"]; //deixa a senha atual, a que está na sessão (ja md5)
     } else { //se não estiver vazia
         $senha = md5($senhaNova); //coloca a nova senha md5
     }
     
     if(empty($imagem = $_FILES['imagem']['name'])) {
-        $imagemFinal = $imagemAtual;
+        $imagemFinal = $_SESSION["imagem-usuario"]; //deixa a imagem atual da sessão
     } else {
         $_UP["pasta"] = "/xampp/htdocs/meusfilmes/img/avatar/";//caminho
         $_UP["tamanho"] = 1024*1024*100; //5mb
-        $_UP["extensoes"] = array('png', 'jpg', 'jpeg');
+        $_UP["extensoes"] = array('png', 'jpg', 'jpeg');//array com as extensões permitidas
         $_UP["renomeia"] = true;
         //erros de upload
         $_UP['erros'][0] = 'Não houve erro';

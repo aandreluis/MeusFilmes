@@ -5,6 +5,31 @@
     verificaUsuario();
 ?>
 
+<?php 
+    if(isset($_GET["add"])) {
+        if($_GET["add"] == "true") {
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                    A categoria foi <strong>cadastrada</strong> com sucesso!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+        }
+        if($_GET["add"] == "false") {
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                    A categoria <strong>não</strong> foi cadastrada!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+        }
+    }
+?>
+
 <!-- Seção inicio -->
     <section class="mt-5">
         <div class="custom-home-container">

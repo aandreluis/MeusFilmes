@@ -36,7 +36,7 @@
 		if(isset($_GET["falhaDeSeguranca"])) {
 			?>
 			<div class="container sticky-top">
-				<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				<div id="alert" class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
 					Você não tem acesso a esta funcionalidade. <strong>Favor fazer login.</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
@@ -90,12 +90,12 @@
 							<form action="login.php" method="post">
 								<div class="mb-3">
 								  <label for="inputEmail" class="form-label text-white">Seu email</label>
-								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required>
+								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" autofocus required>
 								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
 								  <label for="inputSenha" class="form-label text-white">Sua senha</label>
-								  <input type="password" class="form-control" name="senha" required>
+								  <input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
 								</div>
 								<div class="d-grid gap-2 col-6 mx-auto mt-5">
 									<button class="btn btn-menu" type="submit">Fazer login</button>

@@ -22,21 +22,11 @@
      }
      
     if(alteraFilme($conexao, $id, $nome, $diretor, $descricao, $imagem, $data_lancamento, $duracao, $categoria_id, $assistido)){//funcionou
-        ?>
-            <p class="alert alert-success">Filme <?php echo $nome; ?> alterado com sucesso!</p>
-            <?php 
-            header("location: listar-filmes.php?alterado=true");
-            die();
-            ?>
-        <?php
+        header("location: listar-filmes.php?alterado=true");
+        die();
     }else{//não funcionou
-        ?>
-            <p class="alert alert-danger">Filme <?php echo $nome; ?> não foi cadastrado!</p>
-            <?php 
-            header("location: listar-filmes.php?alterado=false");
-            die();
-            ?>
-        <?php
+        header("location: filmes-formulario.php?alterado=false");
+        die();
     }
     //encerrar a conexão
     mysqli_close($conexao);

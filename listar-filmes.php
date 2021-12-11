@@ -6,82 +6,38 @@
     verificaUsuario();
 ?>
 
-
-<?php
-    if(isset($_GET["alterado"])) { //recebe o valor por GET
-        $alterado = $_GET["alterado"]; //se o valor existir adiciona para variavel
-    } else {
-        $alterado = ''; //se não deixa como null
-    }
-    if(isset($_GET["removido"])) {
-        $removido = $_GET["removido"];
-    } else {
-        $removido = '';
-    }
-    if(isset($_GET["add"])) {
-        $add = $_GET["add"];
-    }else{
-        $add = '';
-    }
-?>
-
 <?php 
-    if ($add == "true") {
-    ?>
+    if (isset($_GET["add"])) {
+        ?>
         <div class="container sticky-top">
             <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
                 O filme foi <strong>cadastrado</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-    <?php
-    }
-    if ($add == "false") {
-    ?>
-         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                O filme <strong>não</strong> foi cadastrado!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
+        <?php
     }
 
-?>
-
-<?php 
-    if ($alterado == "true") {
-    ?>
+    if(isset($_GET["alterado"])) {
+        ?>
         <div class="container sticky-top">
             <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
                 O filme foi <strong>alterado</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-    <?php
+        <?php
     }
-    if ($alterado == "false") {
-    ?>
-         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                O filme <strong>não</strong> foi alterado!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    <?php
-    }
-?>
 
-<?php 
-    if ($removido == "true") {
-    ?>
+    if(isset($_GET["removido"])) {
+        ?>
         <div class="container sticky-top">
             <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
                 O filme foi <strong>removido</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-    <?php
+     <?php
     }
 ?>
 
@@ -92,22 +48,21 @@
         <div id="filmes-pg">
             <h1 class="titulo-home">Filmes Cadastrados</h1>
             <?php
-            if (listaFilmes($conexao) == null) {//verifica se existe filmes para mostrar
-            ?>
+            if (!listaFilmes($conexao, $_SESSION["id-usuario"])) {//verifica se existe filmes para mostrar
+                ?>
                 <div class="row d-flex justify-content-center mt-4">
                     <div class="col-md-12">
                         <h5 class="paragrafo-home text-muted">Ops... Nenhum filme encontrado!</h5>
                         <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
                     </div>
                 </div>
-                    
-            <?php
+                <?php
             }    
             ?>         
                 <!-- Cards -->
                 <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
 <?php
-    $filmes = listaFilmes($conexao);
+    $filmes = listaFilmes($conexao, $_SESSION["id-usuario"]);
     
     foreach($filmes as $filme){//for melhorado
 
