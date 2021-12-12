@@ -59,7 +59,8 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputDescricao" class="form-label">Descrição</label>
-                                <textarea  style="resize: none; height: 100px;" class="form-control"  name="descricao" placeholder="Descrição do filme"></textarea>
+                                <textarea id="descricao" style="resize: none; height: 100px;" class="form-control" name="descricao"  maxlength="200" placeholder="Uma breve descrição do filme"></textarea>                                
+                                <div class="form-text text-end" id="falta">Faltam: <strong>200</strong> caracteres</div>
                             </div>
                             <div class="col-md-12">
                                 <label for="inputImagem" class="form-label">Link imagem</label>

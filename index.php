@@ -36,7 +36,7 @@
 		if(isset($_GET["falhaDeSeguranca"])) {
 			?>
 			<div class="container sticky-top">
-				<div id="alert" class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				<div id="myAlert" name="alert" class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
 					Você não tem acesso a esta funcionalidade. <strong>Favor fazer login.</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
@@ -102,7 +102,7 @@
 								<div class="d-grid gap-2 col-6 mx-auto mt-3">
 									<button class="btn btn-menu" type="submit">Fazer login</button>
 									<div class="form-text text-center">
-										Não possui uma conta? 
+										Não possui uma conta? <br>
 										<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui!</a>
 									</div>
 								</div>

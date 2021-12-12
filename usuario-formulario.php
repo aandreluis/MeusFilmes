@@ -114,6 +114,10 @@
 								<div class="d-grid gap-2 col-6 mx-auto mt-3">
 									<button class="btn btn-menu" type="submit">Cadastrar</button>
 								</div>
+								<div class="form-text text-center">
+									Já possui uma conta? <br>
+									<a  href="index.php" class="link-padrao">Fazer login</a>
+								</div>
 							  </form>
 						</div>
 					  </div>
