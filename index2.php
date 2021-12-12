@@ -1,3 +1,4 @@
+<title>MeusFilmes - Início</title>
 <?php 
 	include("header.php");
     verificaUsuario();
@@ -39,7 +40,7 @@
 						<div class="col-md-6">
 							<h1 class="titulo-home">Sobre o MeusFilmes</h1>
 							<p class="paragrafo-home mx-auto">
-								No <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
+								Olá <?php echo $_SESSION["nome-usuario"]?>, no <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
 								- Adicione: <b>titulo, descrição, data de lançamento, categorias, entre outras informações!</b>
 							 </p>
 							<h3 class="titulo-home">Confira os filmes já cadastrados ou adicione novos filmes</h3>

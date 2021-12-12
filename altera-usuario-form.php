@@ -1,4 +1,4 @@
-<title>MeusFilmes - Adicionar Categorias</title>
+<title>MeusFilmes - Editar Perfil</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
@@ -64,7 +64,7 @@
 				<div id="login-pg">
 					<div class="container">
 						<div class="row">
-						  <img class="img-login mx-auto d-block" src="./img/password.svg" alt="">
+						  <img class="img-login mx-auto d-block" src="./img/profile_details.svg" alt="Detalhes do perfil">
 						</div>
 						<div class="row mt-3">
 							<form enctype="multipart/form-data" action="altera-usuario.php" method="post">
@@ -88,9 +88,13 @@
 									<input type="password" class="form-control" name="senhaNova">
 									<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
 								</div>
-								<div class="d-grid gap-2 col-6 mx-auto mt-5">
+								<div class="d-grid gap-2 col-6 mx-auto mt-3">
 									<button class="btn btn-menu" type="submit">Salvar</button>
 								</div>
+								<div class="form-text text-center">
+										ou <br> 
+										<a  href="perfil.php" class="link-padrao">Voltar para o meu perfil</a>
+									</div>
 							  </form>
 						</div>
 					  </div>

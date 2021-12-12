@@ -10,7 +10,7 @@
 <?php 
     $id = $_GET["id"];
     $filme = buscaFilme($conexao, $id);
-    $categorias = listaCategorias($conexao);
+    $categorias = listaCategorias($conexao, $_SESSION["id-usuario"]);
 ?>
 
 <!-- Seção inicio -->

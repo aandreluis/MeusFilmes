@@ -46,6 +46,10 @@
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-menu mt-2">Adicionar</button>
                             </div>
+                            <div class="form-text text-center">
+                                ou <br> 
+                                <a href="listar-categorias.php" class="link-padrao">Ver categorias</a>
+                            </div>
                         </form>
                     </div>
                     <div class="row justify-content-center mt-4">

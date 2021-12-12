@@ -88,7 +88,11 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Adicionar</button>
+                                <button type="submit" class="btn btn-menu mt-1">Adicionar</button>
+                            </div>
+                            <div class="form-text text-center">
+                                ou <br> 
+                                <a href="listar-filmes.php" class="link-padrao">Ver filmes</a>
                             </div>
                         </form>
                     </div>

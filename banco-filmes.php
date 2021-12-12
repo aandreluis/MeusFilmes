@@ -9,10 +9,10 @@
 
     function listaFilmes($conexao, $usuario_id){
         $filmes = array();//criação da array vazia
-        $query = "select f.*, c.nome, f.usuario_id as categoria_nome from filmes as f join categoria as c on c.id=f.categoria_id where f.usuario_id = '{$usuario_id}'";
+        $query = "select f.*, c.nome as categoria_nome from filmes as f join categoria as c on c.id = f.categoria_id where f.usuario_id = '{$usuario_id}'";
         $resultado = mysqli_query($conexao, $query);//retorna um array de valores
         //laço para pegar todas os filmes
-        /* echo $query;
+      /*   echo $query;
         die(); */
         while($filme = mysqli_fetch_assoc($resultado)){//pega a array de valores
             array_push($filmes, $filme); //adiciona valores dentro da array

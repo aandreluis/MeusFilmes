@@ -91,18 +91,19 @@
 								<div class="mb-3">
 								  <label for="inputEmail" class="form-label text-white">Seu email</label>
 								  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" autofocus required>
-								  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail.</div>
+								  <div class="form-text">Nunca compartilharemos seu e-mail.</div>
 								</div>
 								<div class="mb-3">
-								  <label for="inputSenha" class="form-label text-white">Sua senha</label>
-								  <input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
+									<label for="inputSenha" class="form-label text-white">Sua senha</label>
+									<input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
+									<div class="form-text">Não compartilhe sua senha com ninguem.</div>
+
 								</div>
-								<div class="d-grid gap-2 col-6 mx-auto mt-5">
+								<div class="d-grid gap-2 col-6 mx-auto mt-3">
 									<button class="btn btn-menu" type="submit">Fazer login</button>
 									<div class="form-text text-center">
 										Não possui uma conta? 
-										<a  href="usuario-formulario.php">Cadastre-se aqui!</a>
-
+										<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui!</a>
 									</div>
 								</div>
 							  </form>

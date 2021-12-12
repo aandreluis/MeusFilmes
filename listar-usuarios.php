@@ -1,4 +1,4 @@
-<title>MeusFilmes - Listar Categorias</title>
+<title>MeusFilmes - Listar Usuários</title>
 <?php 
     include("header.php"); 
     include("conecta.php");

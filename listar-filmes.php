@@ -75,7 +75,7 @@
                             <h5 class="card-title"><?php echo $filme["nome"];?></h5>
                             <p class="card-text">
                                 <b>Diretor:</b> <?php echo $filme["diretor"];?> <br>
-                                <b>Duração:</b> <?php echo $filme["duracao"];?> <br>
+                                <b>Duração:</b> <?php echo date('H:i', strtotime($filme["duracao"]));?> <br>
                                 <b>Data Lançamento:</b> <?php echo date('d/m/Y', strtotime($filme["data_lancamento"]));?> <br>
                                 <b>Categoria:</b> <?php echo $filme["categoria_nome"];?> <br>
                                 <?php if($filme["assistido"] == '0') {
