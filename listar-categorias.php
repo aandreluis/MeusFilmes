@@ -51,7 +51,7 @@
                     <div class="col-md-6">
                     <h1 class="titulo-home">Categorias</h1>
                     <?php
-                    if (!listaCategorias($conexao, $_SESSION["id-usuario"])) {//verifica se existe categorias para mostrar
+                    if (!listaCategoriasUsuario($conexao, $_SESSION["id-usuario"])) {//verifica se existe categorias para mostrar
                         ?>
                             <div class="row d-flex justify-content-center mt-4">
                                 <div class="col-md-12">
@@ -68,7 +68,7 @@
                                 <td colspan="2"><b>Ações</b></td>
                             </tr>
                         <?php
-                        $categorias = listaCategorias($conexao, $_SESSION["id-usuario"]);
+                        $categorias = listaCategoriasUsuario($conexao, $_SESSION["id-usuario"]);
                             foreach($categorias as $categoria){//for melhorado
                         ?>
                             <tr class="text-white">
