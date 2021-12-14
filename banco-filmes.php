@@ -25,6 +25,10 @@
         return mysqli_query($conexao, $query);
     }
 
+    function removeFilmesUsuario($conexao, $usuario_id){
+        return mysqli_query($conexao, "delete from filmes where usuario_id = {$usuario_id}");
+    }
+
     function buscaFilme($conexao, $id){
         $query = "select * from filmes where id = {$id}";
         $resultado = mysqli_query($conexao, $query);
