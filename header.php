@@ -50,7 +50,6 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item active" href="perfil.php">Perfil</a></li>
-                                <li><a class="dropdown-item" href="listar-usuarios.php">Usuários</a></li>
                                 <li><a class="dropdown-item" href="logout.php">Sair</a></li>
                             </ul>
                         </div>

@@ -5,20 +5,28 @@
         return mysqli_query($conexao, $query);
     }
 
-    function listaTodasCategorias($conexao, $usuario_id){
+    function listaCategoriasUsuario($conexao, $usuario_id, $opcao){
         $categorias = array();//criação da array vazia
-        $query = "select * from categoria where usuario_id = '{$usuario_id}' or usuario_id = '0'"; //usaruio_id = 0 admin
-        $resultado = mysqli_query($conexao, $query);//retorna um array de valores
-        //laço para pegar todas as categorias
-        while($categoria = mysqli_fetch_assoc($resultado)){//pega a array de valores
-            array_push($categorias, $categoria); //adiciona valores dentro da array
+        if($opcao == 1) { // 1 -> Categorias padrão + categorias do usuario (adicionar-filmes)
+            $query = "select * from categoria where usuario_id = '{$usuario_id}' or usuario_id = '0'"; //usaruio_id = 0 admin
+            $resultado = mysqli_query($conexao, $query);//retorna um array de valores
+            while($categoria = mysqli_fetch_assoc($resultado)){//pega a array de valores
+                array_push($categorias, $categoria); //adiciona valores dentro da array
+            }
+        }
+        if($opcao == 2) { // 2 -> Apenas as categorias do usuario (listar-categorias)
+            $query = "select * from categoria where usuario_id = '{$usuario_id}'"; //usaruio_id = 0 admin
+            $resultado = mysqli_query($conexao, $query);//retorna um array de valores
+            while($categoria = mysqli_fetch_assoc($resultado)){//pega a array de valores
+                array_push($categorias, $categoria); //adiciona valores dentro da array
+            }
         }
         return $categorias;
     }
-
-    function listaCategoriasUsuario($conexao, $usuario_id){
+   
+    function listaTodasCategorias($conexao){// (Apenas para Painel adm)
         $categorias = array();//criação da array vazia
-        $query = "select * from categoria where usuario_id = '{$usuario_id}'"; //usaruio_id = 0 admin
+        $query = "select * from categoria"; //usaruio_id = 0 admin
         $resultado = mysqli_query($conexao, $query);//retorna um array de valores
         //laço para pegar todas as categorias
         while($categoria = mysqli_fetch_assoc($resultado)){//pega a array de valores

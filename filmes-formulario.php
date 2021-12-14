@@ -8,7 +8,7 @@
 ?>
 
 <?php 
-    $categorias = listaTodasCategorias($conexao, $_SESSION["id-usuario"]);
+    $categorias = listaCategoriasUsuario($conexao, $_SESSION["id-usuario"], 1);
 ?>
 
 <?php 
