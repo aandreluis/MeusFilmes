@@ -25,7 +25,31 @@
         return mysqli_query($conexao, $query);
     }
 
-    function removeFilmesUsuario($conexao, $usuario_id){
+    function removeImagemCapa($imagemNome) {//remove no momento que altera a imagem.
+        $imagem = "/xampp/htdocs/meusfilmes/img/capa-filmes/".$imagemNome;
+        if(file_exists($imagem)) {
+            unlink($imagem);
+            return true;
+        }
+        return false;
+    }
+
+    function  removeImagemCapaUsuario($conexao, $id) {//remove quando exclui um filme especifico -> id do filme
+        $resultado = mysqli_query($conexao, "select imagem from filmes where id = '{$id}'");
+        $imagemNome = implode(mysqli_fetch_row($resultado)); //implode faz o papel de converter a array em string.
+        $imagem = "/xampp/htdocs/meusfilmes/img/capa-filmes/".$imagemNome;
+        if(file_exists($imagem)) {
+            unlink($imagem);
+            return true;
+        }
+        return false;
+    }
+
+    function removeFilmesUsuario($conexao, $usuario_id) {
+        $resultado = mysqli_query($conexao, "select id from filmes where usuario_id = '{$usuario_id}'");
+        while($imagemId = mysqli_fetch_assoc($resultado)){
+            removeImagemCapaUsuario($conexao, implode($imagemId)); //remove as imagens dos filmes
+        }
         return mysqli_query($conexao, "delete from filmes where usuario_id = {$usuario_id}");
     }
 

@@ -70,7 +70,17 @@
                     <!-- início card -->
                     <div class="col">
                         <div class="card text-white bg-dark border-card h-100 card-box">
-                        <img src="<?php echo $filme["imagem"] ?>" class="card-img-top" alt="Capa do filme">
+                        <?php
+                        if($filme["imagem"] == NULL || $filme["imagem"] == "") {
+                            ?>
+                            <img src="img/capa-default.svg" class="card-img-top" alt="Capa do filme default" style="padding: 20px;">
+                            <?php
+                        } else {
+                            ?>
+                            <img src="img/capa-filmes/<?php echo $filme["imagem"] ?>" class="card-img-top" alt="Capa do filme <?php echo $filme["nome"]; ?>">     
+                            <?php
+                        }
+                        ?>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $filme["nome"];?></h5>
                             <p class="card-text">

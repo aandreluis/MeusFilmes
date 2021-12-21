@@ -9,10 +9,11 @@
 
 <?php 
     $id = $_GET["id"];
-    removeImagem();
-    removeFilmesUsuario($conexao, $_SESSION["id-usuario"]);
-    removeCategoriasUsuario($conexao, $_SESSION["id-usuario"]);
-    removeUsuario($conexao, $id);
+    removeImagem(); //remove imagem do perfil
+    removeFilmesUsuario($conexao, $_SESSION["id-usuario"]); //remove todos os filmes
+    removeCategoriasUsuario($conexao, $_SESSION["id-usuario"]); //remove todas as categorias
+    removeUsuario($conexao, $id); //remove o usuario
+
     header("Location: index.php?removido=true");//volta para a pagita listar-filmes.php com um valor GET = true
     logout();
     die();
