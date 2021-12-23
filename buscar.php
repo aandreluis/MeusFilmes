@@ -1,4 +1,3 @@
-<title>MeusFilmes - Listar Filmes</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
@@ -7,71 +6,24 @@
 ?>
 
 <?php 
-    if (isset($_GET["add"])) {
+
+    $nomeFilme = $_POST["palavra"];
+
+    if(!buscarFilmes($conexao, $_SESSION["id-usuario"], $nomeFilme)) {
         ?>
-        <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                O filme foi <strong>cadastrado</strong> com sucesso!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="col-md-12">
+                <h5 class="paragrafo-home text-muted">Ops... Nenhum filme encontrado!</h5>
+                <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
             </div>
         </div>
         <?php
-    }
-
-    if(isset($_GET["alterado"])) {
+    } else {
         ?>
-        <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                O filme foi <strong>alterado</strong> com sucesso!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-        <?php
-    }
-
-    if(isset($_GET["removido"])) {
-        ?>
-        <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-                O filme foi <strong>removido</strong> com sucesso!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-     <?php
-    }
-?>
-
-
-<!-- Seção Veiculos -->
-<section class="mt-5">
-    <div class="custom-home-container">
-        <div id="filmes-pg">
-            <h1 class="titulo-home">Filmes Cadastrados</h1>
-            <?php
-            if (!listaFilmes($conexao, $_SESSION["id-usuario"])) {//verifica se existe filmes para mostrar
-                ?>
-                <div class="row d-flex justify-content-center mt-4">
-                    <div class="col-md-12">
-                        <h5 class="paragrafo-home text-muted">Ops... Nenhum filme encontrado!</h5>
-                        <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
-                    </div>
-                </div>
-                <?php
-            }    
-            ?>
-            <div class="row d-flex justify-content-center mt-3">
-                <div class="col-6">
-                    <form class="d-flex" id="form-pesquisa" method="POST" action="">
-                        <input class="form-control me-2" id="pesquisa" type="text" placeholder="Buscar filmes pelo nome" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-            <div class="resultado"><!-- Exibe os resultados da pesquisa por jquery --></div>
-
-                <!-- Cards -->
-                <div id="card" class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+        <!-- Cards -->
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
                     <?php
-                        $filmes = listaFilmes($conexao, $_SESSION["id-usuario"]);
+                        $filmes = buscarFilmes($conexao, $_SESSION["id-usuario"], $nomeFilme);
                         
                         foreach($filmes as $filme){//for melhorado
 
@@ -130,10 +82,9 @@
                 </div>
                 <!-- Cards -->
             </div>
-        </div>
-    </section> 
-		<!-- Seção inicio -->
+            <?php
+    }
+    
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/listarscript.js"></script>
-<?php include("footer.php"); ?>
+
+?>

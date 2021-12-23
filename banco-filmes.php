@@ -64,4 +64,20 @@
         return mysqli_query($conexao, $query);
     }
 
+    function buscarFilmes($conexao, $usuario_id, $nomeFilme) {
+        $filmes = array();
+        $query = "select f.*, c.nome as categoria_nome from filmes as f join categoria as c on c.id = f.categoria_id where f.usuario_id = '{$usuario_id}' and f.nome like '%{$nomeFilme}%'";
+        $resultado = mysqli_query($conexao, $query);//retorna um array de valores
+        //laço para pegar todas os filmes
+        if(mysqli_num_rows($resultado) <= 0) {
+            return false;
+        } else {
+            while($filme = mysqli_fetch_assoc($resultado)){//pega a array de valores
+                array_push($filmes, $filme); //adiciona valores dentro da array
+            }
+            return $filmes;
+        }
+        
+    }
+
 ?>
