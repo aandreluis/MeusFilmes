@@ -84,10 +84,10 @@
     
      
     if(alteraFilme($conexao, $id, $nome, $diretor, $descricao, $imagemFinal, $data_lancamento, $duracao, $categoria_id, $assistido)){//funcionou
-        header("location: listar-filmes.php?alterado=true");
+        header("location: listar-filmes.php?p=1&alterado=true");
         die();
     }else{//não funcionou
-        header("location: filmes-formulario.php?alterado=false");
+        header("location: filmes-formulario.php?p=1&alterado=false");
         die();
     }
     //encerrar a conexão

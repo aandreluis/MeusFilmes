@@ -32,7 +32,7 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item active" href="filmes-formulario.php">Adicionar</a></li>
-                                <li><a class="dropdown-item" href="listar-filmes.php">Listar</a></li>
+                                <li><a class="dropdown-item" href="listar-filmes.php?p=1">Listar</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">

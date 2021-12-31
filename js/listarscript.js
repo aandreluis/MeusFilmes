@@ -12,10 +12,13 @@ $ (function() {
                 //mostra dentro os resultados
                 $(".resultado").html(retorna);
                 $("#card").hide(); //esconde os filmes ja listados
+                $("#pags").hide(); //esconde a paginação
             });
         } else {
             $(".resultado").html('');
             $("#card").show(); //mostra os filmes
+            $("#pags").show(); //mostra a paginação
+
 
         } 
     });

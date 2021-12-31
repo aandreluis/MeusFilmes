@@ -80,11 +80,11 @@
     }
     
     if(insereProdutos($conexao, $nome, $diretor, $descricao, $imagemFinal, $data_lancamento, $duracao, $categoria_id, $usuario_id, $assistido)){//funcionou
-        header("location: listar-filmes.php?add=true");
+        header("location: listar-filmes.php?p=1&add=true");
         die();
     }else{//não funcionou
         removeImagemCapa($imagemFinal); //remove imagem que foi cadastrada, porém o filme não.
-        header("location: filmes-formulario.php?add=false");
+        header("location: filmes-formulario.php?p=1&add=false");
         die();
     }
     //encerrar a conexão

@@ -10,7 +10,7 @@
     
     removeImagemCapaUsuario($conexao, $id);
     removeFilme($conexao, $id);
-    header("Location: listar-filmes.php?removido=true");//volta para a pagita listar-filmes.php com um valor GET = true
+    header("Location: listar-filmes.php?p=1&removido=true");//volta para a pagita listar-filmes.php com um valor GET = true
     die();
 ?>
 
