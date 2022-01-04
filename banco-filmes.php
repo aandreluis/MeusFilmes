@@ -37,12 +37,15 @@
     function  removeImagemCapaUsuario($conexao, $id) {//remove quando exclui um filme especifico -> id do filme
         $resultado = mysqli_query($conexao, "select imagem from filmes where id = '{$id}'");
         $imagemNome = implode(mysqli_fetch_row($resultado)); //implode faz o papel de converter a array em string.
+        if($imagemNome == NULL || $imagemNome == ''){
+            return 0;
+        }
         $imagem = "/xampp/htdocs/meusfilmes/img/capa-filmes/".$imagemNome;
         if(file_exists($imagem)) {
             unlink($imagem);
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     }
 
     function removeFilmesUsuario($conexao, $usuario_id) {

@@ -9,7 +9,7 @@
 
 <?php 
     $id = $_GET["id"];
-    removeImagem(); //remove imagem do perfil
+    removeImagemPerfil($conexao, $_SESSION["id-usuario"]); //remove imagem do perfil
     removeFilmesUsuario($conexao, $_SESSION["id-usuario"]); //remove todos os filmes
     removeCategoriasUsuario($conexao, $_SESSION["id-usuario"]); //remove todas as categorias
     removeUsuario($conexao, $id); //remove o usuario

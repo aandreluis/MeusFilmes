@@ -29,11 +29,25 @@
         return mysqli_query($conexao, $query);
     }
 
-    function removeImagem() {
+    function removeImagem() { //altera-usuario
         $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
         if(file_exists($imagem)) {
             unlink($imagem);
         }
+    }
+
+    function removeImagemPerfil($conexao, $id) { //remove-usuario
+        $imagem = mysqli_query($conexao, "SELECT imagem FROM usuarios where id = {$id}");
+        $validarImagem = implode(mysqli_fetch_row($imagem));
+        if($validarImagem == NULL || $validarImagem == ''){
+            return 0;
+        }
+        $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
+        if(file_exists($imagem)) {
+            unlink($imagem);
+            return 1;
+        }
+        return 0;
     }
 
     function alteraUsuario($conexao, $id, $imagem, $nome, $email, $senha) {
