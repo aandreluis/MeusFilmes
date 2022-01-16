@@ -25,13 +25,13 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <div class="btn-group me-3">
-                        <a href="index2.php" class="btn btn-menu">Início</a>
+                        <a href="index2.php" class="btn btn-menu d-flex align-items-center">Início</a>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Filmes
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item active" href="filmes-formulario.php">Adicionar</a></li>
+                                <li><a class="dropdown-item" href="filmes-formulario.php">Adicionar</a></li>
                                 <li><a class="dropdown-item" href="listar-filmes.php?p=1">Listar</a></li>
                             </ul>
                         </div>
@@ -40,17 +40,8 @@
                                 Categorias
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item active" href="categoria-formulario.php">Adicionar</a></li>
+                                <li><a class="dropdown-item" href="categoria-formulario.php">Adicionar</a></li>
                                 <li><a class="dropdown-item" href="listar-categorias.php">Listar</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-menu btn-drop-end dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $_SESSION["nome-usuario"]; ?> <i class="bi bi-person-circle"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item active" href="perfil.php">Perfil</a></li>
-                                <li><a class="dropdown-item" href="logout.php">Sair</a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 body {
+    color: white;
     /* background-color: #262626; */
     background: #0f0c29;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
@@ -20,9 +21,9 @@ body {
 
 .btn-check:focus + .btn-menu, .btn-menu:focus {
     color: #fff;
-    background-color: #7636ec;
-    border-color: #7636ec;
-    box-shadow: 0 0 0 0.25rem #5b40f3c2;
+    background-color: #9677D9;
+    border-color: #9677D9;
+    box-shadow: 0 0 0 0.25rem #9677d9c7
 }
 
 .btn-check:checked + .btn-menu, .btn-check:active + .btn-menu, .btn-menu:active, .btn-menu.active, .show > .btn-menu.dropdown-toggle {
@@ -41,6 +42,7 @@ body {
 
   .btn-drop-center {
     border-radius: 0; 
+    padding: 10px;
   }
 
   .btn-drop-end {
