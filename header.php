@@ -44,6 +44,28 @@
                                 <li><a class="dropdown-item" href="listar-categorias.php">Listar</a></li>
                             </ul>
                         </div>
+                        <div class="dropdown">
+                            <button class="btn btn-menu btn-drop-end dropdown-toggle link-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php
+                                //se a imagem por null ou não exista no diretorio referenciado
+                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                                ?>
+                                <img src="img/avatar-default.svg" width="32" height="32" class="rounded-circle">
+                                <?php
+                            } else {//se existir
+                                ?>
+                                <img src="img/avatar/<?php echo $_SESSION["imagem-usuario"];?>" width="32" height="32" class="rounded-circle">
+                                <?php
+                            }
+                            ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
+                            <li><a class="dropdown-item" href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>">Configurações</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="logout.php">Sair</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
