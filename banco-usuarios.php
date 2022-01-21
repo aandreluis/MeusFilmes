@@ -19,8 +19,8 @@
         return 0; //não existe
     }
 
-    function cadastraUsuario($conexao, $nome, $email, $senha){
-        $query = "insert into usuarios (nome, email, senha) values ('{$nome}', '{$email}', '{$senha}')";
+    function cadastraUsuario($conexao, $imagem, $nome, $email, $senha){
+        $query = "insert into usuarios (imagem, nome, email, senha) values ('{$imagem}', '{$nome}', '{$email}', '{$senha}')";
         return mysqli_query($conexao, $query);
     }
 

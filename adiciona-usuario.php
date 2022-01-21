@@ -9,6 +9,8 @@
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $senhaConfirmacao = $_POST["senhaConfirmacao"];
+    $imagemNome = "IMG-default".date("-dmY-Hisa").".png"; //concatena IMG + DATA e HORA + extensão
+    
 
      //verificação do email
      if(verificaEmail($conexao, $email)) {
@@ -31,7 +33,7 @@
     }
        
     //cadastro do usuario
-    if(cadastraUsuario($conexao, $nome, $email, $senhaMd5)) {//funcionou
+    if(cadastraUsuario($conexao, $imagemNome, $nome, $email, $senhaMd5)) {//funcionou
         logaUsuario($conexao, $email);
         header("location: index2.php?cadastrarUsuario=true");
         die();

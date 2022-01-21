@@ -1,5 +1,5 @@
 <?php 
-    function insereProdutos($conexao, $nome, $diretor, $descricao, $imagem, $data_lancamento, $duracao, $categoria_id, $usuario_id, $assistido){
+    function insereFilmes($conexao, $nome, $diretor, $descricao, $imagem, $data_lancamento, $duracao, $categoria_id, $usuario_id, $assistido){
         //insere do banco de dados
         $query = "insert into filmes (nome, diretor, descricao, imagem, data_lancamento, duracao, categoria_id, usuario_id, assistido) values ('{$nome}', '{$diretor}', '{$descricao}', '{$imagem}', '{$data_lancamento}', '{$duracao}', '{$categoria_id}', '{$usuario_id}', '{$assistido}')";
         /*  echo $query; //debugger

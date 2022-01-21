@@ -79,7 +79,7 @@
         }
     }
     
-    if(insereProdutos($conexao, $nome, $diretor, $descricao, $imagemFinal, $data_lancamento, $duracao, $categoria_id, $usuario_id, $assistido)){//funcionou
+    if(insereFilmes($conexao, $nome, $diretor, $descricao, $imagemFinal, $data_lancamento, $duracao, $categoria_id, $usuario_id, $assistido)){//funcionou
         header("location: listar-filmes.php?p=1&add=true");
         die();
     }else{//não funcionou
