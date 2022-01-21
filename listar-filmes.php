@@ -73,16 +73,16 @@
     <section class="mt-3">
         <div class="custom-home-container">
             <div id="filmes-pg">
-                <h1 class="titulo-home">Filmes Cadastrados</h1>
+                <h1 class="titulo-home">Seus Filmes</h1>
                 <?php            
                 if(listaFilmes($conexao, $_SESSION["id-usuario"])) {//verifica se existe filmes para mostrar
                     ?>
                     <!-- Pesquisa -->
-                    <div class="row d-flex justify-content-center mt-3">
+                    <div class="row d-flex justify-content-center align-items-center mt-2">
                         <div class="col-6">
-                            <div class="form-text">Tente pesquisar o filme pelo seu nome. Exemplo: "Homem-Aranha"</div>
-                            <form class="d-flex mt-2" id="form-pesquisa" method="POST" action="">
-                                <input class="form-control" id="pesquisa" type="text" placeholder="Buscar filmes pelo nome" aria-label="Search">
+                            <div class="form-text text-center">Tente pesquisar o filme pelo seu nome. Exemplo: "Homem-Aranha"</div>
+                            <form class="d-flex mt-1" id="form-pesquisa" method="POST" action="">
+                                <input class="form-control" id="pesquisa" type="text" placeholder="Digite o nome do filme para buscar" aria-label="Search">
                             </form>
                         </div>
                     </div>
@@ -216,7 +216,11 @@
                 ?>
             </div>
         </div>
-    </section> 
+    </section>
+    
+    <a href="#" class="btn btn-menu position-absolute bottom-1 end-0 me-3 scrollToTop"><i class="bi bi-chevron-double-up"></i></a>
+    
+    
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/listarscript.js"></script>
