@@ -101,11 +101,11 @@
                                 <?php
                                 if($filme["imagem"] == NULL || $filme["imagem"] == "") {
                                     ?>
-                                    <img src="img/capa-default.svg" class="card-img-top" alt="Capa do filme default" style="padding: 20px;">
+                                    <img src="img/capa-default.svg" loading="lazy" class="card-img-top" alt="Capa do filme default" style="padding: 20px;">
                                     <?php
                                 } else {
                                     ?>
-                                    <img src="img/capa-filmes/<?php echo $filme["imagem"] ?>" class="card-img-top" alt="Capa do filme <?php echo $filme["nome"]; ?>">     
+                                    <img src="img/capa-filmes/<?php echo $filme["imagem"] ?>" loading="lazy" class="card-img-top" alt="Capa do filme <?php echo $filme["nome"]; ?>">     
                                     <?php
                                 }
                                 ?>
@@ -170,7 +170,7 @@
                     <br>
                     <nav id="pags" aria-label="Página listar filmes">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item"><a class="page-link" href="listar-filmes.php?p=1">Início</a></li>
+                            <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=1">Início</a></li>
                     <?php
                     // Cria um for() para exibir os 3 links antes da página atual
                     for($i = $p - $max_links; $i <= $p - 1; $i++) {
@@ -180,12 +180,12 @@
                         //faz nada
                         } else { // Se estiver tudo OK, cria o link para outra página
                             ?>
-                            <li class="page-item"><a class="page-link" href="listar-filmes.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
+                            <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
                             <?php
                         }
                     }
 							?>
-							<li class="page-item active"><a class="page-link" href="listar-filmes.php?p=<?php echo $p;?>"><?php echo $p;?></a></li>
+							<li class="page-item active"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p;?>"><?php echo $p;?></a></li>
 							<?php
                     // Cria outro for(), desta vez para exibir 3 links após a página atual
                     for($i = $p + 1; $i <= $p + $max_links; $i++) {
@@ -194,13 +194,13 @@
                         //faz nada
                         } else {// Se tiver tudo Ok gera os links.
                             ?>
-                            <li class="page-item"><a class="page-link" href="listar-filmes.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
+                            <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
                             <?php
                         }
                     }
                     // Exibe o link "última página"
 							?>
-							<li class="page-item"><a class="page-link" href="listar-filmes.php?p=<?php echo $pags;?>">Fim</a></li>
+							<li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $pags;?>">Fim</a></li>
 							</nav> 
                 <?php 
                 } else { // se não tiver nenhum filme

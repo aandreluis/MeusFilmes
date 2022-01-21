@@ -50,7 +50,7 @@
                                     <a href="filmes-formulario.php" class="btn btn-menu btn-lg" type="button">Adicionar</a>
                                 </div>
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <a href="listar-filmes.php" class="btn btn-menu btn-lg" type="button">Listar</a>
+                                    <a href="listar-filmes.php?p=1" class="btn btn-menu btn-lg" type="button">Listar</a>
                                 </div>
                             </div>
 						</div>

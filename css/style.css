@@ -142,6 +142,56 @@ body {
     font-size: 17px;
 }
 
+
+ /* paginação listar-filmes */
+
+.pageLinkFIlmes {
+    color: #fff;
+     background-color: #262626;
+    border: 1px solid #5B3FBF;
+}
+
+.pageLinkFIlmes:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #9677D9;
+    border-color: #9677D9;
+  }
+
+  .pageLinkFIlmes:focus {
+    z-index: 3;
+    color: #fff;
+    background-color: #9677D9;
+    box-shadow: 0 0 0 0.25rem #9677d9c7
+  }
+  
+  .page-item:not(:first-child) .pageLinkFIlmes {
+    margin-left: -1px;
+  }
+  
+  .page-item.active .pageLinkFIlmes {
+    z-index: 3;
+    color: #fff;
+    background-color: #5B3FBF;
+    border-color: #5B3FBF;
+  }
+
+  .page-item.active:hover .pageLinkFIlmes {
+    z-index: 2;
+    color: #fff;
+    background-color: #9677D9;
+    border-color: #9677D9;
+  }
+
+  .page-item.disabled .pageLinkFIlmes {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #262626;
+    border-color: #6c757d;
+  }
+
+  /* paginação listar-filmes */
+
 #categoria-form-pg {
     width: 50%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
