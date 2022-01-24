@@ -40,7 +40,11 @@
 						<div class="col-md-6">
 							<h1 class="titulo-home">Sobre o MeusFilmes</h1>
 							<p class="paragrafo-home mx-auto">
-								Olá <?php echo $_SESSION["nome-usuario"]?>, no <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
+								<?php 
+								// Explode Divide uma string em strings. Pega o primeiro nome do usuário = nome[0]
+								$nome = explode(" ", $_SESSION["nome-usuario"]); 
+								?>
+								Olá <?php echo $nome[0]; ?>, no <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
 								- Adicione: <b>titulo, descrição, data de lançamento, categorias, entre outras informações!</b>
 							 </p>
 							<h3 class="titulo-home">Confira os filmes já cadastrados ou adicione novos filmes</h3>
