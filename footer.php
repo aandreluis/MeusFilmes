@@ -5,17 +5,15 @@
 				<a href="index.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
 					<img class="d-inline-block align-text-center me-2" width="40" src="img/logo-footer.png" alt="logo">
 				</a>
-				<span class="text-muted me-2">&copy; 2021 MeusFilmes, Desenvolvido por André Luis</span>
+				<span class="text-muted me-2">&copy; 2021 MeusFilmes, Desenvolvido por <a class="link-secondary" href="https://github.com/aandreluis/">André Luis</a></span>
 			</div>
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-github"></i></a>
-				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-instagram"></i></a>
-				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-facebook"></i></a>
-				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="#"><i class="bi bi-twitter"></i></a>
+				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="https://github.com/aandreluis/meusfilmes"><i class="bi bi-github"></i></a>
+				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="https://www.instagram.com/andreluisstn/"><i class="bi bi-instagram"></i></a>
+				<a class="me-2 mb-md-0 text-muted text-decoration-none lh-1" href="mailto:andreluisstn@gmail.com"><i class="bi bi-envelope-fill"></i></a>
 			</ul>
 		</footer>
 	</div>
-
 		<!-- Rodapé -->
 
 	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
