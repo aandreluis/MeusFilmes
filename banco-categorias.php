@@ -15,7 +15,7 @@
             }
         }
         if($opcao == 2) { // 2 -> Apenas as categorias do usuario (listar-categorias)
-            $query = "SELECT * FROM categoria WHERE usuario_id = '{$usuario_id}' ORDER BY nome ASC"; //usaruio_id = 0 admin
+            $query = "SELECT * FROM categoria WHERE usuario_id = '{$usuario_id}'"; //usaruio_id = 0 admin
             $resultado = mysqli_query($conexao, $query);//retorna um array de valores
             while($categoria = mysqli_fetch_assoc($resultado)){//pega a array de valores
                 array_push($categorias, $categoria); //adiciona valores dentro da array

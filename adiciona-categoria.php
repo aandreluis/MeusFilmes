@@ -8,6 +8,12 @@
     //pega as variaveis do formulario
     $nome = $_POST["nome"];
     $usuario_id = $_SESSION["id-usuario"];
+
+    //verifica se algum campo está vazio
+    if(empty($nome)) {
+        header("location: categoria-formulario.php?camposVazios=true");
+        die();
+    }
     
     if(insereCategorias($conexao, $nome, $usuario_id)){//funcionou
             header("location: categoria-formulario.php?add=true");
