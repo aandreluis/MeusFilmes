@@ -218,7 +218,9 @@
         </div>
     </section>
     
-    <a href="#" class="btn btn-menu position-absolute bottom-1 end-0 me-3 scrollToTop"><i class="bi bi-chevron-double-up"></i></a>
+    <div class="container position-relative mt-2">
+        <a href="#" class="btn btn-menu scrollToTop position-absolute top-50 start-50 translate-middle"><i class="bi bi-chevron-double-up"></i> Voltar ao topo</a>
+    </div>
     
     
 
