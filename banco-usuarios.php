@@ -33,7 +33,9 @@
         $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
         if(file_exists($imagem)) {
             unlink($imagem);
+            return 1;
         }
+        return 0;
     }
 
     function removeImagemPerfil($conexao, $id) { //remove-usuario
