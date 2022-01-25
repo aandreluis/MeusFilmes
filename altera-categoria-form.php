@@ -11,6 +11,22 @@
     $categoria = buscaCategoria($conexao, $id);
 ?>
 
+<?php 
+if(isset($_GET["camposVazios"])) {
+    ?>
+    <div class="container sticky-top">
+        <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            Preencha o campo <strong>nome</strong> para adicionar a categoria.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    
+<?php
+}
+
+
+?>
+
 <!-- Seção inicio -->
     <section class="mt-5">
         <div class="custom-home-container">
