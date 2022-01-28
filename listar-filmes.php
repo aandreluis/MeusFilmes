@@ -170,8 +170,27 @@
                     <br>
                     <nav id="pags" aria-label="Página listar filmes">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=1">Início</a></li>
-                    <?php
+                        <?php
+                            if($p == 1){
+                                ?>
+                                <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=1">Início</a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=1">Início</a></li>
+                                <?php
+                            }
+
+                            if($p > 1){
+                                ?>
+                                <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p-1;?>"><<</a></li>
+                            <?php
+                            } else {
+                                ?>
+                                <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#"><<</a></li>
+                            <?php
+                            }
+                    
                     // Cria um for() para exibir os 3 links antes da página atual
                     for($i = $p - $max_links; $i <= $p - 1; $i++) {
                         // Se o número da página for menor ou igual a zero, não faz nada
@@ -198,9 +217,28 @@
                             <?php
                         }
                     }
+
+                    if($p < $pags){
+                        ?>
+                        <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p+1;?>">>></a></li>
+                    <?php
+                    } else {
+                        ?>
+                        <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#">>></a></li>
+                    <?php
+                    }
+
                     // Exibe o link "última página"
+                        if($p == $pags){
+                            ?>
+                            <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $pags;?>">Fim</a></li>
+                            <?php
+                        } else {
+                            ?>
+                            <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $pags;?>">Fim</a></li>
+                            <?php
+                        }
 							?>
-							<li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $pags;?>">Fim</a></li>
 							</nav> 
                 <?php 
                 } else { // se não tiver nenhum filme
