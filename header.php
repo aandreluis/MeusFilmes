@@ -26,10 +26,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <div class="btn-group me-3">
-                        <a href="index2.php" class="btn btn-menu d-flex align-items-center">Início</a>
+                        <a href="index2.php" class="btn btn-menu d-flex align-items-center"><i class="bi bi-house-door me-2"></i>Início</a>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Filmes
+                                <i class="bi bi-collection-play me-2"></i>Filmes
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item" href="filmes-formulario.php">Adicionar</a></li>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorias
+                                <i class="bi bi-collection me-2"></i>Categorias
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item" href="categoria-formulario.php">Adicionar</a></li>

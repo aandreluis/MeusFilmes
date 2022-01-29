@@ -56,11 +56,11 @@
                             </div>
                             
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Adicionar</button>
+                                <button type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Adicionar</button>
                             </div>
                             <div class="form-text text-center">
                                 ou <br> 
-                                <a href="listar-categorias.php" class="link-padrao">Ver categorias</a>
+                                <a href="listar-categorias.php" class="link-padrao">Ver categorias <i class="bi bi-collection"></i></a>
                             </div>
                         </form>
                     </div>

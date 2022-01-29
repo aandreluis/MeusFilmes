@@ -144,11 +144,11 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-1">Adicionar</button>
+                                <button type="submit" class="btn btn-menu mt-1"><i class="bi bi-plus-square me-2"></i>Adicionar</button>
                             </div>
                             <div class="form-text text-center">
                                 ou <br> 
-                                <a href="listar-filmes.php" class="link-padrao">Ver filmes</a>
+                                <a href="listar-filmes.php" class="link-padrao">Ver filmes <i class="bi bi-collection-play"></i></a>
                             </div>
                         </form>
                     </div>

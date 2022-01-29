@@ -98,10 +98,10 @@
                                 </div>    
                                 <div class="row mt-2">
                                     <div class="col">
-                                        <a class="btn btn-danger veiculos-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
+                                        <a class="btn btn-danger filmes-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
                                     </div>
                                     <div class="col">
-                                        <a href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>" class="btn btn-primary veiculos-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
+                                        <a href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>" class="btn btn-primary filmes-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
                                     </div>
                                 </div>       
                             </div>       
@@ -131,8 +131,8 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <a href="confirmacao.php" class="btn btn-danger">Sim, deletar</i></a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-square me-2"></i>Cancelar</button>
+            <a href="confirmacao.php" class="btn btn-danger"><i class="bi bi-trash me-2"></i>Sim, deletar</i></a>
         </div>
         </div>
     </div>

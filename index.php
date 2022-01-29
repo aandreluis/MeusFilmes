@@ -100,10 +100,10 @@
 
 								</div>
 								<div class="d-grid gap-2 col-6 mx-auto mt-3">
-									<button class="btn btn-menu" type="submit">Fazer login</button>
+									<button class="btn btn-menu" type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Fazer login</button>
 									<div class="form-text text-center">
 										Não possui uma conta? <br>
-										<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui!</a>
+										<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui! <i class="bi bi-person-lines-fill"></i></a>
 									</div>
 								</div>
 							  </form>

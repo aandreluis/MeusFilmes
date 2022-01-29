@@ -70,7 +70,7 @@
     $query = "SELECT f.*, c.nome AS categoria_nome FROM filmes AS f JOIN categoria AS c ON c.id = f.categoria_id WHERE f.usuario_id = '{$_SESSION["id-usuario"]}' ORDER BY f.id DESC LIMIT $inicio, $qnt";
     $resultado = mysqli_query($conexao, $query);
     ?>
-    <section class="mt-3">
+    <section class="mt-5">
         <div class="custom-home-container">
             <div id="filmes-pg">
                 <h1 class="titulo-home">Seus Filmes</h1>
@@ -79,10 +79,10 @@
                     ?>
                     <!-- Pesquisa -->
                     <div class="row d-flex justify-content-center align-items-center mt-2">
-                        <div class="col-6">
+                        <div class="container-md col-8 col-md-6 col-xs-8">
                             <div class="form-text text-center">Tente pesquisar o filme pelo seu nome. Exemplo: "Homem-Aranha"</div>
                             <form class="d-flex mt-1" id="form-pesquisa" method="POST" action="">
-                                <input class="form-control" id="pesquisa" type="text" placeholder="Digite o nome do filme para buscar" aria-label="Search">
+                                <input class="form-control" id="pesquisa" type="text" placeholder="Digite o nome do filme" aria-label="Search">
                             </form>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <!-- Pesquisa -->
 
                     <!-- Card -->
-                    <div id="card" class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+                    <div id="card" class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 row-cols-xl-4  row-cols-xxl-6 g-3 mt-2">
                         <?php
                         //While para pegar as informações do BD
                         while($filme = mysqli_fetch_array($resultado)) {
@@ -135,8 +135,8 @@
                                             <p class="card-subtitle text-center text-muted">Ações</p>
                                         </div>    
                                         <div class="row mt-2">
-                                            <a href="remove-filme.php?id=<?php echo $filme["id"];?>" class="btn btn-danger veiculos-btn d-block mx-auto"><i class="bi bi-trash"></i></a>
-                                            <a href="altera-filme-form.php?id=<?php echo $filme["id"];?>" class="btn btn-primary veiculos-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
+                                            <a href="remove-filme.php?id=<?php echo $filme["id"];?>" class="btn btn-danger filmes-btn d-block mx-auto"><i class="bi bi-trash"></i></a>
+                                            <a href="altera-filme-form.php?id=<?php echo $filme["id"];?>" class="btn btn-primary filmes-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
                                         </div>       
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                     // Exibe o primeiro link "primeira página", que não entra na contagem acima(3)
                     ?>
                     <br>
-                    <nav id="pags" aria-label="Página listar filmes">
+                    <nav id="pags" class="container-sm" aria-label="Página listar filmes">
                         <ul class="pagination justify-content-center">
                         <?php
                             if($p == 1){
@@ -183,11 +183,11 @@
 
                             if($p > 1){
                                 ?>
-                                <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p-1;?>"><<</a></li>
+                                <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p-1;?>"><</a></li>
                             <?php
                             } else {
                                 ?>
-                                <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#"><<</a></li>
+                                <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#"><</a></li>
                             <?php
                             }
                     
@@ -220,11 +220,11 @@
 
                     if($p < $pags){
                         ?>
-                        <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p+1;?>">>></a></li>
+                        <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p+1;?>">></a></li>
                     <?php
                     } else {
                         ?>
-                        <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#">>></a></li>
+                        <li class="page-item disabled"><a class="page-link pageLinkFIlmes" href="#">></a></li>
                     <?php
                     }
 

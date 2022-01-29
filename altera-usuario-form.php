@@ -69,7 +69,7 @@
                             } else {//se existir
                                 ?>
                                 <img width="120px" class="img-login mx-auto d-block rounded-circle" src="img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
-                                <a class="link-padrao text-decoration-none text-center mt-1" href="remove-imagem.php">Remover imagem<i class="bi bi-trash-fill"></i></a>
+                                <a class="link-padrao text-decoration-none text-center mt-1" href="remove-imagem.php">Remover imagem <i class="bi bi-trash-fill"></i></a>
 								<?php
                             }
                         ?>
@@ -99,11 +99,11 @@
 									<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
 								</div>
 								<div class="d-grid gap-2 col-6 mx-auto mt-3">
-									<button class="btn btn-menu" type="submit">Salvar</button>
+									<button class="btn btn-menu" type="submit"><i class="bi bi-check2-square me-2"></i>Salvar</button>
 								</div>
 								<div class="form-text text-center">
 										ou <br> 
-										<a  href="perfil.php" class="link-padrao">Voltar para o meu perfil</a>
+										<a  href="perfil.php" class="link-padrao">Voltar para o meu perfil <i class="bi bi-person-square"></i></a>
 									</div>
 							  </form>
 						</div>

@@ -1,5 +1,4 @@
 <?php 
-    include("header.php");
     include("conecta.php");
     include("banco-usuarios.php"); 
 ?>
