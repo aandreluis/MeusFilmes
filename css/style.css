@@ -65,6 +65,60 @@ body {
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
 }
 
+/* dropdown */
+.dropdown-menu-dark-padrao {
+    color: #dee2e6;
+    background-color: #3a3a3a;
+    background-image: linear-gradient( 114.1deg,  rgba(38, 38, 38, 0.527) 53.4%, rgba(56,56,56,1) 100.1% );
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
+.dropdown-item-padrao, .dropdown-item-padrao-sair {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #fff;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item-padrao:hover, .dropdown-item-padrao:focus {
+    color: #fff;
+    background-color: #5B3FBF;
+}
+
+.dropdown-item-padrao.active, .dropdown-item-padrao:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #9677D9;
+}
+
+.dropdown-item-padrao-sair:hover, .dropdown-item-padrao-sair:focus {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.dropdown-item-padrao-sair.active, .dropdown-item-padrao-sair:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+.dropdown-item-padrao.disabled, .dropdown-item-padrao:disabled {
+    color: #adb5bd;
+    pointer-events: none;
+    background-color: transparent;
+}
+/* dropdown */
+
+
 #home-pg {
     width: 70%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
@@ -123,7 +177,7 @@ body {
         margin-top: 6vh;
     }
 
-  }
+}
 
 #filmes-pg .card-box:hover {
     box-shadow:  0px 5px 8px 0.025rem #5b3fbf65;

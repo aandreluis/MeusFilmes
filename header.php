@@ -31,18 +31,18 @@
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-collection-play me-2"></i>Filmes
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="filmes-formulario.php">Adicionar</a></li>
-                                <li><a class="dropdown-item" href="listar-filmes.php?p=1">Listar</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item-padrao" href="filmes-formulario.php"><i class="bi bi-plus-square me-2"></i>Adicionar</a></li>
+                                <li><a class="dropdown-item-padrao" href="listar-filmes.php?p=1"><i class="bi bi-zoom-in me-2"></i>Listar</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-collection me-2"></i>Categorias
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="categoria-formulario.php">Adicionar</a></li>
-                                <li><a class="dropdown-item" href="listar-categorias.php">Listar</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item-padrao" href="categoria-formulario.php"><i class="bi bi-plus-square me-2"></i>Adicionar</a></li>
+                                <li><a class="dropdown-item-padrao" href="listar-categorias.php"><i class="bi bi-zoom-in me-2"></i>Listar</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -60,11 +60,11 @@
                             }
                             ?>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
-                            <li><a class="dropdown-item" href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>">Configurações</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item-padrao" href="perfil.php"><i class="bi bi-person-square me-2"></i>Perfil</a></li>
+                            <li><a class="dropdown-item-padrao" href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>"><i class="bi bi-gear-fill me-2"></i>Configurações</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="logout.php">Sair</a></li>
+                            <li><a class="dropdown-item-padrao-sair" href="logout.php"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
                             </ul>
                         </div>
                     </div>

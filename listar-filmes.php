@@ -90,7 +90,7 @@
                     <!-- Pesquisa -->
 
                     <!-- Card -->
-                    <div id="card" class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 row-cols-xl-4  row-cols-xxl-6 g-3 mt-2">
+                    <div id="card" class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 g-3 mt-2">
                         <?php
                         //While para pegar as informações do BD
                         while($filme = mysqli_fetch_array($resultado)) {

@@ -54,7 +54,7 @@
                                     <a href="filmes-formulario.php" class="btn btn-menu btn-lg" type="button"><i class="bi bi-plus-square me-2"></i>Adicionar</a>
                                 </div>
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <a href="listar-filmes.php?p=1" class="btn btn-menu btn-lg" type="button"><i class="bi bi-collection-play me-2"></i>Listar</a>
+                                    <a href="listar-filmes.php?p=1" class="btn btn-menu btn-lg" type="button"><i class="bi bi-zoom-in me-2"></i>Listar</a>
                                 </div>
                             </div>
 						</div>
