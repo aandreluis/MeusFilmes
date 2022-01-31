@@ -121,10 +121,10 @@ body {
 
 #home-pg {
     width: 70%;
-    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    /* min-width: 340px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
     /* Não coloquei o height pois ja fica responsivo por causa do bootstrap */
-    padding: 24px 16px 24px 16px;
-    margin-bottom: 2%;
+    padding: 50px 16px 50px 16px;
+    margin: 8vh 0 12vh 0;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
     border-radius: 8px;
@@ -257,7 +257,7 @@ body {
 #categoria-form-pg {
     width: 50%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
-    margin-bottom: 2%;
+    margin: 8vh 0 12vh 0;
     padding: 24px 16px 24px 16px;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
@@ -290,7 +290,7 @@ body {
 #login-pg {
     width: 32%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
-    margin-bottom: 2%;
+    margin: 8vh 0 12vh 0;
     padding: 24px 16px 24px 16px;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
@@ -327,7 +327,7 @@ body {
 #perfil-pg {
     width: 40%;
     min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
-    margin-bottom: 2%;
+    margin: 8vh 0 12vh 0;
     padding: 24px 16px 24px 16px;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
@@ -354,4 +354,19 @@ body {
     color: #ffffff;
     text-align: justify;
     font-size: 17px;
+}
+
+.alert-padrao { /* normal */
+    width: 66vw;
+}
+
+@media (max-width: 700px) { /* dispositivos moveis */
+    .alert-padrao {
+        width: 86vw;
+    }
+
+    #home-pg {
+        width: 90vw;
+        margin: 8vh 0 11vh 0;
+    }
 }

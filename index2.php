@@ -8,7 +8,7 @@
 		if(isset($_GET["login"]) && $_GET["login"] == "true") {
 			?>
 			<div class="container sticky-top">
-			<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+			<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
 				Login realizado com <strong>sucesso!</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
@@ -19,7 +19,7 @@
 		if(isset($_GET["cadastrarUsuario"])) {
 			?>
 			<div class="container sticky-top">
-				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
 					Usuario cadastrado com <strong>sucesso!</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
@@ -44,12 +44,12 @@
 								// Explode Divide uma string em strings. Pega o primeiro nome do usuário = nome[0]
 								$nome = explode(" ", $_SESSION["nome-usuario"]); 
 								?>
-								Olá <?php echo $nome[0]; ?>, no <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
+								Olá <strong><?php echo $nome[0]; ?></strong>, no <b>MeusFilmes</b> você poderá listar todos os filmes que já assitiu, ou os que ainda vai assistir! <br>
 								- Adicione: <b>titulo, descrição, data de lançamento, categorias, entre outras informações!</b>
 							 </p>
 							<h3 class="titulo-home">Confira os filmes já cadastrados ou adicione novos filmes</h3>
 							<br>
-                            <div class="row d-flex align-items-center">
+                            <div class="row d-flex align-items-center justify-content-evelyn">
                                 <div class="d-grid gap-2 col-6 mx-auto">
                                     <a href="filmes-formulario.php" class="btn btn-menu btn-lg" type="button"><i class="bi bi-plus-square me-2"></i>Adicionar</a>
                                 </div>
