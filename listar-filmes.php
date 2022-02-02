@@ -245,8 +245,8 @@
                     ?>
                     <div class="row d-flex justify-content-center mt-3">
                         <div class="col-md-12">
-                            <h5 class="paragrafo-home text-muted">Ops... Nenhum filme encontrado!</h5>
-                            <img class="mx-auto d-block mt-3" style="width: 50%;" src="img/searching.svg" alt="Nada encontrado" >
+                            <h5 class="paragrafo-home text-muted text-center mt-2">Ops... Nenhum filme encontrado!</h5>
+                            <img class="mx-auto d-block" style="width: 50%; margin: 10vh 0 10vh 0;" src="img/searching.svg" alt="Nada encontrado" >
                         </div>
                     </div> 
                     <?php

@@ -19,7 +19,7 @@
 		if($_GET["uploadImagemErro"] == 0){
 			?>
 			<div class="container sticky-top">
-			<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+			<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 Não foi possível alterar o filme, pois a imagem da capa possui <strong>extensão inválida.</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
@@ -29,7 +29,7 @@
 			if($_GET["uploadImagemErro"] == 1){
 				?>
 				<div class="container sticky-top">
-				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
 					Não foi possível alterar o filme, pois a imagem da capa é <strong>muito grande.</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
@@ -39,7 +39,7 @@
 				if($_GET["uploadImagemErro"] == 2){
 					?>
 					<div class="container sticky-top">
-					<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+					<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                     Não foi possível alterar o filme, pois a imagem da capa <strong>não foi cadastrada com sucesso.</strong>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-6">
                     <h1 class="titulo-home">Alterar Filme</h1>
-                        <form class="row g-3 text-white" enctype="multipart/form-data" action="altera-filme.php" method="post">
+                        <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
                                 <input type="text" class="form-control" name="nome" value="<?php echo $filme["nome"]; ?>" placeholder="Nome do filme">

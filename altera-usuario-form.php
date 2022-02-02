@@ -11,7 +11,7 @@
     if(isset($_GET["alteraUsuario"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 Não foi possivel alterar seu perfil. <strong>Tente novamente!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -22,7 +22,7 @@
 		if($_GET["uploadImagemErro"] == 0){
 			?>
 			<div class="container sticky-top">
-			<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+			<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
 				A imagem não foi cadastrada, <strong>extensão inválida.</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
@@ -32,8 +32,8 @@
 			if($_GET["uploadImagemErro"] == 1){
 				?>
 				<div class="container sticky-top">
-				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-					Arquivo muito grande.
+				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					Arquivo <strong>muito grande.</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 				</div>
@@ -42,8 +42,8 @@
 				if($_GET["uploadImagemErro"] == 2){
 					?>
 					<div class="container sticky-top">
-					<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
-						Imagem não foi cadastrada com Sucesso.
+					<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+						Imagem <strong>não foi</strong> cadastrada com sucesso.
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 					</div>

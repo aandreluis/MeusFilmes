@@ -1,6 +1,5 @@
 body {
     color: white;
-    /* background-color: #262626; */
     background: #0f0c29;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -10,7 +9,7 @@ body {
 /* filmes */
 #filmes-pg {
     width: 70%;
-    min-width: 340px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    min-width: 370px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
     padding: 26px 24px 24px 24px;
 }
 
@@ -30,13 +29,13 @@ body {
 
 #categoria-form-pg {
     width: 50%;
-    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    min-width: 370px;
     padding: 24px 16px 24px 16px;
 }
 
 #perfil-pg {
     width: 40%;
-    min-width: 300px; /* esse é o tamanho minimo --> quando ficar menor que 300px ele para */
+    min-width: 370px;
     padding: 24px 16px 24px 16px;
 }
 
@@ -49,27 +48,24 @@ body {
     position: relative;
 }
 
-/* LOGIN - INDEX.PHP */
 #login-pg {
     width: 32%;
+    min-width: 370px;
     padding: 24px 16px 24px 16px;
 }
 
 #login-pg .img-login {
     width: 50%;
 }
-/* LOGIN - INDEX.PHP */
 
-
-/* INDEX2.PHP */
 #home-pg {
     width: 70%;
+    min-width: 370px;
     padding: 50px 16px 50px 16px;
 
 }
-/* INDEX2.PHP */
 
-#login-pg, #home-pg, #perfil-pg, #categoria-form-pg, #filmes-pg {
+#login-pg, #home-pg, #filmes-pg, #categoria-form-pg, #perfil-pg {
     margin: 8vh 0 12vh 0;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
@@ -77,16 +73,16 @@ body {
     box-shadow:  0px 5px 8px 0.025rem #262626a8;
 }
 
-#home-pg, #perfil-pg, #categoria-form-pg, #filmes-pg .img-home {
+.img-home {
     width: 90%;
 }
 
-#home-pg, #perfil-pg, #categoria-form-pg, #filmes-pg .titulo-home {
+.titulo-home {
     text-align: center;
     color: #5B3FBF;
 }
 
-#home-pg, #perfil-pg, #categoria-form-pg, #filmes-pg .paragrafo-home {
+.paragrafo-home {
     color: #ffffff;
     text-align: justify;
     font-size: 17px;
@@ -119,6 +115,7 @@ body {
 .img-modal {
     width: 50%;
 }
+
 
 /* paginação listar-filmes */
 .pageLinkFIlmes {
@@ -167,12 +164,14 @@ body {
 }
 /* paginação listar-filmes */
 
+
 /* footer */
 .rodape-bg {
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
 }
 /* footer */
+
 
 /* ----------- MENU ------------- */
 /* Buttons nav */
@@ -198,25 +197,28 @@ body {
     color: #fff;
     background-color: #9677D9;
     border-color: #5B3FBF;
-  }
-  .btn-check:checked + .btn-menu:focus, .btn-check:active + .btn-menu:focus, .btn-menu:active:focus, .btn-menu.active:focus, .show > .btn-menu.dropdown-toggle:focus {
+}
+
+.btn-check:checked + .btn-menu:focus, .btn-check:active + .btn-menu:focus, .btn-menu:active:focus, .btn-menu.active:focus, .show > .btn-menu.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.25rem #5b40f3c2;
-  }
-  .btn-menu:disabled, .btn-menu.disabled {
+}
+
+.btn-menu:disabled, .btn-menu.disabled {
     color: #fff;
     background-color: #806aff;
     border-color: #724bff;
-  }
+}
 
-  .btn-drop-center {
+.btn-drop-center {
     border-radius: 0; 
     padding: 10px;
-  }
+}
 
-  .btn-drop-end {
+.btn-drop-end {
     border-radius: 0 0.2rem 0.2rem 0; 
-  }
+}
 /* Buttons nav */
+
 
 .nav-title {
     color: #5B3FBF;
@@ -231,6 +233,7 @@ body {
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
 }
+
 
 /* dropdown MENU */
 .dropdown-menu-dark-padrao {
@@ -275,7 +278,7 @@ body {
     color: #fff;
     text-decoration: none;
     background-color: #bb2d3b;
-  border-color: #b02a37;
+    border-color: #b02a37;
 }
 
 .dropdown-item-padrao.disabled, .dropdown-item-padrao:disabled {
@@ -292,15 +295,8 @@ body {
         width: 86vw;
     }
 
-    #login-pg {
+    #login-pg, #home-pg, #filmes-pg, #categoria-form-pg, #perfil-pg {
         width: 90vw;
-    }
-
-    #home-pg { 
-        width: 90vw;
-    }
-    
-    #login-ph, #home-pg {
         margin: 8vh 0 11vh 0;
     }
 }

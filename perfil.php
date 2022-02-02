@@ -8,7 +8,7 @@
     if(isset($_GET["alteraUsuario"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 Alterações realizadas com <strong>sucesso!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -20,7 +20,7 @@
     if(isset($_GET["senhaVazia"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 Digite sua <strong>senha</strong> para continuar.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -31,7 +31,7 @@
     if(isset($_GET["senhaInvalida"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 Senha digitada incorreta, <strong>tente novamente.</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -43,7 +43,7 @@
         if($_GET["removido"] == 1) {
             ?>
             <div class="container sticky-top">
-                <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                     A sua imagem foi <strong>removida</strong> com sucesso!
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -53,7 +53,7 @@
         if($_GET["removido"] == 0) {
             ?>
             <div class="container sticky-top">
-                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 35%;" role="alert">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                     Não foi possivel <strong>remover</strong> sua imagem! <strong>Tente novamente.</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>

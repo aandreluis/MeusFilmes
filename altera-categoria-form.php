@@ -15,7 +15,7 @@
 if(isset($_GET["camposVazios"])) {
     ?>
     <div class="container sticky-top">
-        <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
             Preencha o campo <strong>nome</strong> para adicionar a categoria.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -36,7 +36,7 @@ if(isset($_GET["camposVazios"])) {
                         <form class="row g-3 text-white" action="altera-categoria.php" method="post">
                             <div class="col-12">
                                 <h1 class="titulo-home">Alterar categoria</h1>
-                                <label for="inputNome" class="form-label">Nome</label>
+                                <label for="inputNome" class="form-label mt-3">Nome</label>
                                 <input type="text" class="form-control" name="nome" id="inputNome" value="<?php echo $categoria["nome"]; ?>" placeholder="Nome da categoria">
                             </div>
 
