@@ -38,7 +38,7 @@
 		?>
 		<div class="container sticky-top">
             <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-            	Este email invalido ou já cadastrado. <strong>Tente um novamente!</strong>
+            	Este email é invalido ou já foi cadastrado. <strong>Tente um novamente!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php 
     include("conecta.php");
     include("banco-usuarios.php"); 
+    include("logica-usuario.php");
 ?>
 <?php
     
