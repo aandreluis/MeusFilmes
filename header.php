@@ -54,14 +54,14 @@
                                 <?php
                             } else {//se existir
                                 ?>
-                                <img src="img/avatar/<?php echo $_SESSION["imagem-usuario"];?>" width="32" height="32" class="rounded-circle">
+                                <img src="img/avatar/<?php ob_start(); echo $_SESSION["imagem-usuario"];?>" width="32" height="32" class="rounded-circle">
                                 <?php
                             }
                             ?>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item-padrao" href="perfil.php"><i class="bi bi-person-square me-2"></i>Perfil</a></li>
-                            <li><a class="dropdown-item-padrao" href="altera-usuario-form.php?id=<?php verificaUsuario(); echo $_SESSION["id-usuario"];?>"><i class="bi bi-gear-fill me-2"></i>Configurações</a></li>
+                            <li><a class="dropdown-item-padrao" href="altera-usuario-form.php?id=<?php ob_start(); echo $_SESSION["id-usuario"];?>"><i class="bi bi-gear-fill me-2"></i>Configurações</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item-padrao-sair" href="logout.php"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
                             </ul>
