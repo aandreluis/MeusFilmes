@@ -214,6 +214,10 @@ body {
     padding: 10px;
 }
 
+.btn-drop-ini {
+    border-radius: 0.2rem 0 0 0.2rem; 
+}
+
 .btn-drop-end {
     border-radius: 0 0.2rem 0.2rem 0; 
 }
@@ -232,6 +236,10 @@ body {
 .nav-bg {
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff; 
 }
 
 

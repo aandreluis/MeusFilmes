@@ -23,8 +23,57 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <div class="btn-group me-3">
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a href="index2.php" class="btn btn-menu btn-drop-ini d-flex align-items-center justify-content-center nav-link" style="padding: 10;">
+                            <i class="bi bi-house-door me-2"></i>Início
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-menu btn-drop-center nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-collection-play me-2"></i>Filmes
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item-padrao" href="filmes-formulario.php"><i class="bi bi-plus-square me-2"></i>Adicionar</a></li>
+                            <li><a class="dropdown-item-padrao" href="listar-filmes.php?p=1"><i class="bi bi-zoom-in me-2"></i>Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-menu btn-drop-center nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-collection me-2"></i>Categorias
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item-padrao" href="categoria-formulario.php"><i class="bi bi-plus-square me-2"></i>Adicionar</a></li>
+                            <li><a class="dropdown-item-padrao" href="listar-categorias.php"><i class="bi bi-zoom-in me-2"></i>Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-menu btn-drop-end nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php
+                                //se a imagem por null ou não exista no diretorio referenciado
+                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                                ?>
+                                <img src="img/avatar-default.svg" width="27" height="27" class="rounded-circle">
+                                <?php
+                            } else {//se existir
+                                ?>
+                                <img src="img/avatar/<?php ob_start(); echo $_SESSION["imagem-usuario"];?>" width="27" height="27" class="rounded-circle">
+                                <?php
+                            }
+                        ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-padrao" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item-padrao" href="perfil.php"><i class="bi bi-person-square me-2"></i>Perfil</a></li>
+                            <li><a class="dropdown-item-padrao" href="altera-usuario-form.php?id=<?php ob_start(); echo $_SESSION["id-usuario"];?>"><i class="bi bi-gear-fill me-2"></i>Configurações</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item-padrao-sair" href="logout.php"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                    <!-- <div class="btn-group me-3">
                         <a href="index2.php" class="btn btn-menu d-flex align-items-center"><i class="bi bi-house-door me-2"></i>Início</a>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,8 +83,7 @@
                                 <li><a class="dropdown-item-padrao" href="filmes-formulario.php"><i class="bi bi-plus-square me-2"></i>Adicionar</a></li>
                                 <li><a class="dropdown-item-padrao" href="listar-filmes.php?p=1"><i class="bi bi-zoom-in me-2"></i>Listar</a></li>
                             </ul>
-                        </div>
-                        <div class="dropdown">
+                            <div class="dropdown">
                             <button class="btn btn-menu btn-drop-center dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-collection me-2"></i>Categorias
                             </button>
@@ -46,9 +94,9 @@
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-menu btn-drop-end dropdown-toggle link-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php
+                                <?php
                                 //se a imagem por null ou não exista no diretorio referenciado
-                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                                if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
                                 ?>
                                 <img src="img/avatar-default.svg" width="32" height="32" class="rounded-circle">
                                 <?php
@@ -64,7 +112,8 @@
                             <li><a class="dropdown-item-padrao" href="altera-usuario-form.php?id=<?php ob_start(); echo $_SESSION["id-usuario"];?>"><i class="bi bi-gear-fill me-2"></i>Configurações</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item-padrao-sair" href="logout.php"><i class="bi bi-box-arrow-left me-2"></i>Sair</a></li>
-                            </ul>
+                        </ul>
+                    </div> -->
                         </div>
                     </div>
                 </div>
