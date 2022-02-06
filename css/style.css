@@ -13,15 +13,6 @@ body {
     padding: 26px 24px 24px 24px;
 }
 
-#filmes-pg .card-box:hover {
-    box-shadow:  0px 5px 8px 0.025rem #5b3fbf65;
-    transition: .3s;
-}
-
-#filmes-pg .border-card {
-    border-color: #5B3FBF;
-}
-
 #filmes-pg .filmes-btn {
     width: min(40%, 125px);
 }
@@ -34,7 +25,7 @@ body {
 }
 
 #perfil-pg {
-    width: 40%;
+    width: 50%;
     min-width: 370px;
     padding: 24px 16px 24px 16px;
 }
@@ -59,14 +50,14 @@ body {
 }
 
 #home-pg {
-    width: 70%;
+    width: 60%;
     min-width: 370px;
     padding: 50px 16px 50px 16px;
 
 }
 
 #login-pg, #home-pg, #filmes-pg, #categoria-form-pg, #perfil-pg {
-    margin: 8vh 0 12vh 0;
+    margin: 6vh 0 14vh 0;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
     border-radius: 8px;
@@ -114,6 +105,15 @@ body {
 
 .img-modal {
     width: 50%;
+}
+
+.card-box:hover {
+    box-shadow:  0px 5px 8px 0.025rem #5b3fbf65;
+    transition: .3s;
+}
+
+.border-card {
+    border-color: #5B3FBF;
 }
 
 

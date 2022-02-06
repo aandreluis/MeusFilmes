@@ -1,5 +1,8 @@
 <?php 
 	include("header.php");
+    include("conecta.php");
+    include("banco-filmes.php");
+    include("banco-categorias.php");
     verificaUsuario();
 ?>
     <title>MeusFilmes - <?php echo $_SESSION["nome-usuario"]; ?></title>
@@ -61,6 +64,9 @@
             <?php
         }   
     }
+
+    $quantidadeFilmes =  qntdFilmes($conexao, $_SESSION["id-usuario"]);
+    $quantidadeCategorias =  qntdCategorias($conexao, $_SESSION["id-usuario"]);
 ?>
 
     <!-- SEÇÃO PERFIL -->
@@ -84,30 +90,58 @@
                             }
                         ?>
                     </div>
-                    <div class="row justify-content-center mt-3">
+                    <div class="row justify-content-center mt-4">
                         <div class="col-md-6 paragrafo-home">
-                            <div class="row justify-content-center">
-                                <?php echo $_SESSION["nome-usuario"]; ?>
+                            <div class="row justify-content-center text-center">
+                                <strong><?php echo $_SESSION["nome-usuario"]; ?></strong>
                             </div>
-                            <div class="row justify-content-center">
-                                <?php echo $_SESSION["email-usuario"]; ?>
+                            <div class="row justify-content-center text-center">
+                                <?php 
+								// Explode Divide uma string em strings.
+								$emailReduzido = explode("@", $_SESSION["email-usuario"]); 
+                                ?>
+                               <p><strong>Email: </strong><?php echo $emailReduzido[0]."@..."; ?></p>
                             </div>
-                            <div class="card-footer mt-4">
+                            <div class="container mt-3">
                                 <div class="row">
                                     <p class="card-subtitle text-center text-muted">Ações</p>
                                 </div>    
                                 <div class="row mt-2">
                                     <div class="col">
-                                        <a class="btn btn-danger filmes-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
+                                        <a class="btn btn-outline-danger filmes-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
                                     </div>
                                     <div class="col">
-                                        <a href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>" class="btn btn-primary filmes-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
+                                        <a href="altera-usuario-form.php?id=<?php echo $_SESSION["id-usuario"];?>" class="btn btn-outline-primary filmes-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
                                     </div>
-                                </div>       
-                            </div>       
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
+                <div class="container mt-5">
+                    <h3 class="titulo-home">Total adicionado</h3>
+                    <div class="row justify-content-center">
+                        <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="col">
+                            <div class="card text-white bg-dark border-card card-box mt-2">
+                                <div class="card-header">Filmes</div>
+                                <div class="card-body">
+                                    <h1 class="card-title text-center"><?php echo $quantidadeFilmes;?></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-white bg-dark border-card card-box mt-2">
+                                <div class="card-header">Categorias</div>
+                                <div class="card-body">
+                                    <h1 class="card-title text-center"><?php echo $quantidadeCategorias;?></h1>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section> 
@@ -116,9 +150,9 @@
     <!-- MODAL CONFIRMAÇÃO -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark text-white">
+        <div class="modal-content bg-dark border-card card-box text-white">
         <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Deseja deletar sua conta?</h5>
+            <h5 class="modal-title text-danger fw-bold" id="deleteModalLabel">Deseja deletar sua conta?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

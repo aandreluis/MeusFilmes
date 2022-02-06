@@ -83,4 +83,10 @@
         
     }
 
+    function qntdFilmes($conexao, $usuario_id) {
+        $query = "SELECT * FROM filmes WHERE usuario_id = '{$usuario_id}'";
+        $resultado = mysqli_query($conexao, $query);
+        return mysqli_num_rows($resultado);
+    }
+
 ?>

@@ -56,4 +56,10 @@
         return mysqli_query($conexao, $query);
     }
 
+    function qntdCategorias($conexao, $usuario_id) {
+        $query = "SELECT * FROM categoria WHERE usuario_id = '{$usuario_id}'";
+        $resultado = mysqli_query($conexao, $query);
+        return mysqli_num_rows($resultado);
+    }
+
 ?>

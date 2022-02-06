@@ -136,7 +136,7 @@
                                     }   
                                     ?>
                                 </select>
-                                <div class="form-text">Já disponibilizamos diversas categorias, mas você pode adicionar a suas!</div>
+                                <div class="form-text">Já disponibilizamos diversas categorias, mas você pode adicionar as suas!</div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-check">

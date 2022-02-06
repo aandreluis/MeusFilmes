@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a href="index2.php" class="btn btn-menu btn-drop-ini d-flex align-items-center justify-content-center nav-link" style="padding: 10;">
+                        <a href="index2.php" class="btn btn-menu btn-drop-ini d-flex align-items-center justify-content-center nav-link" style="padding: 10px;">
                             <i class="bi bi-house-door me-2"></i>Início
                         </a>
                     </li>
