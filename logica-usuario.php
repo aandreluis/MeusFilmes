@@ -1,6 +1,19 @@
 <?php 
     include("conecta.php");
-    session_start();
+
+    if (session_status() == PHP_SESSION_NONE) {
+        $time = 2 * 60 * 60; // Define 2 horas tempo do cookie da sessão
+        session_set_cookie_params($time);
+
+        session_start();
+    }
+
+    function verificaStatusLogin() {
+        if(usuarioEstaLogado()) {
+            header("Location: index2.php?login=status");
+            die();
+        }
+    }
 
     function verificaUsuario() {
         if(!usuarioEstaLogado()) {
