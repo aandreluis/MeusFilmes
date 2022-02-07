@@ -122,24 +122,29 @@
                     <h3 class="titulo-home">Total adicionado</h3>
                     <div class="row justify-content-center">
                         <div class="row row-cols-1 row-cols-sm-2">
-                        <div class="col">
-                            <div class="card text-white bg-dark border-card card-box mt-2">
-                                <div class="card-header">Filmes</div>
-                                <div class="card-body">
-                                    <h1 class="card-title text-center"><?php echo $quantidadeFilmes;?></h1>
-                                </div>
+                            <div class="col">
+                                <a href="listar-filmes.php?p=1" class="text-decoration-none">
+                                    <div class="card text-white bg-dark border-card card-box mt-2">
+                                        <div class="card-header">Filmes</div>
+                                        <div class="card-body">
+                                            <h1 class="card-title text-center"><?php echo $quantidadeFilmes;?></h1>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card text-white bg-dark border-card card-box mt-2">
-                                <div class="card-header">Categorias</div>
-                                <div class="card-body">
-                                    <h1 class="card-title text-center"><?php echo $quantidadeCategorias;?></h1>
-                                </div>
+                            <div class="col">
+                                <a href="listar-categorias.php" class="text-decoration-none">
+                                    <div class="card text-white bg-dark border-card card-box mt-2">
+                                        <div class="card-header">Categorias</div>
+                                        <div class="card-body">
+                                            <h1 class="card-title text-center"><?php echo $quantidadeCategorias;?></h1>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>

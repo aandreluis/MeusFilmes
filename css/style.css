@@ -16,6 +16,12 @@ body {
 #filmes-pg .filmes-btn {
     width: min(40%, 125px);
 }
+
+#filmes-form-pg {
+    width: 70%;
+    min-width: 370px;
+    padding: 50px 16px 50px 16px;
+}
 /* filmes */
 
 #categoria-form-pg {
@@ -56,7 +62,7 @@ body {
 
 }
 
-#login-pg, #home-pg, #filmes-pg, #categoria-form-pg, #perfil-pg {
+#login-pg, #home-pg, #filmes-pg, #filmes-form-pg, #categoria-form-pg, #perfil-pg {
     margin: 6vh 0 14vh 0;
     background-color: #262626;
     background-image: linear-gradient( 114.1deg,  rgba(38,38,38,1) 53.4%, rgba(56,56,56,1) 100.1% );
