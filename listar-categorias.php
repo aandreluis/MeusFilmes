@@ -61,7 +61,7 @@
                     <?php
                     } else {
                     ?>            
-                        <table class="table table-dark table-striped table-bordered border-padrao text-center mt-3">
+                        <table class="table table-dark table-striped table-bordered border-padrao text-center" style="margin: 5vh 0 10vh 0;">
                             <tr class="text-white">
                                 <td><b>Categorias</b></td>
                                 <td colspan="2"><b>Ações</b></td>
@@ -82,7 +82,7 @@
                         </table>
                     </div>
                     <div class="col-md-6 d-flex">
-                        <img class="img-home mx-auto d-block" src="img/list.svg" alt="Cinema em casa">
+                        <img class="img-home mx-auto d-block" style="margin: 5vh 0 10vh 0;" src="img/list.svg" alt="Cinema em casa">
                     </div>
                 </div>
             </div>

@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="titulo-home">Alterar Filme</h1>
-                        <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post">
+                        <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post" onsubmit="return checkForm(this);">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
                                 <input type="text" class="form-control" name="nome" value="<?php echo $filme["nome"]; ?>" placeholder="Nome do filme">
@@ -119,11 +119,11 @@
                                 <input type="hidden" name="id" value="<?php echo $filme["id"];?>">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Alterar</button>
+                                <button id="btnSubmit" type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Alterar</button>
                             </div>
                             <div class="form-text text-center">
                                 ou <br> 
-                                <a href="listar-filmes.php" class="link-padrao">Ver filmes</a>
+                                <a href="listar-filmes.php?p=1" class="link-padrao">Ver filmes <i class="bi bi-collection-play"></i></a>
                             </div>
                         </form>
                     </div>
@@ -134,4 +134,5 @@
     <!-- SEÇÃO ALTERAR FILMES -->
 
     <script type="text/javascript" src="js/filmes-forms.js"></script>
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include("footer.php"); ?>

@@ -49,13 +49,13 @@
                 <div class="row justify-content-center">
                     <h1 class="titulo-home">Cadastrar categoria</h1>
                     <div class="col-md-6">
-                        <form class="row g-3 text-white" action="adiciona-categoria.php" method="post">
+                        <form class="row g-3 text-white" action="adiciona-categoria.php" method="post" onsubmit="return checkForm(this);">
                             <div class="col-12">
                                 <label for="inputNome" class="form-label mt-3">Nome *</label>
                                 <input type="text" class="form-control" name="nome" id="inputNome" placeholder="Nome da categoria">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Adicionar</button>
+                                <button id="btnSubmit" type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Adicionar</button>
                             </div>
                             <div class="form-text text-center">
                                 ou <br> 
@@ -65,7 +65,7 @@
                     </div>
                     <div class="row justify-content-center mt-4">
                         <div class="col-md-6">
-                            <img class="img-home mx-auto d-block" src="img/new-ideas.svg" alt="Cinema em casa">
+                            <img class="img-home mx-auto d-block" style="margin: 5vh 0 10vh 0;" src="img/new-ideas.svg" alt="Cinema em casa">
                         </div>
                     </div>
                 </div>
@@ -73,4 +73,6 @@
         </div>
     </section> 
     <!-- SEÇÃO ADICIONAR CATEGORIAS -->
+
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include("footer.php"); ?>

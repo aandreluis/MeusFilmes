@@ -59,7 +59,7 @@
 						<img class="img-login mx-auto d-block" src="./img/password.svg" alt="Imagem login">
 					</div>
 					<div class="row mt-3">
-						<form action="login.php" method="post">
+						<form action="login.php" method="post" onsubmit="return checkForm(this);">
 							<div class="mb-3">
 								<label for="inputEmail" class="form-label text-white">Seu email</label>
 								<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" autofocus required>
@@ -71,7 +71,7 @@
 								<div class="form-text">Não compartilhe sua senha com ninguem.</div>
 							</div>
 							<div class="d-grid gap-2 col-6 mx-auto mt-3">
-								<button class="btn btn-menu" type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Fazer login</button>
+								<button id="btnSubmit" class="btn btn-menu" type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Fazer login</button>
 								<div class="form-text text-center">
 									Não possui uma conta? <br>
 									<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui! <i class="bi bi-person-lines-fill"></i></a>
@@ -85,5 +85,5 @@
 	</section> 
 	<!-- SEÇÃO LOGIN -->
 
-
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include ("footer.php") ?>

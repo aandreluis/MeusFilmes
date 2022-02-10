@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<div class="row mt-2">
-					<form enctype="multipart/form-data" action="altera-usuario.php" method="post">
+					<form enctype="multipart/form-data" action="altera-usuario.php" method="post" onsubmit="return checkForm(this);">
 						<div class="mb-3">
 							<label for="formImagem" class="form-label text-white">Imagem do perfil</label>
 							<!-- <input type="hidden" name="MAX_FILE_SIZE" value="5000" /> -->
@@ -97,7 +97,7 @@
 							<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
 						</div>
 						<div class="d-grid gap-2 col-6 mx-auto mt-3">
-							<button class="btn btn-menu" type="submit"><i class="bi bi-check2-square me-2"></i>Salvar</button>
+							<button id="btnSubmit" class="btn btn-menu" type="submit"><i class="bi bi-check2-square me-2"></i>Salvar</button>
 						</div>
 						<div class="form-text text-center">
 							ou <br> 
@@ -109,5 +109,6 @@
 		</div>
 	</section> 
 	<!-- SEÇÃO ALTERA-USUARIOS -->
-
+	
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include("footer.php"); ?>

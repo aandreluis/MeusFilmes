@@ -57,7 +57,7 @@
 						<img class="img-login mx-auto d-block" src="./img/insert.svg" alt="">
 					</div>
 					<div class="row mt-3">
-						<form action="adiciona-usuario.php" method="post">
+						<form action="adiciona-usuario.php" method="post" onsubmit="return checkForm(this);">
 							<div class="mb-3">
 								<label for="inputNome" class="form-label text-white">Seu nome</label>
 								<input type="text" class="form-control" name="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required>
@@ -79,7 +79,7 @@
 								<div class="form-text">Confirme sua senha para finalizar o cadastro.</div>
 							</div>
 							<div class="d-grid gap-2 col-6 mx-auto mt-3">
-								<button class="btn btn-menu" type="submit"><i class="bi bi-person-check-fill me-2"></i>Cadastrar</button>
+								<button id="btnSubmit" class="btn btn-menu" type="submit"><i class="bi bi-person-check-fill me-2"></i>Cadastrar</button>
 							</div>
 							<div class="form-text text-center">
 								Já possui uma conta? <br>
@@ -93,4 +93,5 @@
 	</section> 
 	<!-- SEÇÃO CADASTRO DE USUÁRIOS -->
 
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include ("footer.php") ?>

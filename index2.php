@@ -9,21 +9,21 @@
 		if ($_GET["login"] == "true") {
 			?>
 			<div class="container sticky-top">
-			<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				Login realizado com <strong>sucesso!</strong>
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
+				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					Login realizado com <strong>sucesso!</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
+			</div>
 			<?php
 		}
 		if ($_GET["login"] == "status") {
 			?>
 			<div class="container sticky-top">
-			<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				Você está conectado como: <strong><?php echo $_SESSION["email-usuario"]?></strong>!
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
+				<div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					Você está conectado como: <strong><?php echo $_SESSION["email-usuario"]?></strong>!
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
+			</div>
 			<?php
 		}
 	}
@@ -39,6 +39,7 @@
 	<?php
 	}
 ?>
+
     <!-- SEÇÃO INICIAL -->
 	<section class="mt-5">
 		<div class="custom-home-container">

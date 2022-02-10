@@ -28,22 +28,26 @@
         <div class="custom-home-container">
             <div id="categoria-form-pg">
                 <div class="row justify-content-center">
+                    <h1 class="titulo-home">Alterar categoria</h1>
                     <div class="col-md-6">
-                        <form class="row g-3 text-white" action="altera-categoria.php" method="post">
+                        <form class="row g-3 text-white" action="altera-categoria.php" method="post" onsubmit="return checkForm(this);">
                             <div class="col-12">
-                                <h1 class="titulo-home">Alterar categoria</h1>
                                 <label for="inputNome" class="form-label mt-3">Nome</label>
                                 <input type="text" class="form-control" name="nome" id="inputNome" value="<?php echo $categoria["nome"]; ?>" placeholder="Nome da categoria">
                             </div>
                             <input type="hidden" name="id" value="<?php echo $categoria["id"];?>">
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-menu mt-2">Alterar</button>
+                                <button id="btnSubmit" type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Alterar</button>
+                            </div>
+                            <div class="form-text text-center">
+                                ou <br> 
+                                <a href="listar-categorias.php" class="link-padrao">Ver categorias <i class="bi bi-collection"></i></a>
                             </div>
                         </form>
                     </div>
                     <div class="row justify-content-center mt-4">
                         <div class="col-md-6">
-                            <img class="img-home mx-auto d-block" src="img/home-cinema.svg" alt="Cinema em casa">
+                            <img class="img-home mx-auto d-block" style="margin: 5vh 0 10vh 0;" src="img/home-cinema.svg" alt="Cinema em casa">
                         </div>
                     </div>
                 </div>
@@ -51,4 +55,6 @@
         </div>
     </section> 
     <!-- SEÇÃO ALTERAR CATEGORIAS -->
+
+    <script type="text/javascript" src="js/validarform.js"></script>
 <?php include("footer.php"); ?>
