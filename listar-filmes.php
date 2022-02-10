@@ -1,16 +1,16 @@
-<title>MeusFilmes - Listar Filmes</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
     include("banco-filmes.php");
     verificaUsuario();
 ?>
+<title>MeusFilmes - Listar Filmes</title>
 
 <?php 
     if (isset($_GET["add"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 O filme foi <strong>cadastrado</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -21,7 +21,7 @@
     if(isset($_GET["alterado"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 O filme foi <strong>alterado</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -32,7 +32,7 @@
     if(isset($_GET["removido"])) {
         ?>
         <div class="container sticky-top">
-            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3" style="width: 30%;" role="alert">
+            <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
                 O filme foi <strong>removido</strong> com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -42,14 +42,13 @@
 ?>
 
 <?php 
-
     // Pegar a página atual por GET
     $p = $_GET["p"];
     // Verifica se a variável tá declarada, senão deixa na primeira página como padrão
     if(isset($p)) {
-    $p = $p;
+        $p = $p;
     } else {
-    $p = 1;
+        $p = 1;
     }
 
     //Verifica se o usuario está acessando de um dispositivo mobile
@@ -69,7 +68,8 @@
     // Seleciona no banco de dados com o LIMIT indicado pelos números acima
     $query = "SELECT f.*, c.nome AS categoria_nome FROM filmes AS f JOIN categoria AS c ON c.id = f.categoria_id WHERE f.usuario_id = '{$_SESSION["id-usuario"]}' ORDER BY f.id DESC LIMIT $inicio, $qnt";
     $resultado = mysqli_query($conexao, $query);
-    ?>
+?>
+    <!-- SEÇÃO LISTAR FILMES -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="filmes-pg">
@@ -168,7 +168,7 @@
                     // Exibe o primeiro link "primeira página", que não entra na contagem acima(3)
                     ?>
                     <br>
-                    <nav id="pags" class="container-sm" aria-label="Página listar filmes">
+                    <nav id="pags" class="container-fluid aria-label="Página listar filmes">
                         <ul class="pagination justify-content-center">
                         <?php
                             if($p == 1){
@@ -180,7 +180,6 @@
                                 <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=1">Início</a></li>
                                 <?php
                             }
-
                             if($p > 1){
                                 ?>
                                 <li class="page-item"><a class="page-link pageLinkFIlmes" href="listar-filmes.php?p=<?php echo $p-1;?>"><</a></li>
@@ -255,12 +254,11 @@
             </div>
         </div>
     </section>
+    <!-- SEÇÃO LISTAR FILMES -->
     
     <div class="container position-relative mt-2">
         <a href="#" class="btn btn-menu scrollToTop position-absolute top-50 start-50 translate-middle"><i class="bi bi-chevron-double-up"></i> Voltar ao topo</a>
     </div>
-    
-    
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/listarscript.js"></script>

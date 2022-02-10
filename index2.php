@@ -39,8 +39,7 @@
 	<?php
 	}
 ?>
-
-    <!-- Seção inicio -->
+    <!-- SEÇÃO INICIAL -->
 	<section class="mt-5">
 		<div class="custom-home-container">
 			<div id="home-pg">
@@ -72,6 +71,6 @@
 				</div>
 			</div>
 		</div>
-		</section> 
-	<!-- Seção inicio -->
+	</section> 
+	<!-- SEÇÃO INICIAL -->
 <?php include("footer.php"); ?>

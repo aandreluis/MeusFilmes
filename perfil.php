@@ -68,24 +68,22 @@
     $quantidadeFilmes =  qntdFilmes($conexao, $_SESSION["id-usuario"]);
     $quantidadeCategorias =  qntdCategorias($conexao, $_SESSION["id-usuario"]);
 ?>
-
     <!-- SEÇÃO PERFIL -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="perfil-pg">
                 <div class="row justify-content-center">
                     <h1 class="titulo-home">Meu perfil</h1>
-
-                    <div class="col-md-6 avatar d-flex justify-content-center mt-3"><!-- DIV DA IMAGEM DO PERFIL -->
+                    <div class="col-md-6 avatar cropped d-flex justify-content-center mt-3"><!-- DIV DA IMAGEM DO PERFIL -->
                         <?php
                             // se a imagem por null ou não exista no diretorio referenciado
                             if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
                                 ?>
-                                <img class="img-avatar" src="img/avatar-default.svg" alt="Imagem do perfil">
+                                <img class="mx-auto d-block avatar" src="img/avatar-default.svg" alt="Imagem do perfil">
                                 <?php
                             } else {//se existir
                                 ?>
-                                <img class="img-avatar" src="img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
+                                <img class="mx-auto d-block avatar" src="img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
                                 <?php
                             }
                         ?>
@@ -144,9 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-
             </div>
         </div>
     </section> 
@@ -154,27 +150,27 @@
 
     <!-- MODAL CONFIRMAÇÃO -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border-card card-box text-white">
-        <div class="modal-header">
-            <h5 class="modal-title text-danger fw-bold" id="deleteModalLabel">Deseja deletar sua conta?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form action="confirmacao.php" method="POST">
-                <div class="mb-3">
-                    <label for="inputSenha" class="form-label text-white">Para deletar sua conta confirme sua senha:</label>
-                    <input type="password" class="form-control" name="senhaConfirmacao" placeholder="Digite sua senha" autofocus required>
-                    <div class="form-text">A exclusão da conta não poderá ser desfeita! <strong>Cuidado ao prosseguir.</strong></div>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-card card-box text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="deleteModalLabel">Deseja deletar sua conta?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </form>
+                <div class="modal-body">
+                    <form action="confirmacao.php" method="POST">
+                        <div class="mb-3">
+                            <label for="inputSenha" class="form-label text-white">Para deletar sua conta confirme sua senha:</label>
+                            <input type="password" class="form-control" name="senhaConfirmacao" placeholder="Digite sua senha" autofocus required>
+                            <div class="form-text">A exclusão da conta não poderá ser desfeita! <strong>Cuidado ao prosseguir.</strong></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-square me-2"></i>Cancelar</button>
+                    <a href="confirmacao.php" class="btn btn-danger"><i class="bi bi-trash me-2"></i>Sim, deletar</i></a>
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-square me-2"></i>Cancelar</button>
-            <a href="confirmacao.php" class="btn btn-danger"><i class="bi bi-trash me-2"></i>Sim, deletar</i></a>
-        </div>
-        </div>
-    </div>
     </div>
     <!-- MODAL CONFIRMAÇÃO -->
 <?php include("footer.php"); ?>

@@ -6,7 +6,6 @@
 ?>
 
 <?php 
-
     $nomeFilme = $_POST["palavra"];
 
     if(!buscarFilmes($conexao, $_SESSION["id-usuario"], $nomeFilme)) {
@@ -21,16 +20,14 @@
     } else {
         ?>
         <!-- Cards -->
-                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                    <?php
-                        $filmes = buscarFilmes($conexao, $_SESSION["id-usuario"], $nomeFilme);
-                        
-                        foreach($filmes as $filme){//for melhorado
-
-                    ?>
-                    <!-- início card -->
-                    <div class="col">
-                        <div class="card text-white bg-dark border-card h-100 card-box">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <?php
+                $filmes = buscarFilmes($conexao, $_SESSION["id-usuario"], $nomeFilme);                       
+                foreach($filmes as $filme){//for melhorado
+            ?>
+            <!-- início card -->
+            <div class="col">
+                <div class="card text-white bg-dark border-card h-100 card-box">
                     <?php
                     if($filme["imagem"] == NULL || $filme["imagem"] == "") {
                         ?>
@@ -42,49 +39,45 @@
                         <?php
                     }
                     ?>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $filme["nome"];?></h5>
-                            <p class="card-text">
-                                <b>Diretor:</b> <?php echo $filme["diretor"];?> <br>
-                                <b>Duração:</b> <?php echo date('H:i', strtotime($filme["duracao"]));?> <br>
-                                <b>Data Lançamento:</b> <?php echo date('d/m/Y', strtotime($filme["data_lancamento"]));?> <br>
-                                <b>Categoria:</b> <?php echo $filme["categoria_nome"];?> <br>
-                                <?php if($filme["assistido"] == '0') {
-                                    ?>
-                                    <b>Já assistido</b>
-                                    <i class="bi bi-play-circle-fill"></i>
-                                    <?php
-                                    } else {
-                                    ?>
-                                    <b>Nunca assistido</b>
-                                    <i class="bi bi-pause-circle-fill"></i>
-                                    <?php
-                                    } ?> <br>
-                                <b>Descrição:</b> <?php echo $filme["descricao"];?>
-                            </p>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <p class="card-subtitle text-center text-muted">Ações</p>
-                                </div>    
-                                <div class="row mt-2">
-                                    <a href="remove-filme.php?id=<?php echo $filme["id"];?>" class="btn btn-danger veiculos-btn d-block mx-auto"><i class="bi bi-trash"></i></a>
-                                    <a href="altera-filme-form.php?id=<?php echo $filme["id"];?>" class="btn btn-primary veiculos-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
-                                </div>       
-                            </div>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $filme["nome"];?></h5>
+                        <p class="card-text">
+                            <b>Diretor:</b> <?php echo $filme["diretor"];?> <br>
+                            <b>Duração:</b> <?php echo date('H:i', strtotime($filme["duracao"]));?> <br>
+                            <b>Data Lançamento:</b> <?php echo date('d/m/Y', strtotime($filme["data_lancamento"]));?> <br>
+                            <b>Categoria:</b> <?php echo $filme["categoria_nome"];?> <br>
+                            <?php if($filme["assistido"] == '0') {
+                                ?>
+                                <b>Já assistido</b>
+                                <i class="bi bi-play-circle-fill"></i>
+                                <?php
+                                } else {
+                                ?>
+                                <b>Nunca assistido</b>
+                                <i class="bi bi-pause-circle-fill"></i>
+                                <?php
+                                } ?> <br>
+                            <b>Descrição:</b> <?php echo $filme["descricao"];?>
+                        </p>
+                        <div class="card-footer">
+                            <div class="row">
+                                <p class="card-subtitle text-center text-muted">Ações</p>
+                            </div>    
+                            <div class="row mt-2">
+                                <a href="remove-filme.php?id=<?php echo $filme["id"];?>" class="btn btn-danger filmes-btn d-block mx-auto"><i class="bi bi-trash"></i></a>
+                                <a href="altera-filme-form.php?id=<?php echo $filme["id"];?>" class="btn btn-primary filmes-btn d-block mx-auto"><i class="bi bi-gear-fill"></i></a>
+                            </div>       
                         </div>
                     </div>
-                    <!-- fim card -->
-                <?php
-                }
-                ?>
-
                 </div>
-                <!-- Cards -->
             </div>
-            <?php
+            <!-- fim card -->
+        <?php
+        }
+        ?>
+        </div>
+        <!-- Cards -->
+    </div>
+    <?php
     }
-    
-
-
 ?>

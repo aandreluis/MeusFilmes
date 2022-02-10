@@ -48,8 +48,7 @@
 		<?php
 	}
 ?>
-
-	<!-- Seção cadastro de usuarios -->
+	<!-- SEÇÃO CADASTRO DE USUÁRIOS -->
 	<section class="mt-5">
 		<div class="custom-home-container">
 			<div id="login-pg">
@@ -86,12 +85,12 @@
 								Já possui uma conta? <br>
 								<a  href="index.php" class="link-padrao">Fazer login <i class="bi bi-box-arrow-in-right"></i></a>
 							</div>
-							</form>
+						</form>
 					</div>
-					</div>
+				</div>
 			</div>
 		</div>
-		</section> 
-	<!-- Seção cadastro de usuarios -->
+	</section> 
+	<!-- SEÇÃO CADASTRO DE USUÁRIOS -->
 
 <?php include ("footer.php") ?>

@@ -1,4 +1,3 @@
-<title>MeusFilmes - Alterar</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
@@ -6,6 +5,7 @@
     include("banco-categorias.php");
     verificaUsuario();
 ?>
+<title>MeusFilmes - Alterar Filme</title>
 
 <?php 
     $id = $_GET["id"];
@@ -51,8 +51,7 @@
 	}
     //erros upload da imagem
 ?>
-
-<!-- Seção inicio -->
+<!-- SEÇÃO ALTERAR FILMES -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="home-pg">
@@ -61,7 +60,7 @@
                         <img class="img-home mx-auto d-block" src="img/home-cinema.svg" alt="Cinema em casa">
                     </div>
                     <div class="col-md-6">
-                    <h1 class="titulo-home">Alterar Filme</h1>
+                        <h1 class="titulo-home">Alterar Filme</h1>
                         <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
@@ -82,14 +81,14 @@
                                 <input type="hidden" name="imagemCapaAtual" value="<?php echo $filme["imagem"];?>">
                                 <div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg</div>
                             </div>
-                                <div class="col-md-4">
-                                    <label for="inputDuracao" class="form-label">Duração *</label>
-                                    <input type="time" class="form-control" name="duracao" value="<?php echo $filme["duracao"]; ?>" placeholder="Duração do filme">
-                                </div>
-                                <div class="col-md-8">
-                                    <label for="inputData" class="form-label">Data de lançamento *</label>
-                                    <input type="date" class="form-control" name="data_lancamento" value="<?php echo $filme["data_lancamento"]; ?>">
-                                </div>
+                            <div class="col-md-4">
+                                <label for="inputDuracao" class="form-label">Duração *</label>
+                                <input type="time" class="form-control" name="duracao" value="<?php echo $filme["duracao"]; ?>" placeholder="Duração do filme">
+                            </div>
+                            <div class="col-md-8">
+                                <label for="inputData" class="form-label">Data de lançamento *</label>
+                                <input type="date" class="form-control" name="data_lancamento" value="<?php echo $filme["data_lancamento"]; ?>">
+                            </div>
                             <div class="col-12">
                                 <label for="categoria" class="form-label">Categoria +<a href="categoria-formulario.php" class="link-padrao ms-1">Adicionar Categoria</a></label>
                                 <select name="categoria_id" class="form-select">
@@ -114,7 +113,7 @@
                                             $assistido = "";
                                         }
                                     ?>
-                                <input class="form-check-input" type="checkbox" name="assistido" value="true" <?php echo $assistido; ?>>
+                                    <input class="form-check-input" type="checkbox" name="assistido" value="true" <?php echo $assistido; ?>>
                                     Já assistiu?
                                 </div>
                                 <input type="hidden" name="id" value="<?php echo $filme["id"];?>">
@@ -132,7 +131,7 @@
             </div>
         </div>
     </section> 
-    <!-- Seção inicio -->
+    <!-- SEÇÃO ALTERAR FILMES -->
 
     <script type="text/javascript" src="js/filmes-forms.js"></script>
 <?php include("footer.php"); ?>

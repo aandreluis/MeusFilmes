@@ -1,10 +1,10 @@
-<title>MeusFilmes - Listar Categorias</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
     include("banco-categorias.php");
     verificaUsuario();
 ?>
+<title>MeusFilmes - Listar Categorias</title>
 
 <?php
     if(isset($_GET["alterado"])) {
@@ -41,9 +41,8 @@
         </div>
         <?php
     }
-    ?>
-
-<!-- Seção inicio -->
+?>
+<!-- SEÇÃO LISTAR CATEGORIAS -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="home-pg">
@@ -53,12 +52,12 @@
                     <?php
                     if (!listaCategoriasUsuario($conexao, $_SESSION["id-usuario"], 2)) {//verifica se existe categorias para mostrar
                         ?>
-                            <div class="row d-flex justify-content-center mt-4">
-                                <div class="col-md-12">
-                                    <h5 class="paragrafo-home text-muted text-center">Ops... Nenhuma categoria encontrada!</h5>
-                                    <img class="mx-auto d-block" style="width: 60%; margin: 5vh 0 10vh 0;" src="img/searching.svg" alt="Nada encontrado" >
-                                </div>
+                        <div class="row d-flex justify-content-center mt-4">
+                            <div class="col-md-12">
+                                <h5 class="paragrafo-home text-muted text-center">Ops... Nenhuma categoria encontrada!</h5>
+                                <img class="mx-auto d-block" style="width: 60%; margin: 5vh 0 10vh 0;" src="img/searching.svg" alt="Nada encontrado" >
                             </div>
+                        </div>
                     <?php
                     } else {
                     ?>            
@@ -69,14 +68,14 @@
                             </tr>
                         <?php
                         $categorias = listaCategoriasUsuario($conexao, $_SESSION["id-usuario"], 2);
-                            foreach($categorias as $categoria){//for melhorado
-                        ?>
+                        foreach($categorias as $categoria){//for melhorado
+                            ?>
                             <tr class="text-white">
                                 <td><?php echo $categoria["nome"]; ?></td>
                                 <td><a class="btn btn-danger" href="remove-categoria.php?id=<?php echo $categoria["id"] ?>"><i class="bi bi-trash"></i></a></td>
                                 <td><a class="btn btn-primary" href="altera-categoria-form.php?id=<?php echo $categoria["id"] ?>"><i class="bi bi-gear-fill"></td>
                             </tr>
-                        <?php
+                            <?php
                         }
                     }
                         ?>
@@ -85,10 +84,9 @@
                     <div class="col-md-6 d-flex">
                         <img class="img-home mx-auto d-block" src="img/list.svg" alt="Cinema em casa">
                     </div>
-
                 </div>
             </div>
         </div>
     </section> 
-    <!-- Seção inicio -->
+    <!-- SEÇÃO LISTAR CATEGORIAS -->
 <?php include("footer.php"); ?>

@@ -1,4 +1,3 @@
-<title>MeusFilmes - Adicionar Filmes</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
@@ -6,13 +5,13 @@
     include("banco-categorias.php");
     verificaUsuario();
 ?>
+<title>MeusFilmes - Adicionar Filmes</title>
 
 <?php 
     $categorias = listaCategoriasUsuario($conexao, $_SESSION["id-usuario"], 1);
 ?>
 
 <?php 
-
     if (isset($_GET["add"])) {
         ?>
             <div class="container sticky-top">
@@ -83,10 +82,8 @@
 		}
 	}
     //erros upload da imagem
-
 ?>
-
-<!-- Seção inicio -->
+<!-- SEÇÃO ADICIONAR FILMES -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="filmes-form-pg">
@@ -94,9 +91,8 @@
                     <div class="col-md-6 d-flex">
                         <img class="img-home mx-auto d-block" src="img/create.svg" alt="Cinema em casa">
                     </div>
-
                     <div class="col-md-6">
-                    <h1 class="titulo-home">Cadastrar Filme</h1>
+                        <h1 class="titulo-home">Cadastrar Filme</h1>
                         <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="adiciona-filme.php" method="post">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
@@ -140,7 +136,7 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="assistido" value="true"> Já assistiu?
+                                    <input class="form-check-input" type="checkbox" name="assistido" value="true"> Já assistiu?
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
@@ -156,7 +152,7 @@
             </div>
         </div>
     </section> 
-    <!-- Seção inicio -->
+    <!-- SEÇÃO ADICIONAR FILMES -->
 
     <script type="text/javascript" src="js/filmes-forms.js"></script>
 <?php include("footer.php"); ?>

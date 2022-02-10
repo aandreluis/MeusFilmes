@@ -1,10 +1,10 @@
-<title>MeusFilmes - Adicionar Categorias</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
     include("banco-categorias.php");
     verificaUsuario();
 ?>
+<title>MeusFilmes - Alterar Categoria</title>
 
 <?php 
     $id = $_GET["id"];
@@ -12,22 +12,18 @@
 ?>
 
 <?php 
-if(isset($_GET["camposVazios"])) {
-    ?>
-    <div class="container sticky-top">
-        <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-            Preencha o campo <strong>nome</strong> para adicionar a categoria.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    if(isset($_GET["camposVazios"])) {
+        ?>
+        <div class="container sticky-top">
+            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                Preencha o campo <strong>nome</strong> para adicionar a categoria.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         </div>
-    </div>
-    
-<?php
-}
-
-
+    <?php
+    }
 ?>
-
-<!-- Seção inicio -->
+    <!--SEÇÃO ALTERAR CATEGORIAS -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="categoria-form-pg">
@@ -39,9 +35,7 @@ if(isset($_GET["camposVazios"])) {
                                 <label for="inputNome" class="form-label mt-3">Nome</label>
                                 <input type="text" class="form-control" name="nome" id="inputNome" value="<?php echo $categoria["nome"]; ?>" placeholder="Nome da categoria">
                             </div>
-
                             <input type="hidden" name="id" value="<?php echo $categoria["id"];?>">
-                            
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-menu mt-2">Alterar</button>
                             </div>
@@ -56,5 +50,5 @@ if(isset($_GET["camposVazios"])) {
             </div>
         </div>
     </section> 
-    <!-- Seção inicio -->
+    <!-- SEÇÃO ALTERAR CATEGORIAS -->
 <?php include("footer.php"); ?>

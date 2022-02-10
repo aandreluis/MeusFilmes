@@ -1,8 +1,8 @@
-<!-- Rodapé -->
+	<!-- Rodapé -->
 	<div class="rodape-bg mt-5">
 		<footer class="d-flex flex-wrap justify-content-center align-items-center py-4">
 			<div class="col-12 col-md-4 d-flex align-items-center">
-				<a href="index.php" class="mb-2 me-2 ms-2 mt-2 mb-md-0 text-muted text-decoration-none lh-1">
+				<a href="index2.php" class="mb-2 me-2 ms-2 mt-2 mb-md-0 text-muted text-decoration-none lh-1">
 					<img class="d-inline-block align-text-center me-2" width="40" src="img/logo-footer.png" alt="logo">
 				</a>
 				<span class="text-muted me-2">&copy; 2021 MeusFilmes, Desenvolvido por <a class="link-secondary" href="https://github.com/aandreluis/" target="_blanck">André Luis</a></span>
@@ -14,7 +14,7 @@
 			</ul>
 		</footer>
 	</div>
-		<!-- Rodapé -->
+	<!-- Rodapé -->
 
 	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 	</body>

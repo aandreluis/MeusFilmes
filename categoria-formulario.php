@@ -1,9 +1,9 @@
-<title>MeusFilmes - Adicionar Categorias</title>
 <?php 
     include("header.php"); 
     include("conecta.php");
     verificaUsuario();
-?>
+    ?>
+<title>MeusFilmes - Adicionar Categorias</title>
 
 <?php 
     if(isset($_GET["add"])) {
@@ -42,7 +42,7 @@
 	}
 ?>
 
-<!-- Seção inicio -->
+<!-- SEÇÃO ADICIONAR CATEGORIAS -->
     <section class="mt-5">
         <div class="custom-home-container">
             <div id="categoria-form-pg">
@@ -54,7 +54,6 @@
                                 <label for="inputNome" class="form-label mt-3">Nome *</label>
                                 <input type="text" class="form-control" name="nome" id="inputNome" placeholder="Nome da categoria">
                             </div>
-                            
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-menu mt-2"><i class="bi bi-plus-square me-2"></i>Adicionar</button>
                             </div>
@@ -73,5 +72,5 @@
             </div>
         </div>
     </section> 
-    <!-- Seção inicio -->
+    <!-- SEÇÃO ADICIONAR CATEGORIAS -->
 <?php include("footer.php"); ?>

@@ -27,7 +27,7 @@
 		<!-- MENU -->
         <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
             <div class="container">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="index2.php">
                     <img class="d-inline-block align-text-center me-2" width="50px" src="img/logo.png" alt="logo">
                     <h2 class="nav-title d-inline-block align-text-top">MeusFilmes</h2>
                 </a>
@@ -65,11 +65,11 @@
                                     //se a imagem por null ou não exista no diretorio referenciado
                                 if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
                                     ?>
-                                    <img src="img/avatar-default.svg" width="27" height="27" class="rounded-circle">
+                                    <img src="img/avatar-default.svg" width="27" height="27" class="rounded-circle" style="object-fit: cover; object-position: center;">
                                     <?php
                                 } else {//se existir
                                     ?>
-                                    <img src="img/avatar/<?php ob_start(); echo $_SESSION["imagem-usuario"];?>" width="27" height="27" class="rounded-circle">
+                                    <img src="img/avatar/<?php ob_start(); echo $_SESSION["imagem-usuario"];?>" width="27" height="27" class="rounded-circle" style="object-fit: cover; object-position: center;">
                                     <?php
                                 }
                             ?>

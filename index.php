@@ -10,7 +10,7 @@
 		?>
 		<div class="container sticky-top">
 			<div id="myAlert" name="alert" class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				Você não tem acesso a esta funcionalidade. <strong>Favor fazer login.</strong>
+				Você está <strong>desconectado</strong> ou <strong>não possui</strong> acesso a essa funcionalidade. <strong>Faça login para continuar.</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 		<?php
 	}
 ?>
-	<!-- Seção login -->
+	<!-- SEÇÃO LOGIN -->
 	<section class="mt-5">
 		<div class="custom-home-container">
 			<div id="login-pg">
@@ -77,13 +77,13 @@
 									<a  href="usuario-formulario.php" class="link-padrao">Cadastre-se aqui! <i class="bi bi-person-lines-fill"></i></a>
 								</div>
 							</div>
-							</form>
+						</form>
 					</div>
-					</div>
+				</div>
 			</div>
 		</div>
-		</section> 
-	<!-- Seção login -->
+	</section> 
+	<!-- SEÇÃO LOGIN -->
 
 
 <?php include ("footer.php") ?>
