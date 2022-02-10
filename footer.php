@@ -16,6 +16,21 @@
 	</div>
 	<!-- Rodapé -->
 
+	<!-- SCRIPT PARA FECHAR OS ALERT AUTOMATICAMENTE USANDO JQUERY -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+		
+			window.setTimeout(function() {
+				$(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+					$(this).remove(); 
+				});
+			}, 4000);
+			
+		});
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- SCRIPT PARA FECHAR OS ALERT AUTOMATICAMENTE USANDO JQUERY -->
+
 	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
