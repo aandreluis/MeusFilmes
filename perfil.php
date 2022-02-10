@@ -77,13 +77,13 @@
                     <div class="col-md-6 avatar cropped d-flex justify-content-center mt-3"><!-- DIV DA IMAGEM DO PERFIL -->
                         <?php
                             // se a imagem por null ou não exista no diretorio referenciado
-                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                            if($_SESSION["imagem-usuario"] == NULL || !file_exists("./img/avatar/".$_SESSION["imagem-usuario"])) {
                                 ?>
                                 <img class="mx-auto d-block avatar" src="img/avatar-default.svg" alt="Imagem do perfil">
                                 <?php
                             } else {//se existir
                                 ?>
-                                <img class="mx-auto d-block avatar" src="img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
+                                <img class="mx-auto d-block avatar" src="./img/avatar/<?php echo $_SESSION["imagem-usuario"]; ?>" alt="Imagem do perfil">
                                 <?php
                             }
                         ?>

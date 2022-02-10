@@ -18,7 +18,7 @@
     if(empty($imagem = $_FILES['imagem']['name'])) {
         $imagemFinal = $_SESSION["imagem-usuario"]; //deixa a imagem atual da sessão
     } else {
-        $_UP["pasta"] = "/xampp/htdocs/meusfilmes/img/avatar/";//caminho
+        $_UP["pasta"] = "./img/avatar/";//caminho
         $_UP["tamanho"] = 1024*1024*100; //5mb
         $_UP["extensoes"] = array('png', 'jpg', 'jpeg');//array com as extensões permitidas
         $_UP["renomeia"] = true;

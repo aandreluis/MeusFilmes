@@ -30,7 +30,7 @@
     if(empty($imagem = $_FILES['imagem']['name'])) {
         $imagemFinal = ""; //deixa vazia
     } else {
-        $_UP["pasta"] = "/xampp/htdocs/meusfilmes/img/capa-filmes/"; //caminho
+        $_UP["pasta"] = "./img/capa-filmes/"; //caminho
         $_UP["tamanho"] = 1024*1024*100; //5mb
         $_UP["extensoes"] = array('png', 'jpg', 'jpeg');//array com as extensões permitidas
         $_UP["renomeia"] = true;

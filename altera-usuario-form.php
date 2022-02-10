@@ -61,7 +61,7 @@
 					<div class="row">
 						<?php
 						// se a imagem por null ou não exista no diretorio referenciado
-						if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+						if($_SESSION["imagem-usuario"] == NULL || !file_exists("./img/avatar/".$_SESSION["imagem-usuario"])) {
 							?>
 							<img class="mx-auto d-block avatar" src="img/avatar-default.svg" alt="Imagem do perfil">
 							<?php

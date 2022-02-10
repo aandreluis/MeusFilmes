@@ -26,7 +26,7 @@
     }
 
     function removeImagemCapa($imagemNome) {//remove no momento que altera a imagem.
-        $imagem = "/xampp/htdocs/meusfilmes/img/capa-filmes/".$imagemNome;
+        $imagem = "./img/capa-filmes/".$imagemNome;
         if(file_exists($imagem)) {
             unlink($imagem);
             return true;
@@ -40,7 +40,7 @@
         if($imagemNome == NULL || $imagemNome == ''){
             return 0;
         }
-        $imagem = "/xampp/htdocs/meusfilmes/img/capa-filmes/".$imagemNome;
+        $imagem = "./img/capa-filmes/".$imagemNome;
         if(file_exists($imagem)) {
             unlink($imagem);
             return 1;

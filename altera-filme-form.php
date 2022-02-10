@@ -54,7 +54,7 @@
 <!-- SEÇÃO ALTERAR FILMES -->
     <section class="mt-5">
         <div class="custom-home-container">
-            <div id="home-pg">
+            <div id="filmes-form-pg">
                 <div class="row">
                     <div class="col-md-6">
                         <img class="img-home mx-auto d-block" src="img/home-cinema.svg" alt="Cinema em casa">

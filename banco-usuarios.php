@@ -30,7 +30,7 @@
     }
 
     function removeImagem() { //altera-usuario
-        $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
+        $imagem = "./img/avatar/".$_SESSION["imagem-usuario"];
         if(file_exists($imagem)) {
             unlink($imagem);
             return 1;
@@ -44,7 +44,7 @@
         if($validarImagem == NULL || $validarImagem == ''){
             return 0;
         }
-        $imagem = "/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"];
+        $imagem = "./img/avatar/".$_SESSION["imagem-usuario"];
         if(file_exists($imagem)) {
             unlink($imagem);
             return 1;

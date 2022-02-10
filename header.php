@@ -63,7 +63,7 @@
                             <a class="btn btn-menu btn-drop-end nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php
                                     //se a imagem por null ou não exista no diretorio referenciado
-                                if($_SESSION["imagem-usuario"] == NULL || !file_exists("/xampp/htdocs/meusfilmes/img/avatar/".$_SESSION["imagem-usuario"])) {
+                                if($_SESSION["imagem-usuario"] == NULL || !file_exists("./img/avatar/".$_SESSION["imagem-usuario"])) {
                                     ?>
                                     <img src="img/avatar-default.svg" width="27" height="27" class="rounded-circle" style="object-fit: cover; object-position: center;">
                                     <?php
