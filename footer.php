@@ -17,6 +17,7 @@
 	<!-- Rodapé -->
 
 	<!-- SCRIPT PARA FECHAR OS ALERT AUTOMATICAMENTE USANDO JQUERY -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 		
@@ -28,9 +29,8 @@
 			
 		});
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- SCRIPT PARA FECHAR OS ALERT AUTOMATICAMENTE USANDO JQUERY -->
-
+	
 	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

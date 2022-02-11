@@ -83,6 +83,7 @@
                             <div class="form-text text-center">Tente pesquisar o filme pelo seu nome. Exemplo: "Homem-Aranha"</div>
                             <form class="d-flex mt-1" id="form-pesquisa" method="POST" action="">
                                 <input class="form-control" id="pesquisa" type="text" placeholder="Digite o nome do filme" aria-label="Search">
+                                <input type="submit" disabled hidden> <!-- impede que aperte ENTER no input pesquisa -->
                             </form>
                         </div>
                     </div>
