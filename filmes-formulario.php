@@ -34,16 +34,62 @@
         <?php
     }
 
-    if(isset($_GET["camposVazios"])) {
-		?>
-		<div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-            	Preencha todos os campos <strong>obrigatórios*</strong> para adicionar o filme.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    if(isset($_GET["erro"])) {
+        if($_GET["erro"] == "camposVazios"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Preencha todos os campos <strong>obrigatórios*</strong> para adicionar o filme.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
-        </div>
-		
-	<?php
+            <?php
+		}
+        
+        if($_GET["erro"] == "dataInvalida"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Não foi possível adicionar o filme pois, a <strong>"data lançamento"</strong> que você informou é <strong>inválida!</strong> Tente novamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+		}
+
+        if($_GET["erro"] == "duracaoInvalida"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Não foi possível adicionar o filme pois, a <strong>"duração"</strong> que você informou é <strong>inválida!</strong> Tente novamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+		}
+
+        if($_GET["erro"] == "categoriaInvalida"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Não foi possível adicionar o filme pois, a <strong>"categoria"</strong> que você informou é <strong>inválida!</strong> Tente novamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+		}
+
+        if($_GET["erro"] == "assistidoInvalido"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Não foi possível adicionar o filme, por existir um erro no campo<strong>"Já assistiu?"</strong>. Tente novamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+		}
+        
 	}
 
     //erros upload da imagem
@@ -52,7 +98,7 @@
 			?>
 			<div class="container sticky-top">
 			<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-                Não foi possível cadastrar o filme, pois a imagem da capa possui <strong>extensão inválida.</strong>
+                Não foi possível cadastrar o filme pois, a imagem da capa possui <strong>extensão inválida.</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 			</div>
@@ -62,7 +108,7 @@
 				?>
 				<div class="container sticky-top">
 				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-					Não foi possível cadastrar o filme, pois a imagem da capa é <strong>muito grande.</strong>
+					Não foi possível cadastrar o filme pois, a imagem da capa é <strong>muito grande.</strong>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 				</div>
@@ -72,7 +118,7 @@
 					?>
 					<div class="container sticky-top">
 					<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-                    Não foi possível cadastrar o filme, pois a imagem da capa <strong>não foi cadastrada com sucesso.</strong>
+                    Não foi possível cadastrar o filme pois, a imagem da capa <strong>não foi cadastrada com sucesso.</strong>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 					</div>

@@ -5,6 +5,18 @@
     verificaUsuario();
 ?>
 <?php
+    // Pegando as variáveis dinamicamente
+    foreach ($_POST as $chave => $valor) {
+        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
+        $$chave = trim(strip_tags($valor));
+
+        //verifica se algum campo está vazio
+        if (empty ($valor)) {
+            header("location: filmes-formulario.php?erro=camposVazios");
+            die();  
+        }
+    }
+
     //pega as variaveis do formulario
     $nome = $_POST["nome"];
     $diretor = $_POST["diretor"];
@@ -13,17 +25,42 @@
     $duracao = $_POST["duracao"];
     $categoria_id = $_POST["categoria_id"];
     $usuario_id = $_SESSION["id-usuario"]; //adiciona o user da sessão no banco
-    
     if(isset($_POST['assistido'])) {
         $assistido = "0";
     } else {
        $assistido = "1";
     }
 
-    //verifica se algum campo está vazio
-    if(empty($nome) || empty($diretor) || empty($descricao) || empty($data_lancamento) || empty($duracao)) {
-        header("location: filmes-formulario.php?camposVazios=true");
+    //validação do input data_duração
+    $data = $data_lancamento;
+    $d = DateTime::createFromFormat('Y-m-d', $data); //define o formato Ano-Mês-Dia
+    if($d && $d->format('Y-m-d') == $data){//verifica se o formato é igual ao aceito
+        //data valida
+    }else{
+        header("location: filmes-formulario.php?erro=dataInvalida");
         die();
+    } 
+
+    //validação do input duração
+    $tempo = $duracao;
+    $d = DateTime::createFromFormat('H:i', $tempo); //define o formato Hora:Minuto
+    if($d && $d->format('H:i') == $tempo){
+        //tempo valido
+    }else{
+        header("location: filmes-formulario.php?erro=duracaoInvalida");
+        die();
+    }
+
+    //verifica se existe e se é número (id)
+    if((!isset($categoria_id) || !is_numeric($categoria_id))) {
+        header("location: filmes-formulario.php?erro=categoriaInvalida");
+       die();
+    }
+
+    //verifica se existe e se é número (1 e 0)
+    if((!isset($assistido) || !is_numeric($assistido))) {
+        header("location: filmes-formulario.php?erro=assistidoInvalido");
+       die();
     }
 
     //upload imagem da capa
