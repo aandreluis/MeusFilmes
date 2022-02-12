@@ -3,8 +3,8 @@
     include("banco-usuarios.php"); 
     include("logica-usuario.php");
 ?>
+
 <?php
-    
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -22,26 +22,20 @@
             die();  
         }
     }
-    
 
-     //verificação do email
-     if(verificaEmail($conexao, $email)) {
+    //verificação do email valido e se já existe
+    if(verificaEmail($conexao, $email)) {
         header("location: usuario-formulario.php?erro=emailInvalido");
         die();
     }
 
     //vefiricação da senha
-    if($senha == "" || $senha == NULL) { //senha em branco
-        header("location: usuario-formulario.php?erro=senhaInvalida");
-        die();
+    if($senha == $senhaConfirmacao) {
+        //Ok
+        $senhaMd5 = md5($senha);
     } else {
-        if($senha == $senhaConfirmacao) {
-            //Ok
-            $senhaMd5 = md5($senha);
-        } else {
-            header("location: usuario-formulario.php?erro=senhasNaoConferem");
-            die();
-        }
+        header("location: usuario-formulario.php?erro=senhasNaoConferem");
+        die();
     }
        
     //cadastro do usuario

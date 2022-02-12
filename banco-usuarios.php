@@ -9,13 +9,10 @@
     }
 
     function verificaEmail($conexao, $email) {
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return 1; //evail invalido
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return 1; //email invalido
         }
-
-        if($email == "" || $email == NULL) {
-            return 1;
-        }
+        
         $linhas = mysqli_query($conexao, "select * from usuarios where email = '{$email}'");
         if(mysqli_num_rows($linhas) > 0){
             return 1; //existe um email ja cadastrado

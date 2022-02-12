@@ -8,7 +8,7 @@
         ?>
         <div class="container sticky-top">
 			<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				Não foi possivel realizar o cadastro. <strong>Tente novamente!</strong>
+				Não foi possivel realizar o cadastro. <strong>Tente novamente.</strong>
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
 		</div>
@@ -31,21 +31,10 @@
 			?>
 			<div class="container sticky-top">
 				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-					Este email é invalido ou já foi cadastrado. <strong>Tente um novamente!</strong>
+					Este email é <strong>invalido</strong> ou <strong>já foi cadastrado.</strong> Tente novamente.
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			</div>
-			<?php
-		}
-
-		if($_GET["erro"] == "senhaInvalida") {
-			?>
-			<div class="container sticky-top">
-				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-					Senha invalida. <strong>Tente uma nova senha!</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-			</div>	
 			<?php
 		}
 
@@ -53,7 +42,7 @@
 			?>
 			<div class="container sticky-top">
 				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-					As senhas que você digitou não conferem. <strong>Tente novamente!</strong>
+					As senhas que você digitou <strong>não conferem.</strong> Tente novamente.
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			</div>
