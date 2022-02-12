@@ -5,17 +5,6 @@
     verificaUsuario();
 ?>
 <?php
-    // Pegando as variáveis dinamicamente
-    foreach ($_POST as $chave => $valor) {
-        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
-        $$chave = trim(strip_tags($valor));
-
-        //verifica se algum campo está vazio
-        if (empty ($valor)) {
-            header("location: filmes-formulario.php?erro=camposVazios");
-            die();  
-        }
-    }
 
     //pega as variaveis do formulario
     $nome = $_POST["nome"];
@@ -29,6 +18,24 @@
         $assistido = "0";
     } else {
        $assistido = "1";
+    }
+
+    // Pegando as variáveis dinamicamente
+    foreach ($_POST as $chave => $valor) {
+        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
+        $$chave = trim(strip_tags($valor));
+
+        //verifica se algum campo está vazio
+        if (empty ($valor)) {
+            header("location: filmes-formulario.php?erro=camposVazios");
+            die();  
+        }
+    }
+
+    //verifica se ja existe um filme com o mesmo nome cadastrado
+    if(verificaNomeFilme($conexao, $nome, $usuario_id)) {
+        header("location: filmes-formulario.php?erro=filmeRepetido");
+        die(); 
     }
 
     //validação do input data_duração

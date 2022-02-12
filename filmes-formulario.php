@@ -45,7 +45,18 @@
             </div>
             <?php
 		}
-        
+
+        if($_GET["erro"] == "filmeRepetido"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Não é possível adicionar esse filme pois, o mesmo<strong> já foi cadastrado.</strong> Tente novamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+		}
+
         if($_GET["erro"] == "dataInvalida"){
             ?>
             <div class="container sticky-top">
