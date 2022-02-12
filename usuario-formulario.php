@@ -15,37 +15,50 @@
     	<?php
 	}
 
-	if(isset($_GET["emailInvalido"])) {
-		?>
-		<div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-            	Este email é invalido ou já foi cadastrado. <strong>Tente um novamente!</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	if(isset($_GET["erro"])) {
+        if($_GET["erro"] == "camposVazios"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Preencha todos os campos <strong>obrigatórios*</strong> para realizar o cadastro.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
-        </div>
-		<?php
-	}
+            <?php
+		}
 
-	if(isset($_GET["senhaInvalida"])) {
-		?>
-		<div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				Senha invalida. <strong>Tente uma nova senha!</strong>
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>	
-		<?php
-	}
+		if($_GET["erro"] == "emailInvalido") {
+			?>
+			<div class="container sticky-top">
+				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					Este email é invalido ou já foi cadastrado. <strong>Tente um novamente!</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+			<?php
+		}
 
-	if(isset($_GET["senhasNaoConferem"])) {
-		?>
-		<div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-				As senhas que você digitou não conferem. <strong>Tente novamente!</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-		<?php
+		if($_GET["erro"] == "senhaInvalida") {
+			?>
+			<div class="container sticky-top">
+				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					Senha invalida. <strong>Tente uma nova senha!</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>	
+			<?php
+		}
+
+		if($_GET["erro"] == "senhasNaoConferem") {
+			?>
+			<div class="container sticky-top">
+				<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+					As senhas que você digitou não conferem. <strong>Tente novamente!</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+			<?php
+		}
 	}
 ?>
 	<!-- SEÇÃO CADASTRO DE USUÁRIOS -->

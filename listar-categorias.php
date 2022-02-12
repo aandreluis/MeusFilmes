@@ -7,6 +7,19 @@
 <title>MeusFilmes - Listar Categorias</title>
 
 <?php
+    if(isset($_GET["add"])) {
+        if($_GET["add"] == "true") {
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-success alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    A categoria foi <strong>cadastrada</strong> com sucesso!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php
+        }
+    }
+
     if(isset($_GET["alterado"])) {
         if($_GET["alterado"] == "true") {
             ?>

@@ -10,24 +10,36 @@
     $senha = $_POST["senha"];
     $senhaConfirmacao = $_POST["senhaConfirmacao"];
     $imagemNome = "IMG-default".date("-dmY-Hisa").".png"; //concatena IMG + DATA e HORA + extensão
+
+    // Pegando as variáveis dinamicamente
+    foreach ($_POST as $chave => $valor) {
+        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
+        $$chave = trim(strip_tags($valor));
+
+        //verifica se algum campo está vazio
+        if (empty ($valor)) {
+            header("location: usuario-formulario.php?erro=camposVazios");
+            die();  
+        }
+    }
     
 
      //verificação do email
      if(verificaEmail($conexao, $email)) {
-        header("location: usuario-formulario.php?emailInvalido=true");
+        header("location: usuario-formulario.php?erro=emailInvalido");
         die();
     }
 
     //vefiricação da senha
     if($senha == "" || $senha == NULL) { //senha em branco
-        header("location: usuario-formulario.php?senhaInvalida=true");
+        header("location: usuario-formulario.php?erro=senhaInvalida");
         die();
     } else {
         if($senha == $senhaConfirmacao) {
             //Ok
             $senhaMd5 = md5($senha);
         } else {
-            header("location: usuario-formulario.php?senhasNaoConferem=true");
+            header("location: usuario-formulario.php?erro=senhasNaoConferem");
             die();
         }
     }

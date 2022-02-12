@@ -9,6 +9,10 @@
     }
 
     function verificaEmail($conexao, $email) {
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return 1; //evail invalido
+        }
+
         if($email == "" || $email == NULL) {
             return 1;
         }
