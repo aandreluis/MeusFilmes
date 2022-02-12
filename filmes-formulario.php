@@ -150,32 +150,32 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="titulo-home">Cadastrar Filme</h1>
-                        <form class="row g-3 text-white mt-2" enctype="multipart/form-data" action="adiciona-filme.php" method="post" onsubmit="return checkForm(this);">
+                        <form id="filmeForm" class="row g-3 text-white mt-2" enctype="multipart/form-data" action="adiciona-filme.php" method="post" onsubmit="return checkForm(this);">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
-                                <input type="text" class="form-control" name="nome" placeholder="Nome do filme" autofocus>
+                                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do filme" autofocus>
                             </div>
                             <div class="col-md-6">
                                 <label for="inputDiretor" class="form-label">Diretor *</label>
-                                <input type="text" class="form-control" name="diretor" placeholder="Nome do diretor">
+                                <input type="text" class="form-control" name="diretor" id="diretor" placeholder="Nome do diretor">
                             </div>
                             <div class="col-12">
                                 <label for="inputDescricao" class="form-label">Descrição *</label>
-                                <textarea id="descricao" style="resize: none; height: 100px;" class="form-control" name="descricao"  maxlength="200" placeholder="Uma breve descrição sobre o filme"></textarea>                                
+                                <textarea style="resize: none; height: 100px;" class="form-control" name="descricao" id="descricao" maxlength="200" placeholder="Uma breve descrição sobre o filme"></textarea>                                
                                 <div class="form-text" id="falta">Cuidado com o limite de caracteres! Faltam: <strong>200</strong> caracteres. <i class="bi bi-exclamation-circle"></i></div>
                             </div>
                             <div class="col-md-12">
                                 <label for="formFile" class="form-label">Imagem da capa</label>
-                                <input class="form-control" type="file" name="imagem" accept=".jpg, .png, .jpeg">
+                                <input class="form-control" type="file" name="imagem" id="imagem" accept=".jpg, .png, .jpeg">
                                 <div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg</div>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputDuracao" class="form-label">Duração *</label>
-                                <input type="time" class="form-control" name="duracao" placeholder="Duração do filme">
+                                <input type="time" class="form-control" name="duracao" id="duracao" placeholder="Duração do filme">
                             </div>
                             <div class="col-md-8">
                                 <label for="inputData" class="form-label">Data de lançamento *</label>
-                                <input type="date" class="form-control" name="data_lancamento">
+                                <input type="date" class="form-control" name="data_lancamento" id="dataLancamento">
                             </div>
                             <div class="col-12">
                                 <label for="categoria" class="form-label">Categoria * +<a href="categoria-formulario.php" class="link-padrao ms-1">Adicionar Categoria</a></label>
@@ -210,6 +210,10 @@
         </div>
     </section> 
     <!-- SEÇÃO ADICIONAR FILMES -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
 
     <script type="text/javascript" src="js/filmes-forms.js"></script>
     <script type="text/javascript" src="js/validarform.js"></script>
