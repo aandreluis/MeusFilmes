@@ -16,18 +16,17 @@ textDescricao.addEventListener("keydown", function(){
 
 $("#filmeForm").validate({
     errorClass: "is-invalid",
-    validClass: "os-valid",
+    validClass: "is-valid",
     rules : {
         nome:{
             required:true,
-            minlength:4
         },
         diretor:{
             required:true,
         },
         descricao:{
             required:true,
-            maxlength:100
+            maxlength:200
         },
         imagem:{
             accept: "image/*",
@@ -36,7 +35,7 @@ $("#filmeForm").validate({
         duracao:{
             required:true,
         },
-        dataLancamento:{
+        data_lancamento:{
             required:true,
             date:true
         },
@@ -46,14 +45,13 @@ $("#filmeForm").validate({
     },
     messages:{
         nome:{
-            required:"Informe o nome do filme",
-            minlength:"O nome deve ter pelo menos 4 caracteres"
+            required:"Informe o nome",
         },
         diretor:{
-            required:"Informe o nome do diretor",
+            required:"Informe o diretor",
         },
         descricao:{
-            required:"Informe a descrição do filme",
+            required:"Informe a descrição",
             maxlength:"Você só pode utilizar 200 caracteres!"
         },
         imagem:{
@@ -61,15 +59,31 @@ $("#filmeForm").validate({
             extension:"Só são permitidos arquivos com a extenção .png, .jpg e .jpeg"
         },
         duracao:{
-            required:"Informe a duração do filme",
+            required:"Informe a duração",
         },
-        dataLancamento:{
-            required:"Informe a data de lançamento do filme",
+        data_lancamento:{
+            required:"Informe a data de lançamento",
             date:"A data que você informou não é valida"
 
         },
         mensagem:{
             required:"A mensagem não pode ficar em branco"
         }      
+    }
+});
+
+$("error").addClass("invalid-feedback");
+
+//verifica se o form está validado
+var form = $( "#filmeForm" );
+form.validate();
+$( "#btnSubmit" ).click(function() {
+    var button = $('#btnSubmit');
+    if(form.valid()) {
+        button.prop('disabled', true);
+        button.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'+' Aguarde...');
+        $('#filmeForm').submit();
+    } else {
+        button.prop('disabled', false);
     }
 });

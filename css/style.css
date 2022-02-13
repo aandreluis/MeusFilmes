@@ -61,6 +61,22 @@ body {
     box-shadow:  0px 5px 8px 0.025rem #262626a8;
 }
 
+label.is-invalid {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+label.is-valid {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #198754;
+}
+
 .avatar {
     background-color: #262626;
     border-radius: 50%; 
