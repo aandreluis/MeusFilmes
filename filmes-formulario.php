@@ -153,16 +153,16 @@
                         <form id="filmeForm" class="row g-3 text-white mt-2" enctype="multipart/form-data" action="adiciona-filme.php" method="post" novalidate>
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
-                                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do filme" autofocus>
+                                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do filme" maxlength="30" autofocus>
                             </div>
                             <div class="col-md-6">
                                 <label for="inputDiretor" class="form-label">Diretor *</label>
-                                <input type="text" class="form-control" name="diretor" id="diretor" placeholder="Nome do diretor">
+                                <input type="text" class="form-control" name="diretor" id="diretor" placeholder="Nome do diretor" maxlength="30">
                             </div>
                             <div class="col-12">
                                 <label for="inputDescricao" class="form-label">Descrição *</label>
                                 <textarea style="resize: none; height: 100px;" class="form-control" name="descricao" id="descricao" maxlength="200" placeholder="Uma breve descrição sobre o filme"></textarea>                                
-                                <div class="form-text" id="falta">Cuidado com o limite de caracteres! Faltam: <strong>200</strong> caracteres. <i class="bi bi-exclamation-circle"></i></div>
+                                <div class="form-text" id="falta"></div>
                             </div>
                             <div class="col-md-12">
                                 <label for="formFile" class="form-label">Imagem da capa</label>
@@ -179,9 +179,9 @@
                             </div>
                             <div class="col-12">
                                 <label for="categoria" class="form-label">Categoria * +<a href="categoria-formulario.php" class="link-padrao ms-1">Adicionar Categoria</a></label>
-                                <select name="categoria_id" class="form-select">
+                                <select name="categoria_id" id="categoria_id" class="form-select">
                                     <!-- loop para chamar as categorias e seus respectivos nomes de forma dinamica com o bd -->
-                                    <option selected value="">Escolha uma categoria</option>
+                                    <option selected value="default">Escolha uma categoria</option>
                                     <?php 
                                     foreach($categorias as $categoria) {
                                         ?>
@@ -216,7 +216,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
-
     <script type="text/javascript" src="js/filmes-forms.js"></script>
-    <script type="text/javascript" src="js/validarform.js"></script>
+
 <?php include("footer.php"); ?>

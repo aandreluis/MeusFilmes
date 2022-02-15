@@ -12,16 +12,18 @@
 ?>
 
 <?php 
-    if(isset($_GET["camposVazios"])) {
-        ?>
-        <div class="container sticky-top">
-            <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
-                Preencha o campo <strong>nome</strong> para adicionar a categoria.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    if(isset($_GET["erro"])) {
+        if($_GET["erro"] == "camposVazios"){
+            ?>
+            <div class="container sticky-top">
+                <div class="alert alert-warning alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x mt-3 alert-padrao" role="alert">
+                    Preencha o campo <strong>nome*</strong> para alterar a categoria.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
-        </div>
-    <?php
-    }
+            <?php
+        }
+   }
 ?>
     <!--SEÇÃO ALTERAR CATEGORIAS -->
     <section class="mt-5">
@@ -30,10 +32,10 @@
                 <div class="row justify-content-center">
                     <h1 class="titulo-home">Alterar categoria</h1>
                     <div class="col-md-6">
-                        <form class="row g-3 text-white" action="altera-categoria.php" method="post" onsubmit="return checkForm(this);">
+                        <form id="categoriaForm" class="row g-3 text-white" action="altera-categoria.php" method="post" novalidate>
                             <div class="col-12">
                                 <label for="inputNome" class="form-label mt-3">Nome</label>
-                                <input type="text" class="form-control" name="nome" id="inputNome" value="<?php echo $categoria["nome"]; ?>" placeholder="Nome da categoria">
+                                <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $categoria["nome"]; ?>" maxlength="30" placeholder="Nome da categoria">
                             </div>
                             <input type="hidden" name="id" value="<?php echo $categoria["id"];?>">
                             <div class="d-flex justify-content-center">
@@ -56,5 +58,9 @@
     </section> 
     <!-- SEÇÃO ALTERAR CATEGORIAS -->
 
-    <script type="text/javascript" src="js/validarform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/categoria-form.js"></script>
+    
 <?php include("footer.php"); ?>

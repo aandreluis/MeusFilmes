@@ -20,9 +20,11 @@ $("#filmeForm").validate({
     rules : {
         nome:{
             required:true,
+            maxlength: 30
         },
         diretor:{
             required:true,
+            maxlength: 30
         },
         descricao:{
             required:true,
@@ -39,6 +41,10 @@ $("#filmeForm").validate({
             required:true,
             date:true
         },
+        categoria_id:{
+            required:true,
+            number: true
+        },
           mensagem:{
             required:true
           }                                 
@@ -46,9 +52,11 @@ $("#filmeForm").validate({
     messages:{
         nome:{
             required:"Informe o nome",
+            maxlength:"Limite de 30 caracteres"
         },
         diretor:{
             required:"Informe o diretor",
+            maxlength:"Limite de 30 caracteres"
         },
         descricao:{
             required:"Informe a descrição",
@@ -64,7 +72,10 @@ $("#filmeForm").validate({
         data_lancamento:{
             required:"Informe a data de lançamento",
             date:"A data que você informou não é valida"
-
+        },
+        categoria_id:{
+            required:"Informe uma categoria",
+            number: "Selecione uma categoria válida"
         },
         mensagem:{
             required:"A mensagem não pode ficar em branco"
@@ -72,12 +83,10 @@ $("#filmeForm").validate({
     }
 });
 
-$("error").addClass("invalid-feedback");
-
 //verifica se o form está validado
-var form = $( "#filmeForm" );
+var form = $("#filmeForm");
 form.validate();
-$( "#btnSubmit" ).click(function() {
+$("#btnSubmit").click(function() {
     var button = $('#btnSubmit');
     if(form.valid()) {
         button.prop('disabled', true);

@@ -21,10 +21,48 @@
     $assistido = "1";
     }
 
-    //verifica se algum campo está vazio
-    if(empty($nome) || empty($diretor) || empty($descricao) || empty($data_lancamento) || empty($duracao)) {
-        header("location: altera-filme-form.php?camposVazios=true");
+    // Pegando as variáveis dinamicamente
+    foreach ($_POST as $chave => $valor) {
+        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
+        $$chave = trim(strip_tags($valor));
+
+        //verifica se algum campo está vazio
+        if (empty ($valor)) {
+            header("location: altera-filme-form.php?id=$id&erro=camposVazios");
+            die();  
+        }
+    }
+
+    //validação do input data_duração
+    $data = $data_lancamento;
+    $d = DateTime::createFromFormat('Y-m-d', $data); //define o formato Ano-Mês-Dia
+    if($d && $d->format('Y-m-d') == $data){//verifica se o formato é igual ao aceito
+        //data valida
+    }else{
+        header("location: altera-filme-form.php?id=$id&erro=dataInvalida");
         die();
+    } 
+
+    //validação do input duração
+    $tempo = $duracao;
+    $d = DateTime::createFromFormat('H:i', $tempo); //define o formato Hora:Minuto
+    if($d && $d->format('H:i') == $tempo){
+        //tempo valido
+    }else{
+        header("location: altera-filme-form.php?id=$id&erro=duracaoInvalida");
+        die();
+    }
+
+    //verifica se existe e se é número (id)
+    if((!isset($categoria_id) || !is_numeric($categoria_id))) {
+        header("location: altera-filme-form.php?id=$id&erro=categoriaInvalida");
+       die();
+    }
+
+    //verifica se existe e se é número (1 e 0)
+    if((!isset($assistido) || !is_numeric($assistido))) {
+        header("location: altera-filme-form.php?id=$id&erro=assistidoInvalido");
+       die();
     }
 
     if(empty($imagem = $_FILES['imagem']['name'])) {

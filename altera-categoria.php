@@ -10,10 +10,17 @@
      $id = $_POST["id"];
      $nome = $_POST["nome"];
 
-    //verifica se algum campo está vazio
-    if(empty($nome)) {
-        header("location: altera-categoria-form.php?id=$id&camposVazios=true");
-        die();
+    // Pegando as variáveis dinamicamente
+    foreach ($_POST as $chave => $valor) {
+        // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
+        $$chave = trim(strip_tags($valor));
+
+        //verifica se algum campo está vazio
+        if (empty ($valor)) {
+           // header("location: filmes-formulario.php?erro=camposVazios");
+            header("location: altera-categoria-form.php?id=$id&erro=camposVazios");
+            die();  
+        }
     }
      
     if(alteraCategoria($conexao, $id, $nome)){//funcionou
