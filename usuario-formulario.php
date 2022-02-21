@@ -59,25 +59,25 @@
 						<img class="img-login mx-auto d-block" src="./img/insert.svg" alt="">
 					</div>
 					<div class="row mt-3">
-						<form action="adiciona-usuario.php" method="post" onsubmit="return checkForm(this);">
+						<form id="usuarioForm" action="adiciona-usuario.php" method="post" novalidate>
 							<div class="mb-3">
 								<label for="inputNome" class="form-label text-white">Seu nome</label>
-								<input type="text" class="form-control" name="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required>
+								<input type="text" class="form-control" name="nome" id="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required>
 								<div class="form-text">Seu nome completo, ou apenas o primeiro nome.</div>
 							</div>
 							<div class="mb-3">
 								<label for="inputEmail" class="form-label text-white">Seu email</label>
-								<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required>
+								<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required>
 								<div class="form-text">Nunca compartilharemos seu e-mail.</div>
 							</div>
 							<div class="mb-3">
 								<label for="inputSenha" class="form-label text-white">Crie uma senha</label>
-								<input type="password" class="form-control" name="senha" placeholder="Crie uma senha forte" required>
+								<input type="password" class="form-control" name="senha" id="senha" placeholder="Crie uma senha forte" required>
 								<div class="form-text">Utilize letras maiusculas, minusculas, números e caracteres especiais, exemplo: ("@!#$&).</div>
 							</div>
 							<div class="mb-3">
 								<label for="inputSenhaConfirma" class="form-label text-white">Confirme sua senha</label>
-								<input type="password" class="form-control" name="senhaConfirmacao" placeholder="Repita sua senha" required>
+								<input type="password" class="form-control" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="Repita sua senha" required>
 								<div class="form-text">Confirme sua senha para finalizar o cadastro.</div>
 							</div>
 							<div class="d-grid gap-2 col-6 mx-auto mt-3">
@@ -95,5 +95,10 @@
 	</section> 
 	<!-- SEÇÃO CADASTRO DE USUÁRIOS -->
 
-    <script type="text/javascript" src="js/validarform.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/usuario-form.js"></script>
+
 <?php include ("footer.php") ?>
