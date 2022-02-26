@@ -33,7 +33,7 @@
     }
 
     //verifica se ja existe um filme com o mesmo nome cadastrado
-    if(verificaNomeFilme($conexao, $nome, $usuario_id)) {
+    if(!verificaNomeFilme($conexao, $nome, $usuario_id)) {
         header("location: filmes-formulario.php?erro=filmeRepetido");
         die(); 
     }

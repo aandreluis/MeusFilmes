@@ -90,11 +90,11 @@
     }
 
     function verificaNomeFilme($conexao, $nome, $usuario_id) {
-        $query = "SELECT * FROM filmes WHERE nome = '$nome' AND usuario_id = '{$usuario_id}'";
-        $resultado = mysqli_query($conexao, $query);
-        if(mysqli_num_rows($resultado) > 0) {// se existerem mais de 1 retorna false
-            return true;
+        $linhas = mysqli_query($conexao, "SELECT * FROM filmes WHERE nome = '$nome' AND usuario_id = '{$usuario_id}'");
+        if(mysqli_num_rows($linhas) > 0){
+            return false; //existe um filme já cadastrado
         }
+        return true; //não existe
     }
 
 ?>

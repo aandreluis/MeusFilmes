@@ -59,15 +59,15 @@
 						<img class="img-login mx-auto d-block" src="./img/password.svg" alt="Imagem login">
 					</div>
 					<div class="row mt-3">
-						<form action="login.php" method="post" onsubmit="return checkForm(this);">
+						<form id="loginForm" action="login.php" method="post" novalidate>
 							<div class="mb-3">
 								<label for="inputEmail" class="form-label text-white">Seu email</label>
-								<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" autofocus required>
+								<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" autofocus required>
 								<div class="form-text">Nunca compartilharemos seu e-mail.</div>
 							</div>
 							<div class="mb-3">
 								<label for="inputSenha" class="form-label text-white">Sua senha</label>
-								<input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
+								<input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" required>
 								<div class="form-text">Não compartilhe sua senha com ninguem.</div>
 							</div>
 							<div class="d-grid gap-2 col-6 mx-auto mt-3">
@@ -85,5 +85,9 @@
 	</section> 
 	<!-- SEÇÃO LOGIN -->
 
-    <script type="text/javascript" src="js/validarform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/login-form.js"></script>
+
 <?php include ("footer.php") ?>

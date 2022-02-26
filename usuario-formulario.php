@@ -73,7 +73,7 @@
 							<div class="mb-3">
 								<label for="inputSenha" class="form-label text-white">Crie uma senha</label>
 								<input type="password" class="form-control" name="senha" id="senha" placeholder="Crie uma senha forte" required>
-								<div class="form-text">Utilize letras maiusculas, minusculas, números e caracteres especiais, exemplo: ("@!#$&).</div>
+								<div class="form-text">Crie uma senha segura.</div>
 							</div>
 							<div class="mb-3">
 								<label for="inputSenhaConfirma" class="form-label text-white">Confirme sua senha</label>

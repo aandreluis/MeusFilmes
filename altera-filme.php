@@ -21,13 +21,13 @@
     $assistido = "1";
     }
 
-    // Pegando as variáveis dinamicamente
+     // Pegando as variáveis dinamicamente
     foreach ($_POST as $chave => $valor) {
         // Remove todas as tags HTML e os espaços em branco do valor no inicio e fim
         $$chave = trim(strip_tags($valor));
 
         //verifica se algum campo está vazio
-        if (empty ($valor)) {
+        if (empty($valor)) {
             header("location: altera-filme-form.php?id=$id&erro=camposVazios");
             die();  
         }
@@ -45,8 +45,8 @@
 
     //validação do input duração
     $tempo = $duracao;
-    $d = DateTime::createFromFormat('H:i', $tempo); //define o formato Hora:Minuto
-    if($d && $d->format('H:i') == $tempo){
+    $d = DateTime::createFromFormat('H:i:s', $tempo); //define o formato Hora:Minuto
+    if($d && $d->format('H:i:s') == $tempo){
         //tempo valido
     }else{
         header("location: altera-filme-form.php?id=$id&erro=duracaoInvalida");

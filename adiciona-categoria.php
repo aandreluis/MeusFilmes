@@ -23,7 +23,7 @@
     }
 
     //verifica se ja existe alguma categoria com o mesmo nome cadastrado
-    if(verificaNomeCategoria($conexao, $nome, $usuario_id)) {
+    if(!verificaNomeCategoria($conexao, $nome, $usuario_id)) {
         header("location: categoria-formulario.php?erro=categoriaRepetida");
         die(); 
     }

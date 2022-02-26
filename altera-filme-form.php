@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="titulo-home">Alterar Filme</h1>
-                        <form id="filmeForm" class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post" novalidate>
+                        <form id="alteraFilmeForm" class="row g-3 text-white mt-2" enctype="multipart/form-data" action="altera-filme.php" method="post" novalidate>
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome *</label>
                                 <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $filme["nome"]; ?>" maxlength="30" placeholder="Nome do filme">
@@ -136,7 +136,15 @@
                             <div class="col-md-12">
                                 <label for="formFile" class="form-label">Nova imagem da capa</label>
                                 <input class="form-control" type="file" name="imagem" id="imagem" accept=".jpg, .png, .jpeg">
-                                <input type="hidden" name="imagemCapaAtual" value="<?php echo $filme["imagem"];?>">
+                                <input type="hidden" name="imagemCapaAtual" value="
+                                <?php
+                                //corrigir erro de campo imagem vazio
+                                 if(empty($filme["imagem"])) {
+                                    echo "null";
+                                } else {
+                                    echo $filme["imagem"];
+                                } 
+                                ?>">
                                 <div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg</div>
                             </div>
                             <div class="col-md-4">
@@ -194,6 +202,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
-    <script type="text/javascript" src="js/filmes-forms.js"></script>
+    <script type="text/javascript" src="js/altera-filmes-form.js"></script>
 
 <?php include("footer.php"); ?>

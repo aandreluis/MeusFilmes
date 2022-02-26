@@ -75,25 +75,25 @@
 					</div>
 				</div>
 				<div class="row mt-2">
-					<form enctype="multipart/form-data" action="altera-usuario.php" method="post" onsubmit="return checkForm(this);">
+					<form id="alteraUserForm" enctype="multipart/form-data" action="altera-usuario.php" method="post" novalidate>
 						<div class="mb-3">
 							<label for="formImagem" class="form-label text-white">Imagem do perfil</label>
 							<!-- <input type="hidden" name="MAX_FILE_SIZE" value="5000" /> -->
-							<input class="form-control" type="file" name="imagem" accept=".jpg, .png, .jpeg"/> 
+							<input class="form-control" type="file" name="imagem" id="imagem" accept=".jpg, .png, .jpeg"/> 
 							<div class="form-text">(Opcional). Extensões permitidas: png, jpg, jpeg ou se preferir</div>
 						</div>
 						<div class="mb-3">
 							<label for="inputNome" class="form-label text-white">Seu nome</label>
-							<input type="text" class="form-control" name="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required value="<?php echo $_SESSION["nome-usuario"]; ?>">
+							<input type="text" class="form-control" name="nome" id="nome" aria-describedby="nomeHelp" placeholder="Exemplo: André Luis" required value="<?php echo $_SESSION["nome-usuario"]; ?>">
 							<div class="form-text">Seu nome completo, ou apenas o primeiro nome.</div>
 						</div>
 						<div class="mb-3">
 							<label for="inputEmail" class="form-label text-white">Seu email</label>
-							<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required value="<?php echo $_SESSION["email-usuario"]; ?>">
+							<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required value="<?php echo $_SESSION["email-usuario"]; ?>">
 						</div>
 						<div class="mb-3">
 							<label for="inputSenha" class="form-label text-white">Senha</label>
-							<input type="password" class="form-control" name="senhaNova">
+							<input type="password" class="form-control" name="senhaNova" id="senhaNova">
 							<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
 						</div>
 						<div class="d-grid gap-2 col-6 mx-auto mt-3">
@@ -110,5 +110,9 @@
 	</section> 
 	<!-- SEÇÃO ALTERA-USUARIOS -->
 	
-    <script type="text/javascript" src="js/validarform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/altera-usuario-form.js"></script>
+
 <?php include("footer.php"); ?>

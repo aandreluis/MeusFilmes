@@ -18,52 +18,28 @@ jQuery.validator.addMethod('senhaForte', function (value, element) {
 }, );
 
 
-$("#usuarioForm").validate({
+$("#loginForm").validate({
     errorClass: "is-invalid",
     validClass: "is-valid",
     rules : {
-        nome:{
-            required:true,
-            maxlength: 30
-        },
         email:{
             required:true,
             email: true,
-            remote: {
-                url: 'validarEmail.php',
-                type: "post",
-            }
         },
         senha:{
             required:true,
-            senhaForte: true,
-            minlength: 6
-        },
-        senhaConfirmacao:{
-            equalTo: "#senha"
         },
         mensagem:{
             required:true
-          }                                 
+        }                                 
     },
     messages:{
-        nome:{
-            required:"Informe o nome",
-            maxlength:"Limite de 30 caracteres"
-        },
         email:{
             required:"Informe seu email",
             email:"Informe um email válido",
-            remote: "Esse email já foi cadastrado"
         },
         senha:{
             required:"Informe uma senha",
-            senhaForte: "Utilize letras maiusculas, minusculas, números e caracteres especiais: [a-Z], [0-9], [@!#$&]",
-            minlength: "Sua senha deve possuir no mínino 6 caracteres"
-        },
-        senhaConfirmacao:{
-            required:"Repita sua senha",
-            equalTo:"Suas senhas não conferem"
         },
         mensagem:{
             required:"A mensagem não pode ficar em branco"
@@ -72,14 +48,14 @@ $("#usuarioForm").validate({
 });
 
 //verifica se o form está validado
-var form = $("#usuarioForm");
+var form = $("#loginForm");
 form.validate();
 $("#btnSubmit").click(function() {
     var button = $('#btnSubmit');
     if(form.valid()) {
         button.prop('disabled', true);
         button.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'+' Aguarde...');
-        $('#usuarioForm').submit();
+        $('#loginForm').submit();
     } else {
         button.prop('disabled', false);
     }

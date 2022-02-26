@@ -14,17 +14,13 @@ textDescricao.addEventListener("keydown", function(){
 });
 
 
-$("#filmeForm").validate({
+$("#alteraFilmeForm").validate({
     errorClass: "is-invalid",
     validClass: "is-valid",
     rules : {
         nome:{
             required:true,
             maxlength: 30,
-            remote: {
-                url: 'validarNomeFilme.php',
-                type: "post",
-            }
         },
         diretor:{
             required:true,
@@ -57,7 +53,6 @@ $("#filmeForm").validate({
         nome:{
             required:"Informe o nome",
             maxlength:"Limite de 30 caracteres",
-            remote: "Esse filme já foi cadastrado"
         },
         diretor:{
             required:"Informe o diretor",
@@ -89,14 +84,14 @@ $("#filmeForm").validate({
 });
 
 //verifica se o form está validado
-var form = $("#filmeForm");
+var form = $("#alteraFilmeForm");
 form.validate();
 $("#btnSubmit").click(function() {
     var button = $('#btnSubmit');
     if(form.valid()) {
         button.prop('disabled', true);
         button.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'+' Aguarde...');
-        $('#filmeForm').submit();
+        $('#alteraFilmeForm').submit();
     } else {
         button.prop('disabled', false);
     }

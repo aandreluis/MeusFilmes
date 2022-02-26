@@ -4,7 +4,11 @@ $("#categoriaForm").validate({
     rules : {
         nome:{
             required:true,
-            maxlength: 30
+            maxlength: 30,
+            remote: {
+                url: 'validarNomeCategoria.php',
+                type: "post",
+            }
         },
         mensagem:{
             required:true
@@ -13,7 +17,8 @@ $("#categoriaForm").validate({
     messages:{
         nome:{
             required:"Informe o nome",
-            maxlength:"Limite de 30 caracteres"
+            maxlength:"Limite de 30 caracteres",
+            remote: "Essa categoria já foi cadastrada"
         },
         mensagem:{
             required:"A mensagem não pode ficar em branco"

@@ -24,7 +24,7 @@
     }
 
     //verificação do email valido e se já existe
-    if(verificaEmail($conexao, $email)) {
+    if(!verificaEmail($conexao, $email)) {
         header("location: usuario-formulario.php?erro=emailInvalido");
         die();
     }

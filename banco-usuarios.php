@@ -10,14 +10,14 @@
 
     function verificaEmail($conexao, $email) {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return 1; //email invalido
+            return false; //email invalido
         }
         
         $linhas = mysqli_query($conexao, "select * from usuarios where email = '{$email}'");
         if(mysqli_num_rows($linhas) > 0){
-            return 1; //existe um email ja cadastrado
+            return false; //existe um email ja cadastrado
         }
-        return 0; //não existe
+        return true; //não existe
     }
 
     function cadastraUsuario($conexao, $imagem, $nome, $email, $senha){

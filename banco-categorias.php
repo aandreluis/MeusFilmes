@@ -63,11 +63,17 @@
     }
 
     function verificaNomeCategoria($conexao, $nome, $usuario_id) {
-        $query = "SELECT * FROM categoria WHERE nome = '$nome' AND usuario_id = '{$usuario_id}' OR nome = '$nome' AND usuario_id = '0'"; //usuario_id = 0 -> admin
+        $linhas = mysqli_query($conexao, "SELECT * FROM categoria WHERE nome = '$nome' AND usuario_id = '{$usuario_id}' OR nome = '$nome' AND usuario_id = '0'"); //usuario_id = 0 -> admin
+        if(mysqli_num_rows($linhas) > 0){
+            return false; //existe uma categoria já cadastrado
+        }
+        return true; //não existe
+
+       /*  $query = "SELECT * FROM categoria WHERE nome = '$nome' AND usuario_id = '{$usuario_id}' OR nome = '$nome' AND usuario_id = '0'"; //usuario_id = 0 -> admin
         $resultado = mysqli_query($conexao, $query);
         if(mysqli_num_rows($resultado) > 0) {// se existerem mais de 1 retorna false
             return true;
-        }
+        } */
     }
 
 ?>
