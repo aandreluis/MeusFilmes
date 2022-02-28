@@ -140,7 +140,7 @@
                                 <?php
                                 //corrigir erro de campo imagem vazio
                                  if(empty($filme["imagem"])) {
-                                    echo "null";
+                                    echo "";
                                 } else {
                                     echo $filme["imagem"];
                                 } 
@@ -160,8 +160,8 @@
                                 <select name="categoria_id" id="categoria_id" class="form-select">
                                 <?php 
                                 foreach($categorias as $categoria) {
-                                    $essaCategoria = $filme["categoria_id"] == $filme["id"];
-                                    $selecao = $essaCategoria ? "selected = 'selected'" : ""; //operador ternario    
+                                    $essaCategoria = $filme['categoria_id'] == $categoria["id"];
+                                    $selecao = $essaCategoria ? "selected='selected'" : ""; //operador ternario
                                     ?>
                                     <option value="<?php echo $categoria["id"]; ?>" <?php echo $selecao; ?>><?php echo $categoria["nome"];?></option>
                                     <?php   

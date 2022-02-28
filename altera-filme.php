@@ -59,12 +59,6 @@
        die();
     }
 
-    //verifica se existe e se é número (1 e 0)
-    if((!isset($assistido) || !is_numeric($assistido))) {
-        header("location: altera-filme-form.php?id=$id&erro=assistidoInvalido");
-       die();
-    }
-
     if(empty($imagem = $_FILES['imagem']['name'])) {
         $imagemFinal = $imagemCapaAtual; //deixa a imagem atual
     } else {

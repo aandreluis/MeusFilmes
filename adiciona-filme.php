@@ -64,12 +64,6 @@
        die();
     }
 
-    //verifica se existe e se é número (1 e 0)
-    if((!isset($assistido) || !is_numeric($assistido))) {
-        header("location: filmes-formulario.php?erro=assistidoInvalido");
-       die();
-    }
-
     //upload imagem da capa
     if(empty($imagem = $_FILES['imagem']['name'])) {
         $imagemFinal = ""; //deixa vazia
