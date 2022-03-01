@@ -1,23 +1,3 @@
-jQuery.validator.addMethod('senhaForte', function (value, element) {
-    /*
-    Regex para senha forte:
-    /^
-    (?=.*\d)              // deve conter ao menos um dígito
-    (?=.*[a-z])           // deve conter ao menos uma letra minúscula
-    (?=.*[A-Z])           // deve conter ao menos uma letra maiúscula
-    (?=.*[!"#$%&'()*+ ,-./:;<=>?@^_`|~]) // deve conter ao menos um caractere especial
-    [0-9a-zA-Z$*&@#]{6,}  // deve conter ao menos 8 dos caracteres mencionados
-    $/ */
-
-    let regras = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+ ,-./:;<=>?@^_`|~])[0-9a-zA-Z!"#$%&'()*+ ,-./:;<=>?@^_`|~]{6,}$/
-    if(regras.test(value)){
-        return true;
-    } else {
-        return false;
-    }
-}, );
-
-
 $("#alteraUserForm").validate({
     errorClass: "is-invalid",
     validClass: "is-valid",
@@ -30,7 +10,14 @@ $("#alteraUserForm").validate({
             required:true,
             maxlength: 30
         },
-       
+        email:{
+            required:true,
+            email: true,
+            remote: {
+                url: 'validarAlteraEmail.php',
+                type: "post",
+            }
+        },
         mensagem:{
             required:true
           }                                 
@@ -43,6 +30,11 @@ $("#alteraUserForm").validate({
         nome:{
             required:"Informe o nome",
             maxlength:"Limite de 30 caracteres"
+        },
+        email:{
+            required:"Informe seu email",
+            email:"Informe um email válido",
+            remote: "Esse email já foi cadastrado"
         },
         mensagem:{
             required:"A mensagem não pode ficar em branco"

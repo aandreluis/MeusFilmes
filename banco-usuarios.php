@@ -53,13 +53,20 @@
         return 0;
     }
 
-    function alteraUsuario($conexao, $id, $imagem, $nome, $email, $senha) {
-        $query = "update usuarios set imagem = '{$imagem}', nome = '{$nome}', email = '{$email}', senha = '{$senha}' where id = '{$id}'";
+    function alteraUsuario($conexao, $id, $imagem, $nome, $email) {
+        $query = "update usuarios set imagem = '{$imagem}', nome = '{$nome}', email = '{$email}', where id = '{$id}'";
         //atualiza dos valores da session
         $_SESSION["id-usuario"] = $id;
         $_SESSION["imagem-usuario"] = $imagem;
         $_SESSION["nome-usuario"] = $nome;
         $_SESSION["email-usuario"] = $email;
+        //$_SESSION["senha-usuario"] = $senha;
+        return mysqli_query($conexao, $query);
+    }
+
+    function alteraSenhaUsuario($conexao, $id, $senha) {
+        $query = "update usuarios set senha = '{$senha}', where id = '{$id}'";
+        //atualiza dos valores da session
         $_SESSION["senha-usuario"] = $senha;
         return mysqli_query($conexao, $query);
     }

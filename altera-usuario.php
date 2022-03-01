@@ -9,11 +9,11 @@
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     
-    if(empty($senhaNova = $_POST["senhaNova"])) {//se a senha nova estiver vazia
+    /* if(empty($senhaNova = $_POST["senhaNova"])) {//se a senha nova estiver vazia
         $senha = $_SESSION["senha-usuario"]; //deixa a senha atual, a que está na sessão (ja md5)
     } else { //se não estiver vazia
         $senha = md5($senhaNova); //coloca a nova senha md5
-    }
+    } */
     
     if(empty($imagem = $_FILES['imagem']['name'])) {
         $imagemFinal = $_SESSION["imagem-usuario"]; //deixa a imagem atual da sessão

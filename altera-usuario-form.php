@@ -91,10 +91,13 @@
 							<label for="inputEmail" class="form-label text-white">Seu email</label>
 							<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="nome@exemplo.com" required value="<?php echo $_SESSION["email-usuario"]; ?>">
 						</div>
-						<div class="mb-3">
+						<div class="mb-3 text-center">
+							<!--	
 							<label for="inputSenha" class="form-label text-white">Senha</label>
-							<input type="password" class="form-control" name="senhaNova" id="senhaNova">
+							 <input type="password" class="form-control" name="senhaNova" id="senhaNova">
 							<div class="form-text">(Opcional). Se preferir, deixe o campo em branco, sua senha continuará a mesma que você cadastrou anteriormente.</div>
+							-->
+							<a class="link-padrao text-decoration-none mt-1" href="alterar-senha-form.php" target="_black">Alterar senha <i class="bi bi-box-arrow-up-right"></i></a>
 						</div>
 						<div class="d-grid gap-2 col-6 mx-auto mt-3">
 							<button id="btnSubmit" class="btn btn-menu" type="submit"><i class="bi bi-check2-square me-2"></i>Salvar</button>
