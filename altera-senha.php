@@ -22,22 +22,31 @@
         }
     }
 
+    //confirma senha atual
     if(md5($senhaAtual) != $_SESSION["senha-usuario"]) {
         header("location: alterar-senha-form.php?erro=senhaAtualInvalida");
         die();
     }
 
-    if($senhaAtual == $senhaNova) {
-        header("location: alterar-senha-form.php?erro=senhaRepetida");
-        die();
-    }
-
+    //verifica se a senha e a confirmação são iguais
     if ($senhaNova != $senhaConfirmacao) {
         header("location: alterar-senha-form.php?erro=senhasNaoConferem");
         die();
     }
 
-    if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[\w$@]{6,}$/', $senhaNova)) {
+    //verifica se a nova senha é igual a senha atual 
+    if($senhaAtual == $senhaNova) {
+        header("location: alterar-senha-form.php?erro=senhaRepetida");
+        die();
+    }
+
+    /*regex para verificar o nivel de força da senha
+    [a-z] // tem pelo menos uma letra minúscula
+    [A-Z] // tem pelo menos uma letra maiúscula
+    [0-9] // tem pelo menos um número
+    [\w$@]{6,} // tem 6 ou mais caracteres 
+    @!#$%^&*()/*/
+    if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[\w!@#$%&*)/(]{6,}$/', $senhaNova)) {
         $senhaNovaMd5 = md5($senhaNova);
     } else {
         header("location: alterar-senha-form.php?erro=senhaFraca");

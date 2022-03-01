@@ -5,11 +5,11 @@ jQuery.validator.addMethod('senhaForte', function (value, element) {
     (?=.*\d)              // deve conter ao menos um dígito
     (?=.*[a-z])           // deve conter ao menos uma letra minúscula
     (?=.*[A-Z])           // deve conter ao menos uma letra maiúscula
-    (?=.*[!"#$%&()*+ ,-./:;<=>?@^_`|~]) // deve conter ao menos um caractere especial
+    (?=.*[@!#$%^&*()/]) // deve conter ao menos um caractere especial
     [0-9a-zA-Z$*&@#]{6,}  // deve conter ao menos 6 dos caracteres mencionados
     $/ */
 
-    let regras = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&()*+ ,-./:;<=>?@^_`|~])[0-9a-zA-Z!"#$%&'()*+ ,-./:;<=>?@^_`|~]{6,}$/
+    let regras = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#$%&*()/])[0-9a-zA-Z@!#$%&*()/]{6,}$/
     if(regras.test(value)){
         return true;
     } else {
@@ -18,51 +18,41 @@ jQuery.validator.addMethod('senhaForte', function (value, element) {
 }, );
 
 
-$("#usuarioForm").validate({
+$("#alterarSenhaForm").validate({
     errorClass: "is-invalid",
     validClass: "is-valid",
     rules : {
-        nome:{
+        senhaAtual:{
             required:true,
-            maxlength: 30
-        },
-        email:{
-            required:true,
-            email: true,
             remote: {
-                url: 'validarEmail.php',
+                url: 'validarSenhaAtual.php',
                 type: "post",
             }
         },
-        senha:{
+        senhaNova:{
             required:true,
             senhaForte: true,
             minlength: 6
         },
         senhaConfirmacao:{
-            equalTo: "#senha"
+            equalTo: "#senhaNova"
         },
         mensagem:{
             required:true
           }                                 
     },
     messages:{
-        nome:{
-            required:"Informe o nome",
-            maxlength:"Limite de 30 caracteres"
+        senhaAtual:{
+            required:"Informe sua senha atual",
+            remote:"Senha incorreta!"
         },
-        email:{
-            required:"Informe seu email",
-            email:"Informe um email válido",
-            remote: "Esse email já foi cadastrado"
-        },
-        senha:{
-            required:"Informe uma senha",
-            senhaForte: "Utilize letras maiusculas, minusculas, números e caracteres especiais: [a-Z], [0-9], [@!#$&]",
+        senhaNova:{
+            required:"Informe uma nova senha",
+            senhaForte: "Utilize letras maiusculas, minusculas, números e caracteres especiais: [a-Z], [0-9], [@!#$%^&*()/]",
             minlength: "Sua senha deve possuir no mínino 6 caracteres"
         },
         senhaConfirmacao:{
-            required:"Repita sua senha",
+            required:"Repita sua nova senha",
             equalTo:"Suas senhas não conferem"
         },
         mensagem:{
@@ -72,14 +62,14 @@ $("#usuarioForm").validate({
 });
 
 //verifica se o form está validado
-var form = $("#usuarioForm");
+var form = $("#alterarSenhaForm");
 form.validate();
 $("#btnSubmit").click(function() {
     var button = $('#btnSubmit');
     if(form.valid()) {
         button.prop('disabled', true);
         button.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'+' Aguarde...');
-        $('#usuarioForm').submit();
+        $('#alterarSenhaForm').submit();
     } else {
         button.prop('disabled', false);
     }
